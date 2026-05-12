@@ -180,7 +180,8 @@ resource cosmosContainer 'Microsoft.DocumentDB/databaseAccounts/sqlDatabases/con
 resource staticWebApp 'Microsoft.Web/staticSites@2024-04-01' = {
   name: '${abbrs.webStaticSites}${resourceToken}'
   location: location
-  tags: tags
+  // azd matches services in azure.yaml to resources via the azd-service-name tag.
+  tags: union(tags, { 'azd-service-name': 'web' })
   sku: {
     name: 'Standard'
     tier: 'Standard'
