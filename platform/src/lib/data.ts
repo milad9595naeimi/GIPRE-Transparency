@@ -13,7 +13,7 @@ import planJson from "../../data/plan.json";
 import scenariosJson from "../../data/scenarios.json";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Types — kept lightweight; the JSON shape is the source of truth.
+// Plan / phase types
 // ─────────────────────────────────────────────────────────────────────────────
 
 export type StepStatus = "done" | "in_progress" | "pending" | "blocked" | "planned" | "unknown";
@@ -37,8 +37,11 @@ export interface PlanPhase {
 
 export interface PlanData {
   phases: PlanPhase[];
-  [k: string]: unknown;
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Build state
+// ─────────────────────────────────────────────────────────────────────────────
 
 export interface BuildStateData {
   version: string;
@@ -47,13 +50,18 @@ export interface BuildStateData {
   steps_done: number;
   steps_in_progress: number;
   steps_pending: number;
-  agents_total: number;
+  completion_pct: number;
   layers_total: number;
   layers_active: number;
-  scenarios_total: number;
+  agents_total: number;
+  agents_target: number;
+  pdf_cycles: number;
   generated_utc: string;
-  [k: string]: unknown;
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Agents
+// ─────────────────────────────────────────────────────────────────────────────
 
 export interface Agent {
   id: string;
@@ -68,35 +76,102 @@ export interface Agent {
 
 export interface AgentsData {
   agents: Agent[];
-  [k: string]: unknown;
+  by_class: Record<string, number>;
+  by_backbone: Record<string, number>;
+  n_total: number;
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Layers
+// ─────────────────────────────────────────────────────────────────────────────
 
 export interface Layer {
   id: string;
-  title: string;
+  cluster: string;
+  name: string;
   status: string;
+  summary?: string;
   [k: string]: unknown;
+}
+
+export interface LayerCluster {
+  id: string;
+  title: string;
+  layer_range: string;
+  n_layers_total: number;
+  n_active: number;
+  layers: Layer[];
 }
 
 export interface LayersData {
   layers: Layer[];
-  [k: string]: unknown;
+  by_cluster: Record<string, LayerCluster>;
+  n_total: number;
+  n_active: number;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Governance (N01 / N02 audit runs)
+// ─────────────────────────────────────────────────────────────────────────────
+
+export interface GovernanceRunSummary {
+  id: string;
+  target_class: string;
+  gate: string;
+  score_mean: number;
+  score_stddev: number;
+  n_findings: number;
+  n_critical: number;
+}
+
+export interface GovernanceRun {
+  step: string;
+  run_id: string;
+  synthesis_md: string;
+  synthesis_md_full_length: number;
+  n_artifacts: number;
+  summaries: GovernanceRunSummary[];
+  available: boolean;
+  structural_metrics_csv_exists?: boolean;
 }
 
 export interface GovernanceData {
-  [k: string]: unknown;
+  n01: GovernanceRun;
+  n02: GovernanceRun;
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Methodology
+// ─────────────────────────────────────────────────────────────────────────────
 
 export interface MethodologyData {
+  digest_excerpt: string;
+  digest_full_length: number;
+  source_files: string[];
+  architecture_md?: string;
+  readme_md?: string;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Scenarios + Changelog + Outputs (loose; rarely accessed)
+// ─────────────────────────────────────────────────────────────────────────────
+
+export interface ScenariosData {
+  scenarios?: unknown[];
   [k: string]: unknown;
 }
 
-export interface ScenariosData {
-  [k: string]: unknown;
+export interface ChangelogEntry {
+  version: string;
+  title: string;
+  body: string;
+  body_full_length?: number;
+  body_excerpt?: string;
 }
 
 export interface ChangelogData {
-  [k: string]: unknown;
+  entries: ChangelogEntry[];
+  n_entries: number;
 }
 
 export interface OutputsData {
@@ -104,7 +179,7 @@ export interface OutputsData {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Exports
+// Exports — JSON cast to the specific interfaces
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const planData = planJson as unknown as PlanData;
