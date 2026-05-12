@@ -1,0 +1,716 @@
+{
+  "phases": [
+    {
+      "id": "Zero",
+      "title": "Operating infrastructure",
+      "n_steps": 1,
+      "n_done": 1,
+      "n_in_progress": 0,
+      "n_pending": 0,
+      "steps": [
+        {
+          "id": "S00",
+          "title": "Multi-session framework scaffolding",
+          "status_cell": "✅ 2026-05-11",
+          "status": "done"
+        }
+      ]
+    },
+    {
+      "id": "A",
+      "title": "Foundation (mostly done; bundled into the four PDF iterations)",
+      "n_steps": 6,
+      "n_done": 6,
+      "n_in_progress": 0,
+      "n_pending": 0,
+      "steps": [
+        {
+          "id": "A01",
+          "title": "Methodology ingestion (6 docx → markdown digest)",
+          "status_cell": "✅",
+          "status": "done"
+        },
+        {
+          "id": "A02",
+          "title": "Engine architecture: 65-layer registry",
+          "status_cell": "✅",
+          "status": "done"
+        },
+        {
+          "id": "A03",
+          "title": "Agent registry + 50-agent slice",
+          "status_cell": "✅",
+          "status": "done"
+        },
+        {
+          "id": "A04",
+          "title": "Master scenario library (100 scenarios)",
+          "status_cell": "✅",
+          "status": "done"
+        },
+        {
+          "id": "A05",
+          "title": "Run + render pipeline (Python core)",
+          "status_cell": "✅",
+          "status": "done"
+        },
+        {
+          "id": "A06",
+          "title": "Four PDF iterations v1→v4",
+          "status_cell": "✅",
+          "status": "done"
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": "Scale agents (50 → 500)",
+      "n_steps": 6,
+      "n_done": 2,
+      "n_in_progress": 0,
+      "n_pending": 4,
+      "steps": [
+        {
+          "id": "B01",
+          "title": "Expand lens panel: activate all 15 inactive lenses (50 → 65 agents) + DeepSeek shim for L17 + per-lens OSINT grounding",
+          "status_cell": "✅ 2026-05-11",
+          "status": "done"
+        },
+        {
+          "id": "B02",
+          "title": "Activate 30 more themes (10 → 40 active; 80 themes total)",
+          "status_cell": "✅ 2026-05-11",
+          "status": "done"
+        },
+        {
+          "id": "B03",
+          "title": "Add 50 sub-state actor agents (central banks, MoFs, defence)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "B04",
+          "title": "Add 100 corporate / sectoral coalition agents",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "B05",
+          "title": "Add 100 named-individual agents (heads of state, governors)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "B06",
+          "title": "Add 50 multilateral / IFI agents",
+          "status_cell": "⏳",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": "Multi-vendor LLM routing (genuine pluralism)",
+      "n_steps": 3,
+      "n_done": 0,
+      "n_in_progress": 0,
+      "n_pending": 3,
+      "steps": [
+        {
+          "id": "C01",
+          "title": "Wire DeepSeek for Tianxia lens",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "C02",
+          "title": "Wire Qwen for Eurasianism lens",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "C03",
+          "title": "Wire regional fine-tunes for Pan-African / Neo-Ottoman",
+          "status_cell": "⏳",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "title": "Foundation time-series forecasting (L8 activation)",
+      "n_steps": 4,
+      "n_done": 0,
+      "n_in_progress": 0,
+      "n_pending": 4,
+      "steps": [
+        {
+          "id": "D01",
+          "title": "Chronos-2 integration (Amazon AWS Bedrock)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "D02",
+          "title": "Moirai-MoE integration",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "D03",
+          "title": "TimesFM-2.5 integration",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "D04",
+          "title": "BPS ensemble + hierarchical Platt-then-Beta calibration",
+          "status_cell": "⏳",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "title": "Polycrisis + adjacent fields (L41-L65 activation)",
+      "n_steps": 12,
+      "n_done": 0,
+      "n_in_progress": 0,
+      "n_pending": 12,
+      "steps": [
+        {
+          "id": "E01",
+          "title": "L41 Polycrisis Cascade Engine (Cascade Institute v2.5 + CIB)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "E02",
+          "title": "L43 EGTA + PSRO agent simulation",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "E03",
+          "title": "L46 AI capability forecaster (METR, Epoch, FRI)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "E04",
+          "title": "L56 Network / graph analytics (DomiRank, ChronoWave-GNN, EG-SAN)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "E05",
+          "title": "L57 Multi-modal GEOINT / OSINT (Prithvi, Clay, SARATR-X, Aurora)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "E06",
+          "title": "L58 Cyber threat intel (MITRE ATT&CK, STIX/TAXII, Project Ire)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "E07",
+          "title": "L59 Provenance & deception defence (C2PA, SynthID, DECODE-GNN)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "E08",
+          "title": "L61 Energy / critical-minerals (PyPSA-Earth, IEA WEO, IMF GEOFRG)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "E09",
+          "title": "L62 Treaty / legal (SaulLM-141B, MultiLegalPile, VCLT 31-32)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "E10",
+          "title": "L63 AI capability/safety tracker (RSP v3, OAI PF, DM FSF)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "E11",
+          "title": "L64 Quantum / biosec / climate-eng tail (NIST PQC, AlphaFold-3)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "E12",
+          "title": "L65 Cultural / bias auditor (BorderLines, Tao 2024, Khandelwal '25)",
+          "status_cell": "⏳",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "F",
+      "title": "Customisation tiers (L33-L40 activation)",
+      "n_steps": 8,
+      "n_done": 0,
+      "n_in_progress": 0,
+      "n_pending": 8,
+      "steps": [
+        {
+          "id": "F01",
+          "title": "L33 User profile JSON (200 fields)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "F02",
+          "title": "L34 Personalised L21/L22 re-run pipeline",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "F03",
+          "title": "L35 Persona-conditioned LLM brief render",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "F04",
+          "title": "L36 Per-tenant isolation + DP noise (ε=1, δ=1e-5)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "F05",
+          "title": "L37 Type-1 Profile Customisation (100-q intake)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "F06",
+          "title": "L38 Type-2 Scenario-Set Bayesian-net overlay",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "F07",
+          "title": "L39 Type-3 Interrogative Q&A gateway",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "F08",
+          "title": "L40 Live Workspace (Redis + Postgres + WebSocket)",
+          "status_cell": "⏳",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "G",
+      "title": "Output platform (12 brief types + 4 channels)",
+      "n_steps": 11,
+      "n_done": 0,
+      "n_in_progress": 0,
+      "n_pending": 11,
+      "steps": [
+        {
+          "id": "G01",
+          "title": "REST API per Doc 2 §7.1 (OpenAPI 3.1)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "G02",
+          "title": "GraphQL per Doc 2 §7.2",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "G03",
+          "title": "WebSocket subscriptions (graphql-ws)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "G04",
+          "title": "Bulk export (Parquet / JSON / CSV; 18 datasets)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "G05",
+          "title": "Dashboard top-level (Web HTML)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "G06",
+          "title": "Country briefs at scale (190 countries)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "G07",
+          "title": "Theme briefs at scale (80 themes)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "G08",
+          "title": "Sector briefs (11 sectors)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "G09",
+          "title": "Crisis briefs (event-triggered)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "G10",
+          "title": "Watch List Updates + Daily Pulse + Outlook + Falsification + Methodology briefs",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "G11",
+          "title": "Multi-language render (AR/FR/ES/ZH/RU)",
+          "status_cell": "⏳",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "H",
+      "title": "Calibration & falsification (L19-L20 wired)",
+      "n_steps": 4,
+      "n_done": 0,
+      "n_in_progress": 0,
+      "n_pending": 4,
+      "steps": [
+        {
+          "id": "H01",
+          "title": "Wire conformal prediction execution end-to-end",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "H02",
+          "title": "Quarterly falsification cycle (Q1-2026 execution)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "H03",
+          "title": "Brier-score scorecard auto-publication",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "H04",
+          "title": "Lens posterior re-weighting (δ=0.95 quarterly)",
+          "status_cell": "⏳",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "I",
+      "title": "Data infrastructure (production-grade)",
+      "n_steps": 6,
+      "n_done": 0,
+      "n_in_progress": 0,
+      "n_pending": 6,
+      "steps": [
+        {
+          "id": "I01",
+          "title": "OSINT live ingest pipeline (Kafka + Iceberg)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "I02",
+          "title": "Provenance manifest signing (Sigstore + OCI registry)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "I03",
+          "title": "Vector store (Qdrant primary + LanceDB secondary)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "I04",
+          "title": "Feature store (Feast: Redis online + Iceberg offline)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "I05",
+          "title": "Data versioning (DVC + lakeFS)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "I06",
+          "title": "Argo Workflows + ArgoCD GitOps deployment",
+          "status_cell": "⏳",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "J",
+      "title": "Compliance & governance",
+      "n_steps": 5,
+      "n_done": 0,
+      "n_in_progress": 0,
+      "n_pending": 5,
+      "steps": [
+        {
+          "id": "J01",
+          "title": "SOC-2 Type II audit preparation",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "J02",
+          "title": "GDPR / FFIEC compliance documentation",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "J03",
+          "title": "Customer Trust Committee setup + RACI",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "J04",
+          "title": "External methodology audit panel",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "J05",
+          "title": "Risk & Ethics Committee + sensitive-scenario review process",
+          "status_cell": "⏳",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "K",
+      "title": "Multi-modal expansion",
+      "n_steps": 3,
+      "n_done": 0,
+      "n_in_progress": 0,
+      "n_pending": 3,
+      "steps": [
+        {
+          "id": "K01",
+          "title": "Satellite imagery integration (Aurora + Clay + Prithvi-EO-2.0)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "K02",
+          "title": "SAR (SARATR-X, AIS via Spire/Kpler)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "K03",
+          "title": "GeoChat + Earth AI for multimodal reasoning",
+          "status_cell": "⏳",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "L",
+      "title": "Scenarios & narrative depth",
+      "n_steps": 5,
+      "n_done": 0,
+      "n_in_progress": 0,
+      "n_pending": 5,
+      "steps": [
+        {
+          "id": "L01",
+          "title": "Expand to 200 scenarios (per Doc 1 K∈[80, 120] full)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "L02",
+          "title": "Per-country horizon-specific scenarios",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "L03",
+          "title": "Customer Bayesian-net scenario overlay (L38)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "L04",
+          "title": "Counterfactual simulation (L14) execution",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "L05",
+          "title": "Generative agent-based model (L17) — Park 2024",
+          "status_cell": "⏳",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "M",
+      "title": "Commercial readiness",
+      "n_steps": 4,
+      "n_done": 0,
+      "n_in_progress": 0,
+      "n_pending": 4,
+      "steps": [
+        {
+          "id": "M01",
+          "title": "Pricing & packaging (subscription tiers + bespoke)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "M02",
+          "title": "Sales playbook + sample-deliverable kit",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "M03",
+          "title": "Demo + onboarding flow",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "M04",
+          "title": "First paid client engagement",
+          "status_cell": "⏳",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "V",
+      "title": "Visible progress (GIPRE Transparency platform — v2 deployable)",
+      "n_steps": 8,
+      "n_done": 0,
+      "n_in_progress": 1,
+      "n_pending": 7,
+      "steps": [
+        {
+          "id": "V01",
+          "title": "Minimal platform v2 — Next.js skeleton + 5 pages (Landing, Methodology, Governance, Architecture, Agents) + Bicep IaC for Static Web Apps Standard + App Insights + Key Vault + Cosmos serverless + Blob; GitHub Actions auto-deploy; one-command `azd up` runbook",
+          "status_cell": "🟡 2026-05-12",
+          "status": "in_progress"
+        },
+        {
+          "id": "V02",
+          "title": "Custom domain (subdomain of `geopoliticalgps.com` or `gipre.dev`); TLS; staging environment per PR; CSP / security headers",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "V03",
+          "title": "Governance dashboard: render N01 Critic synthesis + N02 Bias Auditor synthesis as interactive HTML; per-finding deep-links; cross-ref table; severity filters",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "V04",
+          "title": "Per-actor detail pages (95 agents); click-through brief view; lens-relevance radar; near-term-signals timeline",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "V05",
+          "title": "Scenario library viewer: 100 master scenarios with axis-map projection; per-scenario actor utility heatmap",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "V06",
+          "title": "Live calibration dashboard: Brier score, conformal coverage, fan-chart plots from foundation-TS outputs (after D-Phase ships)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "V07",
+          "title": "Customer-cohort preview pages (Starter / Pro / Enterprise tier \"what you'd see\" demos)",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "V08",
+          "title": "Interactive what-if widget: per-scenario probability re-weighting → live actor-utility re-projection",
+          "status_cell": "⏳",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "N",
+      "title": "Governance agent execution",
+      "n_steps": 5,
+      "n_done": 1,
+      "n_in_progress": 1,
+      "n_pending": 3,
+      "steps": [
+        {
+          "id": "N01",
+          "title": "Run Critic agent (L54) on the current outputs",
+          "status_cell": "✅ 2026-05-12",
+          "status": "done"
+        },
+        {
+          "id": "N02",
+          "title": "Run Bias Auditor (L50/L65) on current outputs",
+          "status_cell": "🟡 2026-05-12",
+          "status": "in_progress"
+        },
+        {
+          "id": "N03",
+          "title": "Run Falsification Auditor (L20) — pre-registration",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "N04",
+          "title": "Run Game Master (Concordia pattern) — world response",
+          "status_cell": "⏳",
+          "status": "pending"
+        },
+        {
+          "id": "N05",
+          "title": "Run Synthesis agent across all governance outputs",
+          "status_cell": "⏳",
+          "status": "pending"
+        }
+      ]
+    }
+  ],
+  "total_steps": 91,
+  "total_done": 10,
+  "total_in_progress": 2,
+  "total_pending": 79,
+  "source_file": "implementation/IMPLEMENTATION_PLAN.md",
+  "generated_utc": "2026-05-12T21:34:48+00:00"
+}

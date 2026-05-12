@@ -1,0 +1,20 @@
+# GIPRE Transparency platform — Azure Developer CLI configuration.
+# Run `azd up` from this directory to provision and deploy.
+# Run `azd down` to tear down all resources.
+#
+# Documentation: https://aka.ms/azure-dev/azd
+#
+# Note: this repo is the *deployable* artefact. Site data (platform/data/*.json)
+# is checked in. To regenerate from the source engine repo, run
+# `python scripts/build_site_data.py` in the main GIPRE engine repo and copy
+# the resulting platform/data/*.json files into this repo.
+
+name: gipre-transparency
+metadata:
+  template: gipre-transparency@0.1.0
+services:
+  web:
+    project: ./platform
+    language: ts
+    host: staticwebapp
+    dist: out

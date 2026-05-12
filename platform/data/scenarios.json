@@ -1,0 +1,2751 @@
+{
+  "scenarios": [
+    {
+      "id": "S001",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP04"
+        ]
+      },
+      "title": "frozen-CW2 + Ukraine-attrition + Iran-restraint",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.04099999999999995,
+      "ci_low": 0.03198,
+      "ci_high": 0.05002,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S002",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP03",
+        "flashpoints": [
+          "FP08",
+          "FP04"
+        ]
+      },
+      "title": "US-led + Saudi-Pakistan-pact-deepens + Iran-flashpoint",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.03899999999999996,
+      "ci_low": 0.030420000000000003,
+      "ci_high": 0.04758,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S003",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP02",
+          "FP03"
+        ]
+      },
+      "title": "frozen-CW2 + Taiwan-status-quo + Korea-tension-rises",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.03399999999999997,
+      "ci_low": 0.026520000000000002,
+      "ci_high": 0.04148,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S004",
+      "key": {
+        "stress_level": 4,
+        "gp_archetype": "GP06",
+        "flashpoints": [
+          "FP10",
+          "FP12"
+        ]
+      },
+      "title": "regionalised-blocs + commodity-shock + EM-FX-stress",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.02899999999999997,
+      "ci_low": 0.02262,
+      "ci_high": 0.03538,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S005",
+      "key": {
+        "stress_level": 4,
+        "gp_archetype": "GP08",
+        "flashpoints": [
+          "FP11",
+          "FP05"
+        ]
+      },
+      "title": "fragmented-anarchy + climate-shock + migration-crisis",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.02599999999999997,
+      "ci_low": 0.02028,
+      "ci_high": 0.03172,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S006",
+      "key": {
+        "stress_level": 2,
+        "gp_archetype": "GP01",
+        "flashpoints": [
+          "FP02"
+        ]
+      },
+      "title": "cooperative-multipolar + tech-decoupling-pause",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.023999999999999973,
+      "ci_low": 0.01872,
+      "ci_high": 0.02928,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S007",
+      "key": {
+        "stress_level": 2,
+        "gp_archetype": "GP03",
+        "flashpoints": [
+          "FP04"
+        ]
+      },
+      "title": "US-led + Iran-deal-revival",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.021999999999999974,
+      "ci_low": 0.017159999999999998,
+      "ci_high": 0.02684,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S008",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP05",
+          "FP01"
+        ]
+      },
+      "title": "frozen-CW2 + Indo-Pakistan-tension-rises",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.020999999999999977,
+      "ci_low": 0.016380000000000002,
+      "ci_high": 0.02562,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S009",
+      "key": {
+        "stress_level": 4,
+        "gp_archetype": "GP08",
+        "flashpoints": [
+          "FP11"
+        ]
+      },
+      "title": "fragmented-anarchy + biosecurity-event",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.01899999999999998,
+      "ci_low": 0.01482,
+      "ci_high": 0.02318,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S010",
+      "key": {
+        "stress_level": 2,
+        "gp_archetype": "GP07",
+        "flashpoints": [
+          "FP02"
+        ]
+      },
+      "title": "US-China-condominium + climate-cooperation-revival",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.016999999999999984,
+      "ci_low": 0.013260000000000001,
+      "ci_high": 0.02074,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S011",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP02",
+          "FP03"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP02+FP03 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S012",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP02",
+          "FP04"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP02+FP04 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S013",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP02",
+          "FP05"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP02+FP05 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S014",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP03",
+          "FP04"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP03+FP04 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S015",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP03",
+          "FP05"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP03+FP05 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S016",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP04",
+          "FP05"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP04+FP05 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S017",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP04",
+          "FP06"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP04+FP06 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S018",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP04",
+          "FP07"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP04+FP07 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S019",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP04",
+          "FP08"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP04+FP08 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S020",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP04",
+          "FP09"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP04+FP09 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S021",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP04",
+          "FP10"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP04+FP10 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S022",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP04",
+          "FP11"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP04+FP11 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S023",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP04",
+          "FP12"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP04+FP12 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S024",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP05",
+          "FP06"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP05+FP06 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S025",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP05",
+          "FP07"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP05+FP07 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S026",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP05",
+          "FP08"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP05+FP08 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S027",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP05",
+          "FP09"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP05+FP09 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S028",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP05",
+          "FP10"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP05+FP10 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S029",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP05",
+          "FP11"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP05+FP11 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S030",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP05",
+          "FP12"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP05+FP12 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S031",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP02",
+          "FP03",
+          "FP04"
+        ]
+      },
+      "title": "frozen_cw2 + FP02+FP03+FP04 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S032",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP02",
+          "FP03",
+          "FP05"
+        ]
+      },
+      "title": "frozen_cw2 + FP02+FP03+FP05 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S033",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP02",
+          "FP03",
+          "FP06"
+        ]
+      },
+      "title": "frozen_cw2 + FP02+FP03+FP06 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S034",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP02",
+          "FP03",
+          "FP07"
+        ]
+      },
+      "title": "frozen_cw2 + FP02+FP03+FP07 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S035",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP02",
+          "FP03",
+          "FP08"
+        ]
+      },
+      "title": "frozen_cw2 + FP02+FP03+FP08 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S036",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP02",
+          "FP03",
+          "FP09"
+        ]
+      },
+      "title": "frozen_cw2 + FP02+FP03+FP09 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S037",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP02",
+          "FP03",
+          "FP10"
+        ]
+      },
+      "title": "frozen_cw2 + FP02+FP03+FP10 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S038",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP02",
+          "FP03",
+          "FP11"
+        ]
+      },
+      "title": "frozen_cw2 + FP02+FP03+FP11 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S039",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP02",
+          "FP03",
+          "FP12"
+        ]
+      },
+      "title": "frozen_cw2 + FP02+FP03+FP12 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.009070156415095057,
+      "ci_low": 0.007074722003774152,
+      "ci_high": 0.011065590826415981,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S040",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP02"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP02 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S041",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP03"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP03 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S042",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP06"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP06 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S043",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP07"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP07 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S044",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP08"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP08 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S045",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP09"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP09 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S046",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP10"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP10 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S047",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP11"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP11 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S048",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP01",
+          "FP12"
+        ]
+      },
+      "title": "frozen_cw2 + FP01+FP12 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S049",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP02",
+          "FP04"
+        ]
+      },
+      "title": "frozen_cw2 + FP02+FP04 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S050",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP02",
+          "FP05"
+        ]
+      },
+      "title": "frozen_cw2 + FP02+FP05 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S051",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP02",
+          "FP06"
+        ]
+      },
+      "title": "frozen_cw2 + FP02+FP06 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S052",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP02",
+          "FP07"
+        ]
+      },
+      "title": "frozen_cw2 + FP02+FP07 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S053",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP02",
+          "FP08"
+        ]
+      },
+      "title": "frozen_cw2 + FP02+FP08 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S054",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP02",
+          "FP09"
+        ]
+      },
+      "title": "frozen_cw2 + FP02+FP09 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S055",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP02",
+          "FP10"
+        ]
+      },
+      "title": "frozen_cw2 + FP02+FP10 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S056",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP02",
+          "FP11"
+        ]
+      },
+      "title": "frozen_cw2 + FP02+FP11 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S057",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP02",
+          "FP12"
+        ]
+      },
+      "title": "frozen_cw2 + FP02+FP12 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S058",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP03",
+          "FP04"
+        ]
+      },
+      "title": "frozen_cw2 + FP03+FP04 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S059",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP03",
+          "FP05"
+        ]
+      },
+      "title": "frozen_cw2 + FP03+FP05 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S060",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP03",
+          "FP06"
+        ]
+      },
+      "title": "frozen_cw2 + FP03+FP06 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S061",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP03",
+          "FP07"
+        ]
+      },
+      "title": "frozen_cw2 + FP03+FP07 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S062",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP03",
+          "FP08"
+        ]
+      },
+      "title": "frozen_cw2 + FP03+FP08 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S063",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP03",
+          "FP09"
+        ]
+      },
+      "title": "frozen_cw2 + FP03+FP09 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S064",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP03",
+          "FP10"
+        ]
+      },
+      "title": "frozen_cw2 + FP03+FP10 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S065",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP03",
+          "FP11"
+        ]
+      },
+      "title": "frozen_cw2 + FP03+FP11 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S066",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP03",
+          "FP12"
+        ]
+      },
+      "title": "frozen_cw2 + FP03+FP12 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S067",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP04",
+          "FP05"
+        ]
+      },
+      "title": "frozen_cw2 + FP04+FP05 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S068",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP04",
+          "FP06"
+        ]
+      },
+      "title": "frozen_cw2 + FP04+FP06 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S069",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP04",
+          "FP07"
+        ]
+      },
+      "title": "frozen_cw2 + FP04+FP07 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S070",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP04",
+          "FP08"
+        ]
+      },
+      "title": "frozen_cw2 + FP04+FP08 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S071",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP04",
+          "FP09"
+        ]
+      },
+      "title": "frozen_cw2 + FP04+FP09 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S072",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP04",
+          "FP10"
+        ]
+      },
+      "title": "frozen_cw2 + FP04+FP10 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S073",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP04",
+          "FP11"
+        ]
+      },
+      "title": "frozen_cw2 + FP04+FP11 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S074",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP04",
+          "FP12"
+        ]
+      },
+      "title": "frozen_cw2 + FP04+FP12 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S075",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP05",
+          "FP06"
+        ]
+      },
+      "title": "frozen_cw2 + FP05+FP06 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S076",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP05",
+          "FP07"
+        ]
+      },
+      "title": "frozen_cw2 + FP05+FP07 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S077",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP05",
+          "FP08"
+        ]
+      },
+      "title": "frozen_cw2 + FP05+FP08 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S078",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP05",
+          "FP09"
+        ]
+      },
+      "title": "frozen_cw2 + FP05+FP09 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S079",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP05",
+          "FP10"
+        ]
+      },
+      "title": "frozen_cw2 + FP05+FP10 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S080",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP05",
+          "FP11"
+        ]
+      },
+      "title": "frozen_cw2 + FP05+FP11 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S081",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP02",
+        "flashpoints": [
+          "FP05",
+          "FP12"
+        ]
+      },
+      "title": "frozen_cw2 + FP05+FP12 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007711182759836572,
+      "ci_low": 0.006014722552672533,
+      "ci_high": 0.009407642967000628,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S082",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP03",
+        "flashpoints": [
+          "FP01",
+          "FP04",
+          "FP08"
+        ]
+      },
+      "title": "us_led_restoration + FP01+FP04+FP08 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007674747735849664,
+      "ci_low": 0.005986303233962745,
+      "ci_high": 0.0093631922377366,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S083",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP03",
+        "flashpoints": [
+          "FP02",
+          "FP04",
+          "FP08"
+        ]
+      },
+      "title": "us_led_restoration + FP02+FP04+FP08 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007674747735849664,
+      "ci_low": 0.005986303233962745,
+      "ci_high": 0.0093631922377366,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S084",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP03",
+        "flashpoints": [
+          "FP03",
+          "FP04",
+          "FP08"
+        ]
+      },
+      "title": "us_led_restoration + FP03+FP04+FP08 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007674747735849664,
+      "ci_low": 0.005986303233962745,
+      "ci_high": 0.0093631922377366,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S085",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP03",
+        "flashpoints": [
+          "FP04",
+          "FP05",
+          "FP08"
+        ]
+      },
+      "title": "us_led_restoration + FP04+FP05+FP08 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007674747735849664,
+      "ci_low": 0.005986303233962745,
+      "ci_high": 0.0093631922377366,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S086",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP03",
+        "flashpoints": [
+          "FP04",
+          "FP06",
+          "FP08"
+        ]
+      },
+      "title": "us_led_restoration + FP04+FP06+FP08 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007674747735849664,
+      "ci_low": 0.005986303233962745,
+      "ci_high": 0.0093631922377366,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S087",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP03",
+        "flashpoints": [
+          "FP04",
+          "FP07",
+          "FP08"
+        ]
+      },
+      "title": "us_led_restoration + FP04+FP07+FP08 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007674747735849664,
+      "ci_low": 0.005986303233962745,
+      "ci_high": 0.0093631922377366,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S088",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP03",
+        "flashpoints": [
+          "FP04",
+          "FP08",
+          "FP09"
+        ]
+      },
+      "title": "us_led_restoration + FP04+FP08+FP09 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007674747735849664,
+      "ci_low": 0.005986303233962745,
+      "ci_high": 0.0093631922377366,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S089",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP03",
+        "flashpoints": [
+          "FP04",
+          "FP08",
+          "FP10"
+        ]
+      },
+      "title": "us_led_restoration + FP04+FP08+FP10 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007674747735849664,
+      "ci_low": 0.005986303233962745,
+      "ci_high": 0.0093631922377366,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S090",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP03",
+        "flashpoints": [
+          "FP04",
+          "FP08",
+          "FP11"
+        ]
+      },
+      "title": "us_led_restoration + FP04+FP08+FP11 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007674747735849664,
+      "ci_low": 0.005986303233962745,
+      "ci_high": 0.0093631922377366,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S091",
+      "key": {
+        "stress_level": 3,
+        "gp_archetype": "GP03",
+        "flashpoints": [
+          "FP04",
+          "FP08",
+          "FP12"
+        ]
+      },
+      "title": "us_led_restoration + FP04+FP08+FP12 + stress3",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007674747735849664,
+      "ci_low": 0.005986303233962745,
+      "ci_high": 0.0093631922377366,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S092",
+      "key": {
+        "stress_level": 2,
+        "gp_archetype": "GP03",
+        "flashpoints": [
+          "FP01",
+          "FP04"
+        ]
+      },
+      "title": "us_led_restoration + FP01+FP04 + stress2",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007149812298956555,
+      "ci_low": 0.005576853593186119,
+      "ci_high": 0.008722771004727006,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S093",
+      "key": {
+        "stress_level": 2,
+        "gp_archetype": "GP03",
+        "flashpoints": [
+          "FP02",
+          "FP04"
+        ]
+      },
+      "title": "us_led_restoration + FP02+FP04 + stress2",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007149812298956555,
+      "ci_low": 0.005576853593186119,
+      "ci_high": 0.008722771004727006,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S094",
+      "key": {
+        "stress_level": 2,
+        "gp_archetype": "GP03",
+        "flashpoints": [
+          "FP03",
+          "FP04"
+        ]
+      },
+      "title": "us_led_restoration + FP03+FP04 + stress2",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007149812298956555,
+      "ci_low": 0.005576853593186119,
+      "ci_high": 0.008722771004727006,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S095",
+      "key": {
+        "stress_level": 2,
+        "gp_archetype": "GP03",
+        "flashpoints": [
+          "FP04",
+          "FP05"
+        ]
+      },
+      "title": "us_led_restoration + FP04+FP05 + stress2",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007149812298956555,
+      "ci_low": 0.005576853593186119,
+      "ci_high": 0.008722771004727006,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S096",
+      "key": {
+        "stress_level": 2,
+        "gp_archetype": "GP03",
+        "flashpoints": [
+          "FP04",
+          "FP06"
+        ]
+      },
+      "title": "us_led_restoration + FP04+FP06 + stress2",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007149812298956555,
+      "ci_low": 0.005576853593186119,
+      "ci_high": 0.008722771004727006,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S097",
+      "key": {
+        "stress_level": 2,
+        "gp_archetype": "GP03",
+        "flashpoints": [
+          "FP04",
+          "FP07"
+        ]
+      },
+      "title": "us_led_restoration + FP04+FP07 + stress2",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007149812298956555,
+      "ci_low": 0.005576853593186119,
+      "ci_high": 0.008722771004727006,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S098",
+      "key": {
+        "stress_level": 2,
+        "gp_archetype": "GP03",
+        "flashpoints": [
+          "FP04",
+          "FP08"
+        ]
+      },
+      "title": "us_led_restoration + FP04+FP08 + stress2",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007149812298956555,
+      "ci_low": 0.005576853593186119,
+      "ci_high": 0.008722771004727006,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S099",
+      "key": {
+        "stress_level": 2,
+        "gp_archetype": "GP03",
+        "flashpoints": [
+          "FP04",
+          "FP09"
+        ]
+      },
+      "title": "us_led_restoration + FP04+FP09 + stress2",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007149812298956555,
+      "ci_low": 0.005576853593186119,
+      "ci_high": 0.008722771004727006,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    },
+    {
+      "id": "S100",
+      "key": {
+        "stress_level": 2,
+        "gp_archetype": "GP03",
+        "flashpoints": [
+          "FP04",
+          "FP10"
+        ]
+      },
+      "title": "us_led_restoration + FP04+FP10 + stress2",
+      "short_narrative": "",
+      "medium_narrative": "",
+      "long_narrative": "",
+      "probability": 0.007149812298956555,
+      "ci_low": 0.005576853593186119,
+      "ci_high": 0.008722771004727006,
+      "qre_payoff_table": {},
+      "triggers": [],
+      "country_impacts": {},
+      "theme_impacts": {},
+      "historical_analogues": [],
+      "horizon_priority": [
+        "M",
+        "L"
+      ]
+    }
+  ],
+  "n_total": 100,
+  "source_file": "runs/scenarios.master.json"
+}

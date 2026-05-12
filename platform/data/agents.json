@@ -1,0 +1,912 @@
+{
+  "agents": [
+    {
+      "id": "AG-USA",
+      "role": "actor",
+      "label": "United States Actor Agent",
+      "iso3": "USA",
+      "tier": "global_power",
+      "backbone": "claude-opus-4-7",
+      "spec": "agents/actors/USA.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-CHN",
+      "role": "actor",
+      "label": "China Actor Agent",
+      "iso3": "CHN",
+      "tier": "global_power",
+      "backbone": "claude-opus-4-7",
+      "spec": "agents/actors/CHN.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-RUS",
+      "role": "actor",
+      "label": "Russia Actor Agent",
+      "iso3": "RUS",
+      "tier": "global_power",
+      "backbone": "claude-opus-4-7",
+      "spec": "agents/actors/RUS.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-EUR",
+      "role": "actor",
+      "label": "EU Actor Agent",
+      "iso3": "EUR",
+      "tier": "global_power",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/EUR.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-IND",
+      "role": "actor",
+      "label": "India Actor Agent",
+      "iso3": "IND",
+      "tier": "global_power",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/IND.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-GBR",
+      "role": "actor",
+      "label": "UK Actor Agent",
+      "iso3": "GBR",
+      "tier": "effective_power",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/GBR.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-FRA",
+      "role": "actor",
+      "label": "France Actor Agent",
+      "iso3": "FRA",
+      "tier": "effective_power",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/FRA.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-DEU",
+      "role": "actor",
+      "label": "Germany Actor Agent",
+      "iso3": "DEU",
+      "tier": "effective_power",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/DEU.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-JPN",
+      "role": "actor",
+      "label": "Japan Actor Agent",
+      "iso3": "JPN",
+      "tier": "effective_power",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/JPN.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-SAU",
+      "role": "actor",
+      "label": "Saudi Arabia Actor Agent",
+      "iso3": "SAU",
+      "tier": "effective_power",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/SAU.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-ARE",
+      "role": "actor",
+      "label": "UAE Actor Agent",
+      "iso3": "ARE",
+      "tier": "effective_power",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/ARE.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-IRN",
+      "role": "actor",
+      "label": "Iran Actor Agent",
+      "iso3": "IRN",
+      "tier": "effective_power",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/IRN.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-ISR",
+      "role": "actor",
+      "label": "Israel Actor Agent",
+      "iso3": "ISR",
+      "tier": "effective_power",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/ISR.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-TUR",
+      "role": "actor",
+      "label": "Türkiye Actor Agent",
+      "iso3": "TUR",
+      "tier": "effective_power",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/TUR.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-KOR",
+      "role": "actor",
+      "label": "South Korea Actor Agent",
+      "iso3": "KOR",
+      "tier": "effective_power",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/KOR.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-BRA",
+      "role": "actor",
+      "label": "Brazil Actor Agent",
+      "iso3": "BRA",
+      "tier": "effective_power",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/BRA.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-IDN",
+      "role": "actor",
+      "label": "Indonesia Actor Agent",
+      "iso3": "IDN",
+      "tier": "effective_power",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/IDN.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-MEX",
+      "role": "actor",
+      "label": "Mexico Actor Agent",
+      "iso3": "MEX",
+      "tier": "effective_power",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/MEX.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-PAK",
+      "role": "actor",
+      "label": "Pakistan Actor Agent",
+      "iso3": "PAK",
+      "tier": "mid_tier",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/PAK.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-EGY",
+      "role": "actor",
+      "label": "Egypt Actor Agent",
+      "iso3": "EGY",
+      "tier": "mid_tier",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/EGY.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-NGA",
+      "role": "actor",
+      "label": "Nigeria Actor Agent",
+      "iso3": "NGA",
+      "tier": "mid_tier",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/NGA.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-ZAF",
+      "role": "actor",
+      "label": "South Africa Actor Agent",
+      "iso3": "ZAF",
+      "tier": "mid_tier",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/ZAF.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-ARG",
+      "role": "actor",
+      "label": "Argentina Actor Agent",
+      "iso3": "ARG",
+      "tier": "mid_tier",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/ARG.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-VNM",
+      "role": "actor",
+      "label": "Vietnam Actor Agent",
+      "iso3": "VNM",
+      "tier": "mid_tier",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/VNM.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-UKR",
+      "role": "actor",
+      "label": "Ukraine Actor Agent",
+      "iso3": "UKR",
+      "tier": "mid_tier",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/UKR.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-POL",
+      "role": "actor",
+      "label": "Poland Actor Agent",
+      "iso3": "POL",
+      "tier": "mid_tier",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/POL.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-AUS",
+      "role": "actor",
+      "label": "Australia Actor Agent",
+      "iso3": "AUS",
+      "tier": "effective_power",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/AUS.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-CAN",
+      "role": "actor",
+      "label": "Canada Actor Agent",
+      "iso3": "CAN",
+      "tier": "effective_power",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/CAN.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-BRICS",
+      "role": "actor",
+      "label": "BRICS+ Bloc Agent",
+      "iso3": "BRICS",
+      "tier": "bloc",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/BRICS.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-ASEAN",
+      "role": "actor",
+      "label": "ASEAN Bloc Agent",
+      "iso3": "ASEAN",
+      "tier": "bloc",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/actors/ASEAN.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-T01",
+      "role": "theme",
+      "label": "US-China Systemic Competition Theme",
+      "theme_id": "T01",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T01_us_china_systemic.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T02",
+      "role": "theme",
+      "label": "EM Sovereign Debt Cascade Theme",
+      "theme_id": "T02",
+      "backbone": "claude-opus-4-7",
+      "spec": "agents/themes/T02_em_debt_cascade.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T03",
+      "role": "theme",
+      "label": "Semiconductor Supply Chain Theme",
+      "theme_id": "T03",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T03_semiconductor_supply.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T04",
+      "role": "theme",
+      "label": "Energy & Critical Minerals Theme",
+      "theme_id": "T04",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T04_energy_critical_minerals.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T05",
+      "role": "theme",
+      "label": "Climate-Migration Theme",
+      "theme_id": "T05",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T05_climate_migration.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-T06",
+      "role": "theme",
+      "label": "AI Capability Geopolitics Theme",
+      "theme_id": "T06",
+      "backbone": "claude-opus-4-7",
+      "spec": "agents/themes/T06_ai_capability.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T07",
+      "role": "theme",
+      "label": "Sanctions & Weaponised Interdependence Theme",
+      "theme_id": "T07",
+      "backbone": "claude-opus-4-7",
+      "spec": "agents/themes/T07_sanctions_weaponized.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T08",
+      "role": "theme",
+      "label": "Middle East & Gulf Security Theme",
+      "theme_id": "T08",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T08_middle_east_security.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T09",
+      "role": "theme",
+      "label": "Indo-Pacific & Taiwan Strait Theme",
+      "theme_id": "T09",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T09_indo_pacific_taiwan.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T10",
+      "role": "theme",
+      "label": "Polycrisis & Cascade Risk Theme",
+      "theme_id": "T10",
+      "backbone": "claude-opus-4-7",
+      "spec": "agents/themes/T10_polycrisis.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T11",
+      "role": "theme",
+      "label": "Pandemic & Biosecurity Risk Theme",
+      "theme_id": "T11",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T11_pandemic_biosecurity.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T12",
+      "role": "theme",
+      "label": "Cyber Threats to Critical Infrastructure Theme",
+      "theme_id": "T12",
+      "backbone": "claude-opus-4-7",
+      "spec": "agents/themes/T12_cyber_critical_infra.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T13",
+      "role": "theme",
+      "label": "Election Integrity & Autocratisation Theme",
+      "theme_id": "T13",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T13_election_integrity.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T14",
+      "role": "theme",
+      "label": "Working-Age Decline & Demographic Cliff Theme",
+      "theme_id": "T14",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T14_demographic_cliff.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T15",
+      "role": "theme",
+      "label": "Religious-Political Mobilisation Theme",
+      "theme_id": "T15",
+      "backbone": "claude-opus-4-7",
+      "spec": "agents/themes/T15_religious_political.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-T16",
+      "role": "theme",
+      "label": "Quantum Computing Geopolitics Theme",
+      "theme_id": "T16",
+      "backbone": "claude-opus-4-7",
+      "spec": "agents/themes/T16_quantum_geopolitics.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-T17",
+      "role": "theme",
+      "label": "Surveillance Tech Diffusion Theme",
+      "theme_id": "T17",
+      "backbone": "claude-opus-4-7",
+      "spec": "agents/themes/T17_surveillance_tech.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-T18",
+      "role": "theme",
+      "label": "Pharmaceutical API Supply Chain Theme",
+      "theme_id": "T18",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T18_pharma_api_supply.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-T19",
+      "role": "theme",
+      "label": "Antimicrobial Resistance Theme",
+      "theme_id": "T19",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T19_antimicrobial_resistance.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-T20",
+      "role": "theme",
+      "label": "Civil-Society Repression Theme",
+      "theme_id": "T20",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T20_civil_society_repression.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-T21",
+      "role": "theme",
+      "label": "Korean Peninsula Theme",
+      "theme_id": "T21",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T21_korean_peninsula.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T22",
+      "role": "theme",
+      "label": "Sahel Instability Theme",
+      "theme_id": "T22",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T22_sahel_instability.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T23",
+      "role": "theme",
+      "label": "Ukraine-Russia & European Security Theme",
+      "theme_id": "T23",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T23_ukraine_russia_europe.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T24",
+      "role": "theme",
+      "label": "Latin American Political Cycle Theme",
+      "theme_id": "T24",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T24_latam_political_cycle.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-T25",
+      "role": "theme",
+      "label": "Dollar Funding Stress Theme",
+      "theme_id": "T25",
+      "backbone": "claude-opus-4-7",
+      "spec": "agents/themes/T25_dollar_funding_stress.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T26",
+      "role": "theme",
+      "label": "Central-Bank Divergence & Currency Wars Theme",
+      "theme_id": "T26",
+      "backbone": "claude-opus-4-7",
+      "spec": "agents/themes/T26_cb_divergence_currency.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T27",
+      "role": "theme",
+      "label": "Commodity Cycles & Inflation Persistence Theme",
+      "theme_id": "T27",
+      "backbone": "claude-opus-4-7",
+      "spec": "agents/themes/T27_commodity_cycles_inflation.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-T28",
+      "role": "theme",
+      "label": "Credit Cycles & NBFI Risk Theme",
+      "theme_id": "T28",
+      "backbone": "claude-opus-4-7",
+      "spec": "agents/themes/T28_credit_cycles_nbfi.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T29",
+      "role": "theme",
+      "label": "Shipping Chokepoints Theme",
+      "theme_id": "T29",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T29_shipping_chokepoints.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T30",
+      "role": "theme",
+      "label": "Port Congestion & Logistics Resilience Theme",
+      "theme_id": "T30",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T30_port_logistics_resilience.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-T31",
+      "role": "theme",
+      "label": "Water Stress & Transboundary Rivers Theme",
+      "theme_id": "T31",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T31_water_stress_transboundary.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T32",
+      "role": "theme",
+      "label": "Agricultural Shocks & Food Security Theme",
+      "theme_id": "T32",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T32_agricultural_shocks.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T33",
+      "role": "theme",
+      "label": "Energy-Transition Geopolitics Theme",
+      "theme_id": "T33",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T33_energy_transition_geopolitics.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T34",
+      "role": "theme",
+      "label": "Judicial Independence & Rule-of-Law Theme",
+      "theme_id": "T34",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T34_judicial_independence.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-T35",
+      "role": "theme",
+      "label": "Mass Migration & Refugee Flows Theme",
+      "theme_id": "T35",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T35_mass_migration_refugee.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T36",
+      "role": "theme",
+      "label": "Urbanisation & Megacity Stress Theme",
+      "theme_id": "T36",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/themes/T36_urbanisation_megacity.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-T37",
+      "role": "theme",
+      "label": "Gender-Rights Regression Theme",
+      "theme_id": "T37",
+      "backbone": "claude-opus-4-7",
+      "spec": "agents/themes/T37_gender_rights_regression.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-T38",
+      "role": "theme",
+      "label": "Criminal Economy & Illicit Finance Theme",
+      "theme_id": "T38",
+      "backbone": "claude-opus-4-7",
+      "spec": "agents/themes/T38_criminal_economy_illicit_finance.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T39",
+      "role": "theme",
+      "label": "Information Warfare & Disinformation Theme",
+      "theme_id": "T39",
+      "backbone": "claude-opus-4-7",
+      "spec": "agents/themes/T39_information_warfare.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-T40",
+      "role": "theme",
+      "label": "Space Geopolitics & Satellite Dependency Theme",
+      "theme_id": "T40",
+      "backbone": "claude-opus-4-7",
+      "spec": "agents/themes/T40_space_geopolitics.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-L01",
+      "role": "lens",
+      "label": "Mearsheimer Offensive Realism Lens",
+      "lens_id": "L01",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/lenses/L01_mearsheimer.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-L05",
+      "role": "lens",
+      "label": "Vreeland IMF Political Economy Lens",
+      "lens_id": "L05",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/lenses/L05_vreeland.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-L17",
+      "role": "lens",
+      "label": "Tianxia / Moral Realism Lens",
+      "lens_id": "L17",
+      "backbone": "deepseek-v4-pro",
+      "spec": "agents/lenses/L17_tianxia.md",
+      "criticality": "high",
+      "multi_vendor_target": "deepseek",
+      "route": "deepseek"
+    },
+    {
+      "id": "AG-L18",
+      "role": "lens",
+      "label": "Eurasianism Lens",
+      "lens_id": "L18",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/lenses/L18_eurasianism.md",
+      "criticality": "medium",
+      "multi_vendor_target": "qwen"
+    },
+    {
+      "id": "AG-L19",
+      "role": "lens",
+      "label": "Pan-African / Decolonial Lens",
+      "lens_id": "L19",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/lenses/L19_pan_african.md",
+      "criticality": "medium",
+      "multi_vendor_target": "regional_finetune"
+    },
+    {
+      "id": "AG-L02",
+      "role": "lens",
+      "label": "Wendt Constructivism Lens",
+      "lens_id": "L02",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/lenses/L02_wendt.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-L03",
+      "role": "lens",
+      "label": "Ikenberry Liberal Internationalism Lens",
+      "lens_id": "L03",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/lenses/L03_ikenberry.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-L04",
+      "role": "lens",
+      "label": "Krasner Sovereignty / Organised Hypocrisy Lens",
+      "lens_id": "L04",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/lenses/L04_krasner.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-L06",
+      "role": "lens",
+      "label": "Reinhart-Rogoff Sovereign Debt History Lens",
+      "lens_id": "L06",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/lenses/L06_reinhart_rogoff.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-L07",
+      "role": "lens",
+      "label": "Eichengreen International Monetary Lens",
+      "lens_id": "L07",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/lenses/L07_eichengreen.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-L08",
+      "role": "lens",
+      "label": "Diamond-Dybvig Bank Runs / Financial Fragility Lens",
+      "lens_id": "L08",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/lenses/L08_diamond_dybvig.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-L09",
+      "role": "lens",
+      "label": "Acemoglu-Robinson Institutional Economics Lens",
+      "lens_id": "L09",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/lenses/L09_acemoglu_robinson.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-L10",
+      "role": "lens",
+      "label": "Linz-Stepan / Levitsky-Way Democratic Transitions Lens",
+      "lens_id": "L10",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/lenses/L10_stepan_linz.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-L11",
+      "role": "lens",
+      "label": "Krugman Economic Geography Lens",
+      "lens_id": "L11",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/lenses/L11_krugman.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-L12",
+      "role": "lens",
+      "label": "Hubbert-Hotelling Resource Depletion Lens",
+      "lens_id": "L12",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/lenses/L12_hubbert_hotelling.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-L13",
+      "role": "lens",
+      "label": "Romer Endogenous Growth Lens",
+      "lens_id": "L13",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/lenses/L13_romer.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-L14",
+      "role": "lens",
+      "label": "Wyplosz FX Reserves / External Balance Lens",
+      "lens_id": "L14",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/lenses/L14_wyplosz.md",
+      "criticality": "medium"
+    },
+    {
+      "id": "AG-L15",
+      "role": "lens",
+      "label": "Henderson Urbanisation Lens",
+      "lens_id": "L15",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/lenses/L15_henderson.md",
+      "criticality": "low"
+    },
+    {
+      "id": "AG-L16",
+      "role": "lens",
+      "label": "Huntington Civilisational Fault-lines Lens",
+      "lens_id": "L16",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/lenses/L16_huntington.md",
+      "criticality": "medium",
+      "contested": true
+    },
+    {
+      "id": "AG-L20",
+      "role": "lens",
+      "label": "Neo-Ottoman / Islamic Order Lens",
+      "lens_id": "L20",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/lenses/L20_neo_ottoman.md",
+      "criticality": "medium",
+      "multi_vendor_target": "regional_finetune"
+    },
+    {
+      "id": "AG-CRITIC",
+      "role": "governance",
+      "sub": "critic",
+      "label": "Critic / Multi-Model Jury Agent (L54)",
+      "backbone": "claude-opus-4-7",
+      "spec": "agents/governance/critic.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-GM",
+      "role": "governance",
+      "sub": "game_master",
+      "label": "Game-Master Agent (Concordia pattern)",
+      "backbone": "claude-opus-4-7",
+      "spec": "agents/governance/game_master.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-SYNTH",
+      "role": "governance",
+      "sub": "synthesis",
+      "label": "Synthesis & Narrative Agent (L29)",
+      "backbone": "claude-opus-4-7",
+      "spec": "agents/governance/synthesis.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-FALS",
+      "role": "governance",
+      "sub": "falsification",
+      "label": "Falsification Auditor (L20)",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/governance/falsification_auditor.md",
+      "criticality": "high"
+    },
+    {
+      "id": "AG-BIAS",
+      "role": "governance",
+      "sub": "bias",
+      "label": "Bias Auditor (L50/L65)",
+      "backbone": "claude-sonnet-4-6",
+      "spec": "agents/governance/bias_auditor.md",
+      "criticality": "medium"
+    }
+  ],
+  "n_total": 95,
+  "by_class": {
+    "unknown": 95
+  },
+  "by_backbone": {
+    "claude-opus-4-7": 22,
+    "claude-sonnet-4-6": 72,
+    "deepseek-v4-pro": 1
+  },
+  "roster_summary": {
+    "total": 95,
+    "actors_state_bloc": 30,
+    "themes": 40,
+    "lenses": 20,
+    "governance": 5
+  },
+  "source_file": "config/agents.yaml"
+}

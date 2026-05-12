@@ -1,0 +1,12 @@
+{
+  "operationalInsightsWorkspaces": "log-",
+  "insightsComponents": "appi-",
+  "keyVaultVaults": "kv-",
+  "storageStorageAccounts": "st",
+  "documentDBDatabaseAccounts": "cosmos-",
+  "webStaticSites": "stapp-",
+  "webSitesFunctions": "func-",
+  "webServerFarms": "plan-",
+  "managedIdentityUserAssignedIdentities": "id-",
+  "containerRegistryRegistries": "cr"
+}

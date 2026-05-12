@@ -1,0 +1,575 @@
+{
+  "n01": {
+    "step": "N01 — Critic / Multi-Model Jury (L54)",
+    "run_id": "critic-2026-05-11",
+    "synthesis_md": "# Critic Run — critic-2026-05-11 (Step N01)\n\n_Methodology_: **faithful L54** (Doc 1 §2.54). 7-judge jury × 3 vendors (Anthropic + OpenAI + DeepSeek).\n_Corpus_: **61 artifacts** (30 actors + 10 themes + 5 lenses + 8 syntheses + 8 PDFs from v4 production run).\n_Total spend (all phases combined)_: **~$252** / cap $400.\n_Note_: the \"$48.14\" / \"8 artifacts\" figures previously shown reflected the final resume-pass only (post disk-full recovery, 8 artifacts re-run + perturbations); see HANDOFF.md for the full cost breakdown across all phases.\n\n## Gate-decision summary\n\n- `publish_ok`: 0 / 61\n- `revise`: 61 / 61\n- `needs_human_review` (high judge disagreement): 0 / 61\n\n## Bottom decile by mean score\n\n| Rank | Artifact | Class | Mean | 95% CI | Stddev | Gate | Findings |\n|---:|---|---|---:|---|---:|---|---:|\n| 1 | `PDF-04_GIPRE_Region_GreaterMiddleEast` | pdf | 43.76 | [34.11, 52.7] | 12.28 | `revise` | 44 |\n| 2 | `AG-ISR` | actor | 46.87 | [40.94, 51.76] | 8.1 | `revise` | 35 |\n| 3 | `PDF-06_GIPRE_Region_SouthAsia` | pdf | 49.7 | [41.4, 56.69] | 11.2 | `revise` | 45 |\n| 4 | `AG-CAN` | actor | 50.64 | [43.57, 56.38] | 10.36 | `revise` | 33 |\n| 5 | `PDF-08_GIPRE_Region_LatinAmerica` | pdf | 50.94 | [42.26, 57.18] | 10.48 | `revise` | 45 |\n| 6 | `AG-POL` | actor | 50.95 | [45.88, 55.37] | 7.21 | `revise` | 32 |\n| 7 | `AG-IRN` | actor | 51.98 | [46.38, 56.62] | 7.59 | `revise` | 33 |\n| 8 | `AG-T10` | theme | 52.7 | [45.46, 59.0] | 9.67 | `revise` | 41 |\n| 9 | `AG-KOR` | actor | 53.0 | [46.98, 57.88] | 8.35 | `revise` | 30 |\n| 10 | `AG-ARG` | actor | 53.14 | [44.91, 61.48] | 11.2 | `revise` | 37 |\n\n## Top decile by mean score\n\n| Rank | Artifact | Class | Mean | 95% CI | Gate |\n|---:|---|---|---:|---|---|\n| 1 | `AG-T04` | theme | 63.04 | [57.86, 68.28] | `revise` |\n| 2 | `SYN-africa` | synthesis | 62.79 | [55.34, 69.2] | `revise` |\n| 3 | `AG-EUR` | actor | 61.55 | [56.22, 67.1] | `revise` |\n| 4 | `AG-DEU` | actor | 61.47 | [54.85, 68.92] | `revise` |\n| 5 | `AG-T03` | theme | 61.38 | [53.49, 68.41] | `revise` |\n| 6 | `AG-L17` | lens | 61.36 | [54.5, 68.56] | `revise` |\n| 7 | `AG-T08` | theme | 60.86 | [56.03, 65.39] | `revise` |\n| 8 | `AG-NGA` | actor | 60.08 | [54.09, 65.12] | `revise` |\n| 9 | `AG-CHN` | actor | 59.99 | [52.87, 66.64] | `revise` |\n| 10 | `SYN-latin_america` | synthesis | 59.95 | [52.45, 66.29] | `revise` |\n\n## Critical findings (any artifact)\n\n- **`AG-ARE`** [internal_inconsistency] — The artifact's stated 12-point utility swing is inconsistent with the actual 16-point range provided in the utility estimates.\n  > The stated 12-point swing does not match the actual utility range in the artifact. The utility estimates span from -8 (S017) to +8 (S006), a 16-point range; even restricting to the Iran-ceasefire bifu\n- **`AG-ARE`** [internal_inconsistency] — The 12-point swing figure is arithmetically inconsistent with the artifact's own utility_estimates_per_scenario, which range from -8 (S017) to +8 (S006), a span of 16 points. Even restricted to Iran-ceasefire-holds vs. collapse scenarios, the arithmetic does not yield 12. This error has now persisted across multiple rounds without correction.\n  > this single bifurcation swings UAE utility by roughly 12 points across scenarios\n- **`AG-ARE`** [lens_balance_failure] — After three prior rounds flagging the absence, the lens roster still contains no Khaleeji-tribal, Islamic governance, Tianxia, or Neo-Ottoman (as indigenous framing) lens despite the UAE being a tribal federation with deep Gulf-Islamic political-legitimacy logic and significant non-Western counter-party exposure (China, India, Africa). The lens set is monocultural Western IR.\n  > \"L20\": 0.85, \"L01\": 0.9, \"L12\": 0.7, \"L50\": 0.6, \"L51\": 0.5, \"L53\": 0.55, \"L54\": 0.65, \"L60\": 0.45\n- **`AG-ARE`** [internal_inconsistency] — The stated 12-point swing is arithmetically false. The utility range spans from -8 (S017) to +8 (S006), a 16-point span. Even restricting to Iran-ceasefire bifurcation scenarios (S001=6, S007=4 vs. S012=-5, S017=-8), the swing is 11–14 points depending on comparison pair, not a clean 12. This error has persisted through four rounds of flagging and undermines decision-maker confidence in the uncertainty quantification.\n  > The dominant uncertainty is whether the May 2026 Iran-war ceasefire holds or collapses into a sustained Hormuz-closure regime — this single bifurcation swings UAE utility by roughly 12 points across s\n- **`AG-ARE`** [bias_flag] — The claim that the G42-Microsoft pipeline 'dwarfs other diplomatic plays' is asserted as consensus fact but rests on a single TechCrunch article with no comparative quantification. The artifact provides no evidence (revenue, strategic weight, reversibility) that this asset outweighs UAE's oil/gas infrastructure (ADNOC $150B upstream plan), sovereign-wealth capital ($1.7T+), or geographic chokepoint control (Strait of Hormuz, Jebel Ali). This is bandwagon framing: treating a vendor press-release narrative as objective hierarchy without evidence.\n  > US AI export-control regime as a trust-tiering system: UAE has been designated a Tier-1 'trusted' node via the G42-Microsoft pipeline and Stargate UAE — this is the single most valuable strategic asse\n- **`AG-ARE`** [lens_balance_failure] — After three prior rounds explicitly flagging the absence of Khaleeji-tribal, Islamic governance, and Gulf-specific indigenous analytical frames, the artifact has not added any such lens. The lens roster remains Western-origin IR (L20=realism, L01=liberalism, L12=constructivism, L50/L51/L53/L54/L60=unspecified but context suggests Western governance/tech lenses). For an actor that is a federation of tribal sheikhdoms with Islamic governance structures, the absence of Khaleeji-tribal or Islamic-governance lenses is a structural failure. Judge J2 flagged this as critical in round 3; it remains unfixed.\n  > lens_relevance: { \"L20\": 0.85, \"L01\": 0.9, \"L12\": 0.7, \"L50\": 0.6, \"L51\": 0.5, \"L53\": 0.55, \"L54\": 0.65, \"L60\": 0.45 }\n- **`AG-ARE`** [bias_flag] — The label 'Neo-Ottoman/Africa subimperialism' imposes a Western Marxist academic category (derived from Ruy Mauro Marini's dependency theory) onto a Gulf state's Africa strategy. Judge J2 flagged this exact framing as critical in round 3: 'subimperialism' is a Western colonial-era analytical category that ignores indigenous Gulf strategic logic (regional depth, resource security, hedge against Iran/Saudi encirclement). The artifact has not revised this framing despite explicit critical feedback. From a non-Western perspective, this is UAE's legitimate regional-power play, not 'subimperialism.'\n  > Neo-Ottoman/Africa subimperialism: UAE's Sudan/RSF arming, Chad logistics, Egypt Ras El-Hekma, Horn of Africa ports, and gold-flow capture constitute a coherent extra-regional power-projection grand s\n- **`AG-ARE`** [missed_evidence] — The Saudi-Pakistan mutual-defense pact is flagged as a critical redline and appears in utility estimates for S002 (-3), S019 (-6), S026 (-5), but the only source is self-flagged '[uncited-judgement]' with no verifiable evidence. The artifact cites 'prior Sept-2025 SA-Pak mutual-defense MOU coverage' but provides no URL or publication. This is a foundational claim for three scenarios (10% of the scenario space) with zero citation. Judge J3 flagged this as critical in round 3; it remains uncited.\n  > Saudi-Pakistan defense-pact codification (text, joint exercises, basing) ... [uncited-judgement] — derived from S002 scenario weighting and prior Sept-2025 SA-Pak mutual-defense MOU coverage\n- **`AG-ARE`** [lens_balance_failure] — After four rounds of explicit flagging by multiple judges (rounds 2, 3, and now round 4), the artifact still contains zero Khaleeji-tribal, Islamic governance, or Gulf-specific indigenous analytical frames in the lens_relevance roster; the UAE is a federation of tribal sheikhdoms governed by Islamic law with a distinct Khaleeji political culture, and the complete absence of any indigenous analytical lens after repeated critical flags constitutes a persistent structural failure that has not been remediated across the entire review cycle.\n  > \"lens_relevance\": {\n    \"L20\": 0.85,\n    \"L01\": 0.9,\n    \"L12\": 0.7,\n    \"L50\": 0.6,\n    \"L51\": 0.5,\n    \"L53\": 0.55,\n    \"L54\": 0.65,\n    \"L60\": 0.45\n  }\n- **`AG-ARE`** [bias_flag] — This framing has been flagged as critical in rounds 2, 3, and now persists unchanged into round 4: 'subimperialism' is a Western Marxist dependency-theory category (derived from Ruy Mauro Marini) and 'Neo-Ottoman' is a Western IR label for Turkish foreign policy being misapplied to a Gulf Arab state; the sole source is Spectre Journal, an explicitly left-academic publication, and the artifact presents this contested ideological framing as a neutral analytical descriptor without acknowledging the framing's origins or offering an indigenous alternative such as Emirati strategic depth-building, South-South investment, or Gulf-African historical trade networks.\n  > Neo-Ottoman/Africa subimperialism: UAE's Sudan/RSF arming, Chad logistics, Egypt Ras El-Hekma, Horn of Africa ports, and gold-flow capture constitute a coherent extra-regional power-projection grand s\n- **`AG-ARE`** [internal_inconsistency] — The artifact's own utility_estimates show S017 at -8 and S006 at +8, a span of 16 points, not 12; even restricting to the Iran-ceasefire bifurcation (S001 at +6 vs. S017 at -8), the swing is 14 points; the '12-point' figure is arithmetically inconsistent with the artifact's own data and has been flagged as critical by five separate judges across three prior rounds without correction.\n  > The dominant uncertainty is whether the May 2026 Iran-war ceasefire holds or collapses into a sustained Hormuz-closure regime — this single bifurcation swings UAE utility by roughly 12 points across s\n- **`AG-ARE`** [internal_inconsistency] — The actual utility range is from −8 (S017) to +8 (S006), a span of 16 points, not 12. The stated 12-point swing is arithmetically inconsistent with the artifact's own utility_estimates_per_scenario.\n  > this single bifurcation swings UAE utility by roughly 12 points across scenarios\n- **`AG-ARE`** [lens_balance_failure] — The lens roster contains only Western-origin IR and governance frameworks; no non-Western indigenous lens (Khaleeji-tribal, Islamic governance, Tianxia, Pan-African) is included, despite multiple prior-round flags and the actor being a Gulf sheikhdom.\n  > {\"L20\": 0.85, \"L01\": 0.9, \"L12\": 0.7, \"L50\": 0.6, \"L51\": 0.5, \"L53\": 0.55, \"L54\": 0.65, \"L60\": 0.45}\n- **`AG-ARG`** [internal_inconsistency] — The lens relevance block contains duplicate keys with conflicting values, leading to a critical internal inconsistency.\n  > \"lens_relevance\": { \"L01_mearsheimer_offensive_realism\": 0.25, \"L02_vreeland_imf_political_economy\": 0.95, \"L03_tianxia_moral_realism\": 0.15, \"L04_eurasianism\": 0.05, \"L05_pan_african_decolonial\": 0.1\n- **`AG-ARG`** [internal_inconsistency] — The lens_relevance block contains conflicting/duplicate L05/L06/L09 ID semantics: L05 is bound to Pan-African (0.1) AND to an actor_prior (0.85) for what the author admits is a different taxonomy. The sum of weights also exceeds 1.0, and the author's own note acknowledges the mapping is improvised. This breaks any downstream lens-weighted aggregation.\n  > \"L05_pan_african_decolonial\": 0.1,\n    \"L06_reinhart_rogoff_debt_intolerance\": 0.9,\n    \"L09_acemoglu_robinson_institutions\": 0.8,\n    \"L05_actor_prior\": 0.85,\n    \"L06_actor_prior\": 0.9,\n    \"L09_act\n- **`AG-ARG`** [lens_balance_failure] — Non-Western lenses are assigned negligible weight and receive zero substantive engagement in key_drivers, elite_bargain_summary, or scenario best-responses, despite Argentina's active PBoC CNY 35B swap, Chinese lithium offtake exposure, BRICS-adjacent positioning debates, and Mercosur dynamics. A Tianxia or non-Western political-economy framing of the US-vs-China hedge would materially alter the 'patronage' framing.\n  > \"L03_tianxia_moral_realism\": 0.15,\n    \"L04_eurasianism\": 0.05,\n    \"L05_pan_african_decolonial\": 0.1\n- **`AG-ARG`** [bias_flag] — The artifact invokes 'consensus' on end-2026 inflation without naming which analysts, institutions, or forecasters hold this view, their track records, confidence intervals, or the methodology used to aggregate their views.\n  > consensus end-2026 ≈28%\n- **`AG-ARG`** [bias_flag] — The artifact frames the US-Treasury relationship as 'patronage' (implying hierarchical dependency and clientelism) without evidence that Argentine policymakers themselves use this framing, that it represents genuine structural dependency, or that alternative multilateral channels are genuinely unavailable.\n  > Trump-Bessent bilateral patronage as a substitute for traditional Western multilateral support — strategic dependency on a single US administration's preferences\n- **`AG-ARG`** [internal_inconsistency] — The lens_relevance object contains duplicate keys (L05, L06, L09) with conflicting values. L05 appears twice with weights 0.1 and 0.85; L06 appears twice with weights 0.9 and 0.9 (redundant but not conflicting); L09 appears twice with weights 0.8 and 0.8 (redundant). The author's note acknowledges 'a separate per-actor lens taxonomy' but does not resolve which values should be used for downstream weighting. The sum of all listed weights exceeds 1.0 (0.25+0.95+0.15+0.05+0.1+0.9+0.8+0.85+0.9+0.8 = 6.75), making the lens weighting framework incoherent.\n  > \"L05_pan_african_decolonial\": 0.1, ... \"L05_actor_prior\": 0.85, ... \"L06_reinhart_rogoff_debt_intolerance\": 0.9, \"L06_actor_prior\": 0.9, ... \"L09_acemoglu_robinson_institutions\": 0.8, \"L09_actor_prior\n- **`AG-ARG`** [lens_balance_failure] — Non-Western analytical lenses (Tianxia, Eurasianism, Pan-African/decolonial) are assigned negligible relevance scores (≤0.15) and receive zero substantive analytical engagement in the key_drivers, elite_bargain_summary, or scenario responses. Yet Argentina's active PBoC swap, lithium offtake agreements with Chinese firms, and positioning in the Global South demand at least a Tianxia framing (hierarchical but mutually beneficial economic relationships) or a Pan-African/decolonial lens (Argentina as a commodity exporter resisting Northern debt coercion). The artifact's framing is entirely Western-centric (Vreeland IMF, Reinhart-Rogoff debt cycles, Acemoglu-Robinson institutions, Mearsheimer realism).\n  > L03_tianxia_moral_realism: 0.15, L04_eurasianism: 0.05, L05_pan_african_decolonial: 0.1\n- **`AG-ARG`** [internal_inconsistency] — The lens_relevance block contains duplicate keys L05, L06, and L09 with conflicting values (L05_pan_african_decolonial=0.1 vs L05_actor_prior=0.85; L06_reinhart_rogoff=0.9 vs L06_actor_prior=0.9; L09_acemoglu_robinson=0.8 vs L09_actor_prior=0.8), and the author's own note acknowledges a taxonomy ambiguity without resolving it — this is a schema-level bug that makes the lens weighting framework uninterpretable and the sum of weights far exceeds 1.0.\n  > \"L05_pan_african_decolonial\": 0.1, \"L06_reinhart_rogoff_debt_intolerance\": 0.9, \"L09_acemoglu_robinson_institutions\": 0.8, \"L05_actor_prior\": 0.85, \"L06_actor_prior\": 0.9, \"L09_actor_prior\": 0.8\n- **`AG-ARG`** [lens_balance_failure] — Non-Western analytical lenses (Tianxia, Eurasianism, Pan-African/decolonial) are assigned negligible relevance scores and receive zero substantive engagement in key_drivers, elite_bargain_summary, or any scenario best_response, despite Argentina's active PBoC swap line, Chinese lithium offtake agreements, and BRICS-adjacent positioning — this constitutes a critical lens-balance failure for a non-Western actor with significant Sino-Argentine economic interdependence.\n  > \"L03_tianxia_moral_realism\": 0.15, \"L04_eurasianism\": 0.05, \"L05_pan_african_decolonial\": 0.1\n- **`AG-ARG`** [internal_inconsistency] — Duplicate keys in the lens relevance block with conflicting values indicate a critical internal inconsistency.\n  > \"lens_relevance\": { \"L01_mearsheimer_offensive_realism\": 0.25, \"L02_vreeland_imf_political_economy\": 0.95, \"L03_tianxia_moral_realism\": 0.15, \"L04_eurasianism\": 0.05, \"L05_pan_african_decolonial\": 0.1\n- **`AG-ARG`** [internal_inconsistency] — Duplicate lens keys (L05, L06, L09) with conflicting conceptual mappings (e.g., Pan-African vs actor-prior) produce an incoherent weighting scheme that neither sums to 1.0 nor enables unambiguous ranking of lenses.\n  > \"L05_pan_african_decolonial\": 0.1, ... \"L05_actor_prior\": 0.85, ... \"L06_reinhart_rogoff_debt_intolerance\": 0.9, ... \"L06_actor_prior\": 0.9, ... \"L09_acemoglu_robinson_institutions\": 0.8, ... \"L09_act\n- **`AG-ARG`** [lens_balance_failure] — Non-Western analytical frameworks receive negligible relevance scores (≤0.15) and are wholly absent from key_drivers, best_responses, and elite_bargain_summary, despite Argentina's active PBoC swap, Chinese lithium offtake, and multi-continental trade ties.\n  > \"L03_tianxia_moral_realism\": 0.15, \"L04_eurasianism\": 0.05, \"L05_pan_african_decolonial\": 0.1\n- **`AG-ARG`** [internal_inconsistency] — Duplicate keys (L05, L06, L09) with conflicting values persist in the lens_relevance block, making lens weights ambiguous and the overall sum exceed 1.0—this structural JSON flaw has not been resolved since prior rounds.\n  > \"L05_pan_african_decolonial\": 0.1, \"L06_reinhart_rogoff_debt_intolerance\": 0.9, \"L09_acemoglu_robinson_institutions\": 0.8, \"L05_actor_prior\": 0.85, \"L06_actor_prior\": 0.9, \"L09_actor_prior\": 0.8\n- **`AG-ARG`** [lens_balance_failure] — Non-Western lenses are assigned negligible relevance scores and receive zero substantive integration in key_drivers, elite_bargain_summary, or best_responses, despite Argentina's active PBoC CNY 35B swap, Chinese lithium offtake agreements, and Mercosur's potential Eurasianist dimensions.\n  > \"L03_tianxia_moral_realism\": 0.15, \"L04_eurasianism\": 0.05, \"L05_pan_african_decolonial\": 0.1\n- **`AG-ASEAN`** [lens_balance_failure] — After four rounds of debate the artifact still assigns Tianxia a 0.6 relevance weight — higher than Eurasianism and Pan-African — yet zero substantive Tianxia-framed analysis appears in the brief. No engagement with hierarchical regional order, tributary-trade logic, or China-as-civilisational-centre framing of ASEAN-China relations. The weight is asserted but never operationalised, which is a schema-level inconsistency between declared lens relevance and actual analytic content.\n  > \"Tianxia\": 0.6,\n    \"Eurasianism\": 0.25,\n    \"Pan-African\": 0.3\n- **`AG-ASEAN`** [lens_balance_failure] — Tianxia is assigned the third-highest relevance weight (0.6, higher than Eurasianism 0.25 and Pan-African 0.3), yet the artifact contains zero substantive Tianxia-framed analysis despite this being the fourth round of review with identical feedback from three prior judges.\n  > Tianxia: 0.6\n- **`AG-ASEAN`** [bias_flag] — The artifact frames ASEAN's core identity through Mearsheimer's offensive-realism logic (great-power competition, structural constraints on weaker actors) without engaging ASEAN's own foundational self-conception rooted in the Bandung Spirit, non-alignment doctrine, and hierarchical-order management. This is Western IR theory applied to a non-Western actor that explicitly rejects Western-centric framing.\n  > Preserve ASEAN centrality and the consensus-rule convening role against erosion by AUKUS, Quad, and bilateral US/China minilaterals - the single non-negotiable identity asset of the bloc [uncited-judg\n- **`AG-ASEAN`** [missed_evidence] — The artifact omits the ASEAN Outlook on the Indo-Pacific (AOIP), ASEAN's own foundational strategic document articulating its preferred regional order and its vision of ASEAN centrality. This document directly informs every scenario involving SCS, Taiwan, and ASEAN's convening role, yet is absent from the analysis despite being cited by prior judges as essential.\n  > Preserve ASEAN centrality and the consensus-rule convening role against erosion by AUKUS, Quad, and bilate",
+    "synthesis_md_full_length": 349889,
+    "n_artifacts": 61,
+    "summaries": [
+      {
+        "id": "AG-ARE",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 55.81,
+        "score_stddev": 8.93,
+        "n_findings": 33,
+        "n_critical": 13
+      },
+      {
+        "id": "AG-ARG",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 53.14,
+        "score_stddev": 11.2,
+        "n_findings": 37,
+        "n_critical": 14
+      },
+      {
+        "id": "AG-ASEAN",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 58.37,
+        "score_stddev": 9.68,
+        "n_findings": 37,
+        "n_critical": 8
+      },
+      {
+        "id": "AG-AUS",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 53.45,
+        "score_stddev": 12.12,
+        "n_findings": 38,
+        "n_critical": 17
+      },
+      {
+        "id": "AG-BRA",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 57.72,
+        "score_stddev": 9.7,
+        "n_findings": 34,
+        "n_critical": 6
+      },
+      {
+        "id": "AG-BRICS",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 55.23,
+        "score_stddev": 9.11,
+        "n_findings": 28,
+        "n_critical": 11
+      },
+      {
+        "id": "AG-CAN",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 50.64,
+        "score_stddev": 10.36,
+        "n_findings": 33,
+        "n_critical": 18
+      },
+      {
+        "id": "AG-CHN",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 59.99,
+        "score_stddev": 9.89,
+        "n_findings": 35,
+        "n_critical": 9
+      },
+      {
+        "id": "AG-DEU",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 61.47,
+        "score_stddev": 9.54,
+        "n_findings": 26,
+        "n_critical": 6
+      },
+      {
+        "id": "AG-EGY",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 55.7,
+        "score_stddev": 11.26,
+        "n_findings": 38,
+        "n_critical": 13
+      },
+      {
+        "id": "AG-EUR",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 61.55,
+        "score_stddev": 7.46,
+        "n_findings": 35,
+        "n_critical": 10
+      },
+      {
+        "id": "AG-FRA",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 53.73,
+        "score_stddev": 8.69,
+        "n_findings": 32,
+        "n_critical": 11
+      },
+      {
+        "id": "AG-GBR",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 53.97,
+        "score_stddev": 8.61,
+        "n_findings": 31,
+        "n_critical": 11
+      },
+      {
+        "id": "AG-IDN",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 55.01,
+        "score_stddev": 8.99,
+        "n_findings": 32,
+        "n_critical": 9
+      },
+      {
+        "id": "AG-IND",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 58.09,
+        "score_stddev": 8.81,
+        "n_findings": 39,
+        "n_critical": 12
+      },
+      {
+        "id": "AG-IRN",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 51.98,
+        "score_stddev": 7.59,
+        "n_findings": 33,
+        "n_critical": 14
+      },
+      {
+        "id": "AG-ISR",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 46.87,
+        "score_stddev": 8.1,
+        "n_findings": 35,
+        "n_critical": 11
+      },
+      {
+        "id": "AG-JPN",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 55.99,
+        "score_stddev": 11.35,
+        "n_findings": 36,
+        "n_critical": 14
+      },
+      {
+        "id": "AG-KOR",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 53.0,
+        "score_stddev": 8.35,
+        "n_findings": 30,
+        "n_critical": 14
+      },
+      {
+        "id": "AG-L01",
+        "target_class": "lens",
+        "gate": "revise",
+        "score_mean": 57.05,
+        "score_stddev": 8.17,
+        "n_findings": 34,
+        "n_critical": 16
+      },
+      {
+        "id": "AG-L05",
+        "target_class": "lens",
+        "gate": "revise",
+        "score_mean": 58.42,
+        "score_stddev": 7.89,
+        "n_findings": 19,
+        "n_critical": 4
+      },
+      {
+        "id": "AG-L17",
+        "target_class": "lens",
+        "gate": "revise",
+        "score_mean": 61.36,
+        "score_stddev": 9.45,
+        "n_findings": 31,
+        "n_critical": 6
+      },
+      {
+        "id": "AG-L18",
+        "target_class": "lens",
+        "gate": "revise",
+        "score_mean": 56.36,
+        "score_stddev": 12.21,
+        "n_findings": 33,
+        "n_critical": 8
+      },
+      {
+        "id": "AG-L19",
+        "target_class": "lens",
+        "gate": "revise",
+        "score_mean": 57.61,
+        "score_stddev": 7.94,
+        "n_findings": 31,
+        "n_critical": 8
+      },
+      {
+        "id": "AG-MEX",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 55.85,
+        "score_stddev": 8.73,
+        "n_findings": 32,
+        "n_critical": 11
+      },
+      {
+        "id": "AG-NGA",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 60.08,
+        "score_stddev": 8.38,
+        "n_findings": 39,
+        "n_critical": 9
+      },
+      {
+        "id": "AG-PAK",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 54.35,
+        "score_stddev": 10.37,
+        "n_findings": 26,
+        "n_critical": 10
+      },
+      {
+        "id": "AG-POL",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 50.95,
+        "score_stddev": 7.21,
+        "n_findings": 32,
+        "n_critical": 14
+      },
+      {
+        "id": "AG-RUS",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 55.2,
+        "score_stddev": 12.74,
+        "n_findings": 33,
+        "n_critical": 9
+      },
+      {
+        "id": "AG-SAU",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 58.84,
+        "score_stddev": 9.86,
+        "n_findings": 36,
+        "n_critical": 11
+      },
+      {
+        "id": "AG-T01",
+        "target_class": "theme",
+        "gate": "revise",
+        "score_mean": 58.5,
+        "score_stddev": 7.37,
+        "n_findings": 29,
+        "n_critical": 4
+      },
+      {
+        "id": "AG-T02",
+        "target_class": "theme",
+        "gate": "revise",
+        "score_mean": 53.34,
+        "score_stddev": 8.18,
+        "n_findings": 29,
+        "n_critical": 11
+      },
+      {
+        "id": "AG-T03",
+        "target_class": "theme",
+        "gate": "revise",
+        "score_mean": 61.38,
+        "score_stddev": 10.66,
+        "n_findings": 29,
+        "n_critical": 7
+      },
+      {
+        "id": "AG-T04",
+        "target_class": "theme",
+        "gate": "revise",
+        "score_mean": 63.04,
+        "score_stddev": 7.49,
+        "n_findings": 35,
+        "n_critical": 6
+      },
+      {
+        "id": "AG-T05",
+        "target_class": "theme",
+        "gate": "revise",
+        "score_mean": 55.4,
+        "score_stddev": 10.95,
+        "n_findings": 38,
+        "n_critical": 12
+      },
+      {
+        "id": "AG-T06",
+        "target_class": "theme",
+        "gate": "revise",
+        "score_mean": 57.26,
+        "score_stddev": 5.64,
+        "n_findings": 23,
+        "n_critical": 8
+      },
+      {
+        "id": "AG-T07",
+        "target_class": "theme",
+        "gate": "revise",
+        "score_mean": 55.08,
+        "score_stddev": 7.59,
+        "n_findings": 33,
+        "n_critical": 15
+      },
+      {
+        "id": "AG-T08",
+        "target_class": "theme",
+        "gate": "revise",
+        "score_mean": 60.86,
+        "score_stddev": 6.05,
+        "n_findings": 33,
+        "n_critical": 6
+      },
+      {
+        "id": "AG-T09",
+        "target_class": "theme",
+        "gate": "revise",
+        "score_mean": 58.61,
+        "score_stddev": 6.82,
+        "n_findings": 27,
+        "n_critical": 4
+      },
+      {
+        "id": "AG-T10",
+        "target_class": "theme",
+        "gate": "revise",
+        "score_mean": 52.7,
+        "score_stddev": 9.67,
+        "n_findings": 41,
+        "n_critical": 9
+      },
+      {
+        "id": "AG-TUR",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 55.25,
+        "score_stddev": 11.86,
+        "n_findings": 32,
+        "n_critical": 13
+      },
+      {
+        "id": "AG-UKR",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 55.64,
+        "score_stddev": 11.78,
+        "n_findings": 39,
+        "n_critical": 15
+      },
+      {
+        "id": "AG-USA",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 54.88,
+        "score_stddev": 9.2,
+        "n_findings": 33,
+        "n_critical": 15
+      },
+      {
+        "id": "AG-VNM",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 56.2,
+        "score_stddev": 6.21,
+        "n_findings": 16,
+        "n_critical": 4
+      },
+      {
+        "id": "AG-ZAF",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 56.75,
+        "score_stddev": 6.74,
+        "n_findings": 29,
+        "n_critical": 8
+      },
+      {
+        "id": "PDF-01_GIPRE_Master_Scenarios",
+        "target_class": "pdf",
+        "gate": "revise",
+        "score_mean": 53.42,
+        "score_stddev": 5.78,
+        "n_findings": 12,
+        "n_critical": 4
+      },
+      {
+        "id": "PDF-02_GIPRE_Region_NorthAmerica",
+        "target_class": "pdf",
+        "gate": "revise",
+        "score_mean": 54.32,
+        "score_stddev": 5.69,
+        "n_findings": 36,
+        "n_critical": 17
+      },
+      {
+        "id": "PDF-03_GIPRE_Region_Europe",
+        "target_class": "pdf",
+        "gate": "revise",
+        "score_mean": 58.65,
+        "score_stddev": 6.33,
+        "n_findings": 25,
+        "n_critical": 12
+      },
+      {
+        "id": "PDF-04_GIPRE_Region_GreaterMiddleEast",
+        "target_class": "pdf",
+        "gate": "revise",
+        "score_mean": 43.76,
+        "score_stddev": 12.28,
+        "n_findings": 44,
+        "n_critical": 15
+      },
+      {
+        "id": "PDF-05_GIPRE_Region_AsiaPacific",
+        "target_class": "pdf",
+        "gate": "revise",
+        "score_mean": 56.12,
+        "score_stddev": 9.48,
+        "n_findings": 31,
+        "n_critical": 10
+      },
+      {
+        "id": "PDF-06_GIPRE_Region_SouthAsia",
+        "target_class": "pdf",
+        "gate": "revise",
+        "score_mean": 49.7,
+        "score_stddev": 11.2,
+        "n_findings": 45,
+        "n_critical": 16
+      },
+      {
+        "id": "PDF-07_GIPRE_Region_Africa",
+        "target_class": "pdf",
+        "gate": "revise",
+        "score_mean": 57.94,
+        "score_stddev": 6.6,
+        "n_findings": 37,
+        "n_critical": 9
+      },
+      {
+        "id": "PDF-08_GIPRE_Region_LatinAmerica",
+        "target_class": "pdf",
+        "gate": "revise",
+        "score_mean": 50.94,
+        "score_stddev": 10.48,
+        "n_findings": 45,
+        "n_critical": 21
+      },
+      {
+        "id": "SYN-africa",
+        "target_class": "synthesis",
+        "gate": "revise",
+        "score_mean": 62.79,
+        "score_stddev": 10.46,
+        "n_findings": 39,
+        "n_critical": 15
+      },
+      {
+        "id": "SYN-asia_pacific",
+        "target_class": "synthesis",
+        "gate": "revise",
+        "score_mean": 58.5,
+        "score_stddev": 7.56,
+        "n_findings": 29,
+        "n_critical": 8
+      },
+      {
+        "id": "SYN-europe",
+        "target_class": "synthesis",
+        "gate": "revise",
+        "score_mean": 54.59,
+        "score_stddev": 3.61,
+        "n_findings": 26,
+        "n_critical": 13
+      },
+      {
+        "id": "SYN-greater_middle_east",
+        "target_class": "synthesis",
+        "gate": "revise",
+        "score_mean": 55.41,
+        "score_stddev": 11.16,
+        "n_findings": 30,
+        "n_critical": 10
+      },
+      {
+        "id": "SYN-latin_america",
+        "target_class": "synthesis",
+        "gate": "revise",
+        "score_mean": 59.95,
+        "score_stddev": 10.65,
+        "n_findings": 34,
+        "n_critical": 10
+      },
+      {
+        "id": "SYN-master",
+        "target_class": "synthesis",
+        "gate": "revise",
+        "score_mean": 56.34,
+        "score_stddev": 9.5,
+        "n_findings": 41,
+        "n_critical": 14
+      },
+      {
+        "id": "SYN-north_america",
+        "target_class": "synthesis",
+        "gate": "revise",
+        "score_mean": 58.58,
+        "score_stddev": 8.84,
+        "n_findings": 35,
+        "n_critical": 17
+      },
+      {
+        "id": "SYN-south_asia",
+        "target_class": "synthesis",
+        "gate": "revise",
+        "score_mean": 59.08,
+        "score_stddev": 8.92,
+        "n_findings": 36,
+        "n_critical": 13
+      }
+    ],
+    "available": true
+  },
+  "n02": {
+    "step": "N02 — Bias Auditor (L50 + L65)",
+    "run_id": "bias-audit-2026-05-12",
+    "synthesis_md": "",
+    "synthesis_md_full_length": 0,
+    "n_artifacts": 0,
+    "summaries": [],
+    "available": false,
+    "structural_metrics_csv_exists": true
+  },
+  "source_files": [
+    "runs/critic-2026-05-11/synthesis.md",
+    "runs/bias-audit-2026-05-12/synthesis.md"
+  ]
+}

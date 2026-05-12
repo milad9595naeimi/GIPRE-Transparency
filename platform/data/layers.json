@@ -1,0 +1,1657 @@
+{
+  "layers": [
+    {
+      "id": "L01",
+      "cluster": "A",
+      "name": "Multi-source Ingest",
+      "status": "active",
+      "summary": "Ingest OSINT public data (GDELT, ACLED public, IMF WEO, World Bank WDI, UN COMTRADE, V-Dem, WID, USGS, IEA, Natural Earth, Wikidata) into local Parquet + provenance manifest hash.",
+      "depends_on": [],
+      "module": "gipre.data.ingest",
+      "contracts": {
+        "input": "source_descriptors_yaml",
+        "output": "raw_parquet_with_manifest_sha256"
+      },
+      "cluster_id": "A",
+      "cluster_title": "Data ingestion"
+    },
+    {
+      "id": "L02",
+      "cluster": "A",
+      "name": "Embedding Architecture",
+      "status": "stub",
+      "summary": "Three nested embedding architectures (Cohere Embed v3 multilingual / lens-tagged academic / agent-history); HNSW ANN retrieval. STUB: in this build we use only document-level fingerprints; full embeddings deferred.",
+      "depends_on": [
+        "L01"
+      ],
+      "module": "gipre.data.embeddings",
+      "contracts": {
+        "input": "documents_with_text",
+        "output": "embedding_vectors_1024d"
+      },
+      "cluster_id": "A",
+      "cluster_title": "Data ingestion"
+    },
+    {
+      "id": "L03",
+      "cluster": "A",
+      "name": "Lens-Tagged Document Corpus",
+      "status": "active",
+      "summary": "Tag retrieved documents with the 20 lenses based on keyword + claim-pattern signatures; threshold τ=0.50.",
+      "depends_on": [
+        "L01"
+      ],
+      "module": "gipre.data.lens_tagging",
+      "contracts": {
+        "input": "documents",
+        "output": "lens_tagged_documents"
+      },
+      "cluster_id": "A",
+      "cluster_title": "Data ingestion"
+    },
+    {
+      "id": "L04",
+      "cluster": "B",
+      "name": "Lens Proposal Engine",
+      "status": "stub",
+      "summary": "Continuous monitoring of leading IR/PE journals; LDA + Newman modularity; admission probability ≥0.60. STUB: panel frozen at 20 for first build.",
+      "depends_on": [
+        "L03"
+      ],
+      "module": "gipre.lenses.proposal",
+      "contracts": {
+        "input": "journal_corpus",
+        "output": "candidate_lens_proposals"
+      },
+      "cluster_id": "B",
+      "cluster_title": "Conformal + Bayesian core"
+    },
+    {
+      "id": "L05",
+      "cluster": "B",
+      "name": "Lens-Conditional Reasoning",
+      "status": "active",
+      "summary": "P(θ | D, lens_i, q) = Claude(θ | framing_i, context_i(q,D), q). Each lens agent reads top-K=12 lens-relevant documents and produces structured analysis.",
+      "depends_on": [
+        "L03",
+        "L04"
+      ],
+      "module": "gipre.orchestration.lens_runner",
+      "contracts": {
+        "input": "question + actor_context + lens_id",
+        "output": "lens_conditional_assessment_json"
+      },
+      "cluster_id": "B",
+      "cluster_title": "Conformal + Bayesian core"
+    },
+    {
+      "id": "L06",
+      "cluster": "B",
+      "name": "Coupling Matrix (Causal Discovery)",
+      "status": "stub",
+      "summary": "Bagged-PCMCI+ over ~400 macro/political variables; 1,000 candidate DAGs; high-confidence edges at p̂≥0.80. STUB: in this build the coupling matrix is hand-curated from doc / lens-agent inputs.",
+      "depends_on": [
+        "L01"
+      ],
+      "module": "gipre.synthesis.coupling",
+      "contracts": {
+        "input": "time_series_panel",
+        "output": "dag_posterior_with_edge_marginals"
+      },
+      "cluster_id": "B",
+      "cluster_title": "Conformal + Bayesian core"
+    },
+    {
+      "id": "L07",
+      "cluster": "B",
+      "name": "Lens-Conditional Reweighting (BMA)",
+      "status": "active",
+      "summary": "BMA with hierarchical hyper-prior over lens weights. P(θ|D,q) = Σ_i w_i(q,D) · P(θ|D,lens_i,q).",
+      "depends_on": [
+        "L05"
+      ],
+      "module": "gipre.synthesis.bma",
+      "contracts": {
+        "input": "lens_conditional_assessments",
+        "output": "ensembled_posterior"
+      },
+      "cluster_id": "B",
+      "cluster_title": "Conformal + Bayesian core"
+    },
+    {
+      "id": "L08",
+      "cluster": "B",
+      "name": "Foundation-Model Forecast Ensemble",
+      "status": "stub",
+      "summary": "Chronos-2 + Moirai-MoE + TimesFM-2.5 ensemble via BPS + hierarchical Platt-Beta calibration. STUB: replaced in MVP with statistical baselines (ARIMA / linear / piecewise) on OSINT indicators.",
+      "depends_on": [
+        "L01"
+      ],
+      "module": "gipre.synthesis.ts_forecast",
+      "contracts": {
+        "input": "time_series",
+        "output": "forecast_density"
+      },
+      "cluster_id": "B",
+      "cluster_title": "Conformal + Bayesian core"
+    },
+    {
+      "id": "L09",
+      "cluster": "B",
+      "name": "Cross-Domain Specialists",
+      "status": "stub",
+      "summary": "Aurora (climate), AlphaFold-3 (biosec), Evo-2 (genomics), METR (AI capability), country-specific DSGE. STUB: deferred.",
+      "depends_on": [
+        "L01"
+      ],
+      "module": "gipre.synthesis.specialists",
+      "cluster_id": "B",
+      "cluster_title": "Conformal + Bayesian core"
+    },
+    {
+      "id": "L10",
+      "cluster": "B",
+      "name": "Agent-Based Sub-Module",
+      "status": "active",
+      "summary": "Top-tier strategic-deep agents (LLM-driven actor agents per Doc 6 Gap 2, replacing Cicero/DiL-piKL); mid-tier mean-field MARL cohorts (stub); bottom-tier GABM populations (stub).",
+      "depends_on": [
+        "L05",
+        "L07"
+      ],
+      "module": "gipre.orchestration.agent_runner",
+      "contracts": {
+        "input": "scenario_context + actor_persona",
+        "output": "actor_action_distribution"
+      },
+      "cluster_id": "B",
+      "cluster_title": "Conformal + Bayesian core"
+    },
+    {
+      "id": "L11",
+      "cluster": "B",
+      "name": "Scenario Generator",
+      "status": "active",
+      "summary": "BPS over scenario-space; cluster scenarios from agent rollouts; outputs joint posteriors per country (P(A,B,C)).",
+      "depends_on": [
+        "L10",
+        "L26"
+      ],
+      "module": "gipre.scenarios.generator",
+      "contracts": {
+        "input": "agent_rollouts + axis_definitions",
+        "output": "scenario_library_with_probabilities"
+      },
+      "cluster_id": "B",
+      "cluster_title": "Conformal + Bayesian core"
+    },
+    {
+      "id": "L12",
+      "cluster": "C",
+      "name": "Uncertainty Decomposition",
+      "status": "stub",
+      "summary": "Aleatoric + epistemic + lens-revision + coupling variance via Saltelli 2008 Sobol indices. STUB: only aleatoric+epistemic in MVP.",
+      "depends_on": [
+        "L11"
+      ],
+      "module": "gipre.core.uncertainty",
+      "cluster_id": "B",
+      "cluster_title": "Conformal + Bayesian core"
+    },
+    {
+      "id": "L13",
+      "cluster": "C",
+      "name": "Causal Discovery",
+      "status": "active",
+      "summary": "PCMCI+ / J-PCMCI+ / Bagged-PCMCI+ over indicator panels; α_PC = 0.01 with BH-FDR 5%.",
+      "depends_on": [
+        "L01"
+      ],
+      "module": "gipre.synthesis.causal_discovery",
+      "contracts": {
+        "input": "panel_time_series",
+        "output": "causal_dag"
+      },
+      "cluster_id": "C",
+      "cluster_title": "Game theory + ABM"
+    },
+    {
+      "id": "L14",
+      "cluster": "C",
+      "name": "Counterfactual Simulation",
+      "status": "active",
+      "summary": "Pearl do-calculus, twin-network (Balke-Pearl), Rosenbaum bounds + E-value sensitivity, N=10,000 MC draws.",
+      "depends_on": [
+        "L13"
+      ],
+      "module": "gipre.synthesis.counterfactual",
+      "cluster_id": "C",
+      "cluster_title": "Game theory + ABM"
+    },
+    {
+      "id": "L15",
+      "cluster": "C",
+      "name": "Strategic-Deep Agents (LLM-replaced)",
+      "status": "active",
+      "summary": "Per Doc 6 Gap 2, REPLACED Cicero/DiL-piKL with Claude-Sonnet/Opus actor agents using Richelieu pattern. KL-regularised against best-response oracle. λ_KL=0.03.",
+      "depends_on": [
+        "L10"
+      ],
+      "module": "gipre.orchestration.actor_agents",
+      "cluster_id": "C",
+      "cluster_title": "Game theory + ABM"
+    },
+    {
+      "id": "L16",
+      "cluster": "C",
+      "name": "Mean-Field MARL Cohorts",
+      "status": "stub",
+      "summary": "Yang-Wang ICML 2018 mean-field MARL for sub-state actors. STUB: deferred to Phase 2; first build uses LLM persona-aggregation.",
+      "depends_on": [
+        "L15"
+      ],
+      "module": "gipre.orchestration.mfmarl",
+      "cluster_id": "C",
+      "cluster_title": "Game theory + ABM"
+    },
+    {
+      "id": "L17",
+      "cluster": "C",
+      "name": "Generative Agent-Based Model (GABM)",
+      "status": "stub",
+      "summary": "Park et al. 2024 architecture; 1,000-10,000 LLM agents per scenario. STUB: deferred — this build uses 50-agent slice without bottom-tier population.",
+      "depends_on": [
+        "L15",
+        "L16"
+      ],
+      "module": "gipre.orchestration.gabm",
+      "cluster_id": "D",
+      "cluster_title": "Auditor + decision-support layer"
+    },
+    {
+      "id": "L18",
+      "cluster": "C",
+      "name": "BPS Apex Aggregator",
+      "status": "active",
+      "summary": "McAlinn-West 2019; Adrian-Giannone-Luciani-West 2024. Linear synthesis over component forecasts with discount factor δ ∈ (0.9, 0.99).",
+      "depends_on": [
+        "L07",
+        "L11"
+      ],
+      "module": "gipre.synthesis.bps",
+      "cluster_id": "D",
+      "cluster_title": "Auditor + decision-support layer"
+    },
+    {
+      "id": "L19",
+      "cluster": "D",
+      "name": "Conformal Prediction",
+      "status": "active",
+      "summary": "Vovk-Gammerman-Shafer 2005, Lei et al. 2018; n_cal=500. Adaptive conformal (Gibbs-Candes 2021). Mondrian variants for stratified coverage.",
+      "depends_on": [
+        "L18"
+      ],
+      "module": "gipre.core.conformal",
+      "cluster_id": "D",
+      "cluster_title": "Auditor + decision-support layer"
+    },
+    {
+      "id": "L20",
+      "cluster": "D",
+      "name": "Falsification & Lens Reweighting",
+      "status": "active",
+      "summary": "Pre-registered prediction sets (≥30 events per lens per quarter). Bayes factors via bridge sampling. δ_lens=0.95 quarterly discount; ENL alarm threshold ENL<4.",
+      "depends_on": [
+        "L05",
+        "L19"
+      ],
+      "module": "gipre.core.falsification",
+      "cluster_id": "D",
+      "cluster_title": "Auditor + decision-support layer"
+    },
+    {
+      "id": "L21",
+      "cluster": "D",
+      "name": "Decision Layer",
+      "status": "active",
+      "summary": "Standard expected-loss minimisation; min-max regret (Hansen-Sargent 2008); Wasserstein-DRO (Mohajerin Esfahani-Kuhn 2018); CVaR-constrained; Pareto front for multi-objective.",
+      "depends_on": [
+        "L18"
+      ],
+      "module": "gipre.core.decision",
+      "cluster_id": "D",
+      "cluster_title": "Auditor + decision-support layer"
+    },
+    {
+      "id": "L22",
+      "cluster": "D",
+      "name": "Risk Aggregation (Copulas)",
+      "status": "stub",
+      "summary": "Sklar copula; vine copulas (R/C/D) per Aas et al. 2009. Clayton for sovereign-default, Gumbel for commodity-shock. STUB: simple correlation aggregation in MVP.",
+      "depends_on": [
+        "L21"
+      ],
+      "module": "gipre.core.copula",
+      "cluster_id": "D",
+      "cluster_title": "Auditor + decision-support layer"
+    },
+    {
+      "id": "L23",
+      "cluster": "D",
+      "name": "Communication / Brief Render",
+      "status": "active",
+      "summary": "ReportLab PDF (replacing WeasyPrint due to Windows GTK), Jinja2 HTML, python-docx DOCX. Charts via matplotlib SVG. Maps via cartopy + Natural Earth GeoJSON. Hallucination control: 0.5σ numeric tolerance, up to 3 regenerations.",
+      "depends_on": [
+        "L29"
+      ],
+      "module": "gipre.reports.pdf_builder",
+      "cluster_id": "D",
+      "cluster_title": "Auditor + decision-support layer"
+    },
+    {
+      "id": "L24",
+      "cluster": "D",
+      "name": "Audit & Provenance",
+      "status": "active",
+      "summary": "Manifest hash H_manifest = SHA256(data || code || params || env || output). Reproducibility ε=1e-6. Sigstore signing deferred; SHA256 ledger only in MVP.",
+      "depends_on": [],
+      "module": "gipre.core.audit",
+      "cluster_id": "D",
+      "cluster_title": "Auditor + decision-support layer"
+    },
+    {
+      "id": "L25",
+      "cluster": "E",
+      "name": "Master Scenario Library",
+      "status": "active",
+      "summary": "K≈80-120 scenarios partitioning Ω. Three axes: stress (5 levels), GP-config (8 archetypes), regional flashpoint set (2-4 of 12). Pruning Pr<0.005 via Wasserstein.",
+      "depends_on": [
+        "L11",
+        "L26"
+      ],
+      "module": "gipre.scenarios.library",
+      "cluster_id": "E",
+      "cluster_title": "Global Scenario Engine + Customisation Matrix"
+    },
+    {
+      "id": "L26",
+      "cluster": "E",
+      "name": "Game-Theoretic Equilibrium Solver (rQRE)",
+      "status": "active",
+      "summary": "Regularised QRE: Pr_QRE(S_i) ∝ exp{β · Σ_k w_k · U_k(S_i) - λ · KL(σ_i || π_BC)}. β default 1.0 (high-stakes 2.0); λ=0.1. Max-entropy equilibrium selection.",
+      "depends_on": [
+        "L15"
+      ],
+      "module": "gipre.scenarios.qre",
+      "cluster_id": "E",
+      "cluster_title": "Global Scenario Engine + Customisation Matrix"
+    },
+    {
+      "id": "L27",
+      "cluster": "E",
+      "name": "Scenario Probability Estimation",
+      "status": "active",
+      "summary": "Bayesian hierarchical Dirichlet posterior over scenarios. α_i = 0.5·Pr_QRE + 0.3·Pr_triggers + 0.2·π_analogue. CRPS alarm threshold 0.10.",
+      "depends_on": [
+        "L26"
+      ],
+      "module": "gipre.scenarios.probability",
+      "cluster_id": "E",
+      "cluster_title": "Global Scenario Engine + Customisation Matrix"
+    },
+    {
+      "id": "L28",
+      "cluster": "E",
+      "name": "Trigger Tracking",
+      "status": "active",
+      "summary": "Real-time Bayesian update Pr(S_i|τ,H) = Pr(τ|S_i)·Pr(S_i|H) / Σ. Drift alert thresholds 0.02 active / 0.005 baseline.",
+      "depends_on": [
+        "L27"
+      ],
+      "module": "gipre.scenarios.triggers",
+      "cluster_id": "E",
+      "cluster_title": "Global Scenario Engine + Customisation Matrix"
+    },
+    {
+      "id": "L29",
+      "cluster": "E",
+      "name": "Scenario Narrative Synthesis",
+      "status": "active",
+      "summary": "Short 200w / Medium 400w / Long 800-1200w narratives. Numeric consistency C_1: |n-d| < 0.5·σ(d). Translation deferred to Phase 2.",
+      "depends_on": [
+        "L27",
+        "L28"
+      ],
+      "module": "gipre.scenarios.narratives",
+      "cluster_id": "E",
+      "cluster_title": "Global Scenario Engine + Customisation Matrix"
+    },
+    {
+      "id": "L30",
+      "cluster": "E",
+      "name": "Country Cascade",
+      "status": "active",
+      "summary": "p(y_C|data) = Σ_i Pr(S_i)·p(y_C|S_i,data) per country.",
+      "depends_on": [
+        "L27"
+      ],
+      "module": "gipre.synthesis.cascade",
+      "cluster_id": "E",
+      "cluster_title": "Global Scenario Engine + Customisation Matrix"
+    },
+    {
+      "id": "L31",
+      "cluster": "E",
+      "name": "Theme Cascade",
+      "status": "active",
+      "summary": "p(y_T|S_i) = ∫ a(y) · Π_C∈T p(y_C|S_i) · c_copula dy over themes.",
+      "depends_on": [
+        "L30"
+      ],
+      "module": "gipre.synthesis.cascade",
+      "cluster_id": "E",
+      "cluster_title": "Global Scenario Engine + Customisation Matrix"
+    },
+    {
+      "id": "L32",
+      "cluster": "E",
+      "name": "Consistency Enforcement",
+      "status": "active",
+      "summary": "Macro-baseline ε_macro=1e-6, NLI contradiction block threshold 0.85. Audit on cross-brief sample.",
+      "depends_on": [
+        "L30",
+        "L31"
+      ],
+      "module": "gipre.synthesis.consistency",
+      "cluster_id": "E",
+      "cluster_title": "Global Scenario Engine + Customisation Matrix"
+    },
+    {
+      "id": "L33",
+      "cluster": "E",
+      "name": "User Profile (200-field JSON)",
+      "status": "stub",
+      "summary": "User profile with lens weights, exposures, decision spec, brief preferences. STUB: deferred — first build serves Future Innovation AI Group founder profile only.",
+      "depends_on": [],
+      "module": "gipre.customisation.profile",
+      "cluster_id": "E",
+      "cluster_title": "Global Scenario Engine + Customisation Matrix"
+    },
+    {
+      "id": "L34",
+      "cluster": "E",
+      "name": "Personalised L21/L22 Re-run",
+      "status": "stub",
+      "summary": "Per-user decision and risk recomputation. STUB: deferred.",
+      "depends_on": [
+        "L21",
+        "L33"
+      ],
+      "cluster_id": "E",
+      "cluster_title": "Global Scenario Engine + Customisation Matrix"
+    },
+    {
+      "id": "L35",
+      "cluster": "E",
+      "name": "Persona-Conditioned LLM Brief Render",
+      "status": "stub",
+      "summary": "Per-user LLM persona for brief tone / detail. STUB: deferred.",
+      "depends_on": [
+        "L23",
+        "L33"
+      ],
+      "cluster_id": "E",
+      "cluster_title": "Global Scenario Engine + Customisation Matrix"
+    },
+    {
+      "id": "L36",
+      "cluster": "E",
+      "name": "Per-Tenant Isolation + DP Noise",
+      "status": "stub",
+      "summary": "Multi-tenant isolation with DP noise (ε=1.0, δ=1e-5). STUB: deferred — single-tenant MVP.",
+      "depends_on": [
+        "L33"
+      ],
+      "cluster_id": "E",
+      "cluster_title": "Global Scenario Engine + Customisation Matrix"
+    },
+    {
+      "id": "L37",
+      "cluster": "F",
+      "name": "Type-1 Profile Customisation",
+      "status": "stub",
+      "summary": "100-question LLM intake (90-120 min, 9 domains). STUB: deferred — first build assumes single founder profile.",
+      "cluster_id": "F",
+      "cluster_title": "Customisation tiers (v8.1)"
+    },
+    {
+      "id": "L38",
+      "cluster": "F",
+      "name": "Type-2 Scenario-Set Customisation",
+      "status": "stub",
+      "summary": "Customer Bayesian-net overlay; add/remove/expand/condition scenarios. STUB: deferred.",
+      "depends_on": [
+        "L25"
+      ],
+      "cluster_id": "F",
+      "cluster_title": "Customisation tiers (v8.1)"
+    },
+    {
+      "id": "L39",
+      "cluster": "F",
+      "name": "Type-3 Interrogative Q&A",
+      "status": "stub",
+      "summary": "Cross-cutting NL gateway routing to L13/L14/L18/L20/L22/L29. STUB: deferred.",
+      "cluster_id": "F",
+      "cluster_title": "Customisation tiers (v8.1)"
+    },
+    {
+      "id": "L40",
+      "cluster": "F",
+      "name": "Live Workspace",
+      "status": "stub",
+      "summary": "Stateful Redis+Postgres; WebSocket subscriptions; multi-user collab. STUB: deferred.",
+      "cluster_id": "F",
+      "cluster_title": "Customisation tiers (v8.1)"
+    },
+    {
+      "id": "L41",
+      "cluster": "G",
+      "name": "Polycrisis Cascade Engine",
+      "status": "stub",
+      "summary": "Cascade Institute Polycrisis Core Model v2.5 + Weimer-Jehle CIB. 11 subsystems, 500 expert judgements, 10^4-10^6 configurations. STUB: hand-curated cross-impact matrix in MVP.",
+      "depends_on": [
+        "L25"
+      ],
+      "module": "gipre.synthesis.polycrisis",
+      "cluster_id": "G",
+      "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+    },
+    {
+      "id": "L42",
+      "cluster": "G",
+      "name": "Adversarial-Reflexivity Auditor",
+      "status": "stub",
+      "summary": "Hansen-Sargent ambiguity, bounded-depth 2-3 reflexivity, Aghassi-Bertsimas robust game theory. STUB.",
+      "cluster_id": "G",
+      "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+    },
+    {
+      "id": "L43",
+      "cluster": "G",
+      "name": "EGTA + PSRO",
+      "status": "stub",
+      "summary": "Wellman-Tuyls-Greenwald JAIR 2025 + PSRO (Lanctot 2017). Best-response oracle via PPO/SAC. STUB.",
+      "cluster_id": "G",
+      "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+    },
+    {
+      "id": "L44",
+      "cluster": "G",
+      "name": "Horizon Scanner",
+      "status": "stub",
+      "summary": "BERTopic streaming + LDA fallback + IsolationForest novelty + BERTrend. Hiltunen Future Sign 3D. STUB.",
+      "cluster_id": "G",
+      "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+    },
+    {
+      "id": "L45",
+      "cluster": "G",
+      "name": "Causal Sensitivity",
+      "status": "stub",
+      "summary": "E-values + Rosenbaum Γ + Cinelli-Hazlett OVB. STUB.",
+      "cluster_id": "G",
+      "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+    },
+    {
+      "id": "L46",
+      "cluster": "G",
+      "name": "AI Capability Forecaster",
+      "status": "stub",
+      "summary": "METR Time Horizon (~7-month doubling) + Epoch AI compute (5×/yr frontier, 3×/yr efficiency) + FRI elicitation. STUB.",
+      "cluster_id": "G",
+      "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+    },
+    {
+      "id": "L47",
+      "cluster": "G",
+      "name": "Distributional Macro",
+      "status": "stub",
+      "summary": "WID DINA Guidelines 2025; Bilbiie-Monacelli-Perotti JME 2024 inequality-aware HANK. STUB.",
+      "cluster_id": "G",
+      "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+    },
+    {
+      "id": "L48",
+      "cluster": "G",
+      "name": "Network Resilience (legacy)",
+      "status": "stub",
+      "summary": "Sillmann Nat Comms 2025, ESRank, percolation. SUPERSEDED by L56 in v9.0. Transition layer.",
+      "cluster_id": "G",
+      "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+    },
+    {
+      "id": "L49",
+      "cluster": "G",
+      "name": "Behavioural / Cognitive Hierarchy",
+      "status": "stub",
+      "summary": "Camerer-Ho-Chong QJE 2004; Lin-Palfrey JET 2024. Prospect theory α≈0.88, λ≈2.25, γ≈0.61. STUB.",
+      "cluster_id": "G",
+      "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+    },
+    {
+      "id": "L50",
+      "cluster": "G",
+      "name": "Critical Bias Auditor",
+      "status": "active",
+      "summary": "Acharya 2014 multiplex; region-anchored sources (Carnegie ME, Brookings Africa, ISEAS, El Colegio de México, ORF, RIAC). One Bias Auditor agent in our 50-agent slice.",
+      "module": "gipre.governance.bias_auditor",
+      "cluster_id": "G",
+      "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+    },
+    {
+      "id": "L51",
+      "cluster": "G",
+      "name": "Reasoning-LLM Orchestrator",
+      "status": "active",
+      "summary": "Routing across reasoning models. In our Claude Code build: Haiku 4.5 routine / Sonnet 4.6 default / Opus 4.7 critical.",
+      "module": "gipre.orchestration.routing",
+      "cluster_id": "G",
+      "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+    },
+    {
+      "id": "L52",
+      "cluster": "G",
+      "name": "GraphRAG + Agentic RAG",
+      "status": "stub",
+      "summary": "Microsoft GraphRAG, LightRAG (Oct 2024, ~10× cheaper), HyDE, agentic RAG. STUB: simple keyword retrieval over OSINT cache in MVP.",
+      "module": "gipre.data.rag",
+      "cluster_id": "G",
+      "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+    },
+    {
+      "id": "L53",
+      "cluster": "G",
+      "name": "LLM Safety / Adversarial Defense",
+      "status": "active",
+      "summary": "OWASP LLM Top 10 v2025 (LLM01:2025), Anthropic spotlighting, honeypot canaries. Detection thresholds τ=0.7 review / 0.9 block.",
+      "module": "gipre.core.safety",
+      "cluster_id": "G",
+      "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+    },
+    {
+      "id": "L54",
+      "cluster": "G",
+      "name": "LLM-as-Judge / Multi-Model Jury",
+      "status": "active",
+      "summary": "CALM framework (Ye et al. ICLR 2025), 12-bias quantification. In our build, the Critic agent serves the jury role.",
+      "module": "gipre.governance.critic",
+      "cluster_id": "G",
+      "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+    },
+    {
+      "id": "L55",
+      "cluster": "G",
+      "name": "Domain Fine-Tuning + Multimodal",
+      "status": "stub",
+      "summary": "LoRA/QLoRA/DoRA on Llama-3.1-70B / Qwen2.5-72B; FINMME benchmark. STUB.",
+      "cluster_id": "G",
+      "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+    },
+    {
+      "id": "L56",
+      "cluster": "H",
+      "name": "Network/Graph Analytics",
+      "status": "stub",
+      "summary": "DomiRank (Nature Sci Rep 2025), ESRank, ChronoWave-GNN, EG-SAN, FiGraph (WWW 2025, 730K nodes/1M edges). TGNN with continual graph learning. STUB.",
+      "cluster_id": "H",
+      "cluster_title": "Adjacent fields (v9.0)"
+    },
+    {
+      "id": "L57",
+      "cluster": "H",
+      "name": "Multi-Modal GEOINT/OSINT",
+      "status": "stub",
+      "summary": "Prithvi-EO-2.0 (NASA-IBM, 1.3B), Clay (26M), SARATR-X, Aurora, GeoChat (CVPR 2024), Earth AI. AIS via Spire/Kpler/MarineTraffic. STUB.",
+      "cluster_id": "H",
+      "cluster_title": "Adjacent fields (v9.0)"
+    },
+    {
+      "id": "L58",
+      "cluster": "H",
+      "name": "Cyber Threat Intel",
+      "status": "stub",
+      "summary": "MITRE ATT&CK v18-v19, STIX 2.1/TAXII 2.1, Diamond Model, Lockheed Cyber Kill Chain, Microsoft Project Ire (0.98 precision Windows drivers, 26% recall). Tallinn Manual 3.0. STUB.",
+      "cluster_id": "H",
+      "cluster_title": "Adjacent fields (v9.0)"
+    },
+    {
+      "id": "L59",
+      "cluster": "H",
+      "name": "Provenance & Deception Defense",
+      "status": "stub",
+      "summary": "C2PA 2.1 (ISO/IEC 22144 2025), SynthID, Pangram (BFI 2025-116), DISARM Red+Blue, DECODE GNN (~12% accuracy improvement). STUB.",
+      "cluster_id": "H",
+      "cluster_title": "Adjacent fields (v9.0)"
+    },
+    {
+      "id": "L60",
+      "cluster": "H",
+      "name": "Sanctions & Weaponized Interdependence",
+      "status": "active",
+      "summary": "Farrell-Newman chokepoint ledger (USD-clearing, SWIFT, ASML EUV/DUV, Cadence/Synopsys/Mentor EDA, advanced packaging, REE refining, undersea cables, AWS/Azure/GCP regions). LLM-driven SDN parsing per Federal Reserve FEDS 2025-092.",
+      "module": "gipre.synthesis.sanctions",
+      "cluster_id": "H",
+      "cluster_title": "Adjacent fields (v9.0)"
+    },
+    {
+      "id": "L61",
+      "cluster": "H",
+      "name": "Energy / Critical Minerals / Trade",
+      "status": "stub",
+      "summary": "PyPSA-Earth/USA/DE; IEA WEO 2025 (AI data centre 485→950 TWh by 2030); USGS OFR 2025-1047 (samarium ~$4.5B); IMF Geoeconomic Fragmentation programme; Tinbergen + Anderson-van Wincoop PPML gravity. STUB.",
+      "cluster_id": "H",
+      "cluster_title": "Adjacent fields (v9.0)"
+    },
+    {
+      "id": "L62",
+      "cluster": "H",
+      "name": "Treaty / Legal",
+      "status": "stub",
+      "summary": "SaulLM-141B (Equall 2024), MultiLegalPile 689GB, LegalBench, LEXam 2025, VCLT Articles 31-32. STUB.",
+      "cluster_id": "H",
+      "cluster_title": "Adjacent fields (v9.0)"
+    },
+    {
+      "id": "L63",
+      "cluster": "H",
+      "name": "AI Capability/Safety Tracker",
+      "status": "stub",
+      "summary": "Anthropic RSP v3.0 (ASL-3 May 2025 activated for Claude Opus 4 — 2.53× bioweapon uplift), OpenAI Preparedness Framework, DeepMind Frontier Safety Framework, RAND RRA3797-1, FLI 2025 AI Safety Index. STUB.",
+      "cluster_id": "H",
+      "cluster_title": "Adjacent fields (v9.0)"
+    },
+    {
+      "id": "L64",
+      "cluster": "H",
+      "name": "Quantum / Biosec / Climate-Eng Tail Risk",
+      "status": "stub",
+      "summary": "Quantum (NIST PQC FIPS 203/204/205, Federal Reserve FEDS 2025-093 HNDL, Willow late 2024, Quantum Echoes Oct 2025, IBM Loon Nov 2025, Hanyuan-1 Oct 2025); Biosec (AlphaFold-3, ESM-3, Evo-2 40B Feb 2025, EO 14292 May 2025); Climate-Eng (Make Sunsets, NSF NCAR, UKRI £10.5M, Simons $50M); Pandemic (PandemicLLM Nature CompSci 2025, EpiLLM, BEACON). STUB.",
+      "cluster_id": "H",
+      "cluster_title": "Adjacent fields (v9.0)"
+    },
+    {
+      "id": "L65",
+      "cluster": "H",
+      "name": "Cultural / Bias Auditor",
+      "status": "stub",
+      "summary": "BorderLines (NAACL 2024, 251 territories × 49 langs), Tao PNAS Nexus 2024, Identity-Aware (arXiv:2510.18510), Khandelwal EMNLP 2025. STUB.",
+      "cluster_id": "H",
+      "cluster_title": "Adjacent fields (v9.0)"
+    }
+  ],
+  "n_total": 65,
+  "n_active": 28,
+  "by_cluster": {
+    "A": {
+      "id": "A",
+      "title": "Data ingestion",
+      "layer_range": "L1–L3",
+      "n_layers_total": 3,
+      "n_active": 2,
+      "layers": [
+        {
+          "id": "L01",
+          "cluster": "A",
+          "name": "Multi-source Ingest",
+          "status": "active",
+          "summary": "Ingest OSINT public data (GDELT, ACLED public, IMF WEO, World Bank WDI, UN COMTRADE, V-Dem, WID, USGS, IEA, Natural Earth, Wikidata) into local Parquet + provenance manifest hash.",
+          "depends_on": [],
+          "module": "gipre.data.ingest",
+          "contracts": {
+            "input": "source_descriptors_yaml",
+            "output": "raw_parquet_with_manifest_sha256"
+          },
+          "cluster_id": "A",
+          "cluster_title": "Data ingestion"
+        },
+        {
+          "id": "L02",
+          "cluster": "A",
+          "name": "Embedding Architecture",
+          "status": "stub",
+          "summary": "Three nested embedding architectures (Cohere Embed v3 multilingual / lens-tagged academic / agent-history); HNSW ANN retrieval. STUB: in this build we use only document-level fingerprints; full embeddings deferred.",
+          "depends_on": [
+            "L01"
+          ],
+          "module": "gipre.data.embeddings",
+          "contracts": {
+            "input": "documents_with_text",
+            "output": "embedding_vectors_1024d"
+          },
+          "cluster_id": "A",
+          "cluster_title": "Data ingestion"
+        },
+        {
+          "id": "L03",
+          "cluster": "A",
+          "name": "Lens-Tagged Document Corpus",
+          "status": "active",
+          "summary": "Tag retrieved documents with the 20 lenses based on keyword + claim-pattern signatures; threshold τ=0.50.",
+          "depends_on": [
+            "L01"
+          ],
+          "module": "gipre.data.lens_tagging",
+          "contracts": {
+            "input": "documents",
+            "output": "lens_tagged_documents"
+          },
+          "cluster_id": "A",
+          "cluster_title": "Data ingestion"
+        }
+      ]
+    },
+    "B": {
+      "id": "B",
+      "title": "Conformal + Bayesian core",
+      "layer_range": "L4–L12",
+      "n_layers_total": 9,
+      "n_active": 4,
+      "layers": [
+        {
+          "id": "L04",
+          "cluster": "B",
+          "name": "Lens Proposal Engine",
+          "status": "stub",
+          "summary": "Continuous monitoring of leading IR/PE journals; LDA + Newman modularity; admission probability ≥0.60. STUB: panel frozen at 20 for first build.",
+          "depends_on": [
+            "L03"
+          ],
+          "module": "gipre.lenses.proposal",
+          "contracts": {
+            "input": "journal_corpus",
+            "output": "candidate_lens_proposals"
+          },
+          "cluster_id": "B",
+          "cluster_title": "Conformal + Bayesian core"
+        },
+        {
+          "id": "L05",
+          "cluster": "B",
+          "name": "Lens-Conditional Reasoning",
+          "status": "active",
+          "summary": "P(θ | D, lens_i, q) = Claude(θ | framing_i, context_i(q,D), q). Each lens agent reads top-K=12 lens-relevant documents and produces structured analysis.",
+          "depends_on": [
+            "L03",
+            "L04"
+          ],
+          "module": "gipre.orchestration.lens_runner",
+          "contracts": {
+            "input": "question + actor_context + lens_id",
+            "output": "lens_conditional_assessment_json"
+          },
+          "cluster_id": "B",
+          "cluster_title": "Conformal + Bayesian core"
+        },
+        {
+          "id": "L06",
+          "cluster": "B",
+          "name": "Coupling Matrix (Causal Discovery)",
+          "status": "stub",
+          "summary": "Bagged-PCMCI+ over ~400 macro/political variables; 1,000 candidate DAGs; high-confidence edges at p̂≥0.80. STUB: in this build the coupling matrix is hand-curated from doc / lens-agent inputs.",
+          "depends_on": [
+            "L01"
+          ],
+          "module": "gipre.synthesis.coupling",
+          "contracts": {
+            "input": "time_series_panel",
+            "output": "dag_posterior_with_edge_marginals"
+          },
+          "cluster_id": "B",
+          "cluster_title": "Conformal + Bayesian core"
+        },
+        {
+          "id": "L07",
+          "cluster": "B",
+          "name": "Lens-Conditional Reweighting (BMA)",
+          "status": "active",
+          "summary": "BMA with hierarchical hyper-prior over lens weights. P(θ|D,q) = Σ_i w_i(q,D) · P(θ|D,lens_i,q).",
+          "depends_on": [
+            "L05"
+          ],
+          "module": "gipre.synthesis.bma",
+          "contracts": {
+            "input": "lens_conditional_assessments",
+            "output": "ensembled_posterior"
+          },
+          "cluster_id": "B",
+          "cluster_title": "Conformal + Bayesian core"
+        },
+        {
+          "id": "L08",
+          "cluster": "B",
+          "name": "Foundation-Model Forecast Ensemble",
+          "status": "stub",
+          "summary": "Chronos-2 + Moirai-MoE + TimesFM-2.5 ensemble via BPS + hierarchical Platt-Beta calibration. STUB: replaced in MVP with statistical baselines (ARIMA / linear / piecewise) on OSINT indicators.",
+          "depends_on": [
+            "L01"
+          ],
+          "module": "gipre.synthesis.ts_forecast",
+          "contracts": {
+            "input": "time_series",
+            "output": "forecast_density"
+          },
+          "cluster_id": "B",
+          "cluster_title": "Conformal + Bayesian core"
+        },
+        {
+          "id": "L09",
+          "cluster": "B",
+          "name": "Cross-Domain Specialists",
+          "status": "stub",
+          "summary": "Aurora (climate), AlphaFold-3 (biosec), Evo-2 (genomics), METR (AI capability), country-specific DSGE. STUB: deferred.",
+          "depends_on": [
+            "L01"
+          ],
+          "module": "gipre.synthesis.specialists",
+          "cluster_id": "B",
+          "cluster_title": "Conformal + Bayesian core"
+        },
+        {
+          "id": "L10",
+          "cluster": "B",
+          "name": "Agent-Based Sub-Module",
+          "status": "active",
+          "summary": "Top-tier strategic-deep agents (LLM-driven actor agents per Doc 6 Gap 2, replacing Cicero/DiL-piKL); mid-tier mean-field MARL cohorts (stub); bottom-tier GABM populations (stub).",
+          "depends_on": [
+            "L05",
+            "L07"
+          ],
+          "module": "gipre.orchestration.agent_runner",
+          "contracts": {
+            "input": "scenario_context + actor_persona",
+            "output": "actor_action_distribution"
+          },
+          "cluster_id": "B",
+          "cluster_title": "Conformal + Bayesian core"
+        },
+        {
+          "id": "L11",
+          "cluster": "B",
+          "name": "Scenario Generator",
+          "status": "active",
+          "summary": "BPS over scenario-space; cluster scenarios from agent rollouts; outputs joint posteriors per country (P(A,B,C)).",
+          "depends_on": [
+            "L10",
+            "L26"
+          ],
+          "module": "gipre.scenarios.generator",
+          "contracts": {
+            "input": "agent_rollouts + axis_definitions",
+            "output": "scenario_library_with_probabilities"
+          },
+          "cluster_id": "B",
+          "cluster_title": "Conformal + Bayesian core"
+        },
+        {
+          "id": "L12",
+          "cluster": "C",
+          "name": "Uncertainty Decomposition",
+          "status": "stub",
+          "summary": "Aleatoric + epistemic + lens-revision + coupling variance via Saltelli 2008 Sobol indices. STUB: only aleatoric+epistemic in MVP.",
+          "depends_on": [
+            "L11"
+          ],
+          "module": "gipre.core.uncertainty",
+          "cluster_id": "B",
+          "cluster_title": "Conformal + Bayesian core"
+        }
+      ]
+    },
+    "C": {
+      "id": "C",
+      "title": "Game theory + ABM",
+      "layer_range": "L13–L16",
+      "n_layers_total": 4,
+      "n_active": 3,
+      "layers": [
+        {
+          "id": "L13",
+          "cluster": "C",
+          "name": "Causal Discovery",
+          "status": "active",
+          "summary": "PCMCI+ / J-PCMCI+ / Bagged-PCMCI+ over indicator panels; α_PC = 0.01 with BH-FDR 5%.",
+          "depends_on": [
+            "L01"
+          ],
+          "module": "gipre.synthesis.causal_discovery",
+          "contracts": {
+            "input": "panel_time_series",
+            "output": "causal_dag"
+          },
+          "cluster_id": "C",
+          "cluster_title": "Game theory + ABM"
+        },
+        {
+          "id": "L14",
+          "cluster": "C",
+          "name": "Counterfactual Simulation",
+          "status": "active",
+          "summary": "Pearl do-calculus, twin-network (Balke-Pearl), Rosenbaum bounds + E-value sensitivity, N=10,000 MC draws.",
+          "depends_on": [
+            "L13"
+          ],
+          "module": "gipre.synthesis.counterfactual",
+          "cluster_id": "C",
+          "cluster_title": "Game theory + ABM"
+        },
+        {
+          "id": "L15",
+          "cluster": "C",
+          "name": "Strategic-Deep Agents (LLM-replaced)",
+          "status": "active",
+          "summary": "Per Doc 6 Gap 2, REPLACED Cicero/DiL-piKL with Claude-Sonnet/Opus actor agents using Richelieu pattern. KL-regularised against best-response oracle. λ_KL=0.03.",
+          "depends_on": [
+            "L10"
+          ],
+          "module": "gipre.orchestration.actor_agents",
+          "cluster_id": "C",
+          "cluster_title": "Game theory + ABM"
+        },
+        {
+          "id": "L16",
+          "cluster": "C",
+          "name": "Mean-Field MARL Cohorts",
+          "status": "stub",
+          "summary": "Yang-Wang ICML 2018 mean-field MARL for sub-state actors. STUB: deferred to Phase 2; first build uses LLM persona-aggregation.",
+          "depends_on": [
+            "L15"
+          ],
+          "module": "gipre.orchestration.mfmarl",
+          "cluster_id": "C",
+          "cluster_title": "Game theory + ABM"
+        }
+      ]
+    },
+    "D": {
+      "id": "D",
+      "title": "Auditor + decision-support layer",
+      "layer_range": "L17–L24",
+      "n_layers_total": 8,
+      "n_active": 6,
+      "layers": [
+        {
+          "id": "L17",
+          "cluster": "C",
+          "name": "Generative Agent-Based Model (GABM)",
+          "status": "stub",
+          "summary": "Park et al. 2024 architecture; 1,000-10,000 LLM agents per scenario. STUB: deferred — this build uses 50-agent slice without bottom-tier population.",
+          "depends_on": [
+            "L15",
+            "L16"
+          ],
+          "module": "gipre.orchestration.gabm",
+          "cluster_id": "D",
+          "cluster_title": "Auditor + decision-support layer"
+        },
+        {
+          "id": "L18",
+          "cluster": "C",
+          "name": "BPS Apex Aggregator",
+          "status": "active",
+          "summary": "McAlinn-West 2019; Adrian-Giannone-Luciani-West 2024. Linear synthesis over component forecasts with discount factor δ ∈ (0.9, 0.99).",
+          "depends_on": [
+            "L07",
+            "L11"
+          ],
+          "module": "gipre.synthesis.bps",
+          "cluster_id": "D",
+          "cluster_title": "Auditor + decision-support layer"
+        },
+        {
+          "id": "L19",
+          "cluster": "D",
+          "name": "Conformal Prediction",
+          "status": "active",
+          "summary": "Vovk-Gammerman-Shafer 2005, Lei et al. 2018; n_cal=500. Adaptive conformal (Gibbs-Candes 2021). Mondrian variants for stratified coverage.",
+          "depends_on": [
+            "L18"
+          ],
+          "module": "gipre.core.conformal",
+          "cluster_id": "D",
+          "cluster_title": "Auditor + decision-support layer"
+        },
+        {
+          "id": "L20",
+          "cluster": "D",
+          "name": "Falsification & Lens Reweighting",
+          "status": "active",
+          "summary": "Pre-registered prediction sets (≥30 events per lens per quarter). Bayes factors via bridge sampling. δ_lens=0.95 quarterly discount; ENL alarm threshold ENL<4.",
+          "depends_on": [
+            "L05",
+            "L19"
+          ],
+          "module": "gipre.core.falsification",
+          "cluster_id": "D",
+          "cluster_title": "Auditor + decision-support layer"
+        },
+        {
+          "id": "L21",
+          "cluster": "D",
+          "name": "Decision Layer",
+          "status": "active",
+          "summary": "Standard expected-loss minimisation; min-max regret (Hansen-Sargent 2008); Wasserstein-DRO (Mohajerin Esfahani-Kuhn 2018); CVaR-constrained; Pareto front for multi-objective.",
+          "depends_on": [
+            "L18"
+          ],
+          "module": "gipre.core.decision",
+          "cluster_id": "D",
+          "cluster_title": "Auditor + decision-support layer"
+        },
+        {
+          "id": "L22",
+          "cluster": "D",
+          "name": "Risk Aggregation (Copulas)",
+          "status": "stub",
+          "summary": "Sklar copula; vine copulas (R/C/D) per Aas et al. 2009. Clayton for sovereign-default, Gumbel for commodity-shock. STUB: simple correlation aggregation in MVP.",
+          "depends_on": [
+            "L21"
+          ],
+          "module": "gipre.core.copula",
+          "cluster_id": "D",
+          "cluster_title": "Auditor + decision-support layer"
+        },
+        {
+          "id": "L23",
+          "cluster": "D",
+          "name": "Communication / Brief Render",
+          "status": "active",
+          "summary": "ReportLab PDF (replacing WeasyPrint due to Windows GTK), Jinja2 HTML, python-docx DOCX. Charts via matplotlib SVG. Maps via cartopy + Natural Earth GeoJSON. Hallucination control: 0.5σ numeric tolerance, up to 3 regenerations.",
+          "depends_on": [
+            "L29"
+          ],
+          "module": "gipre.reports.pdf_builder",
+          "cluster_id": "D",
+          "cluster_title": "Auditor + decision-support layer"
+        },
+        {
+          "id": "L24",
+          "cluster": "D",
+          "name": "Audit & Provenance",
+          "status": "active",
+          "summary": "Manifest hash H_manifest = SHA256(data || code || params || env || output). Reproducibility ε=1e-6. Sigstore signing deferred; SHA256 ledger only in MVP.",
+          "depends_on": [],
+          "module": "gipre.core.audit",
+          "cluster_id": "D",
+          "cluster_title": "Auditor + decision-support layer"
+        }
+      ]
+    },
+    "E": {
+      "id": "E",
+      "title": "Global Scenario Engine + Customisation Matrix",
+      "layer_range": "L25–L36",
+      "n_layers_total": 12,
+      "n_active": 8,
+      "layers": [
+        {
+          "id": "L25",
+          "cluster": "E",
+          "name": "Master Scenario Library",
+          "status": "active",
+          "summary": "K≈80-120 scenarios partitioning Ω. Three axes: stress (5 levels), GP-config (8 archetypes), regional flashpoint set (2-4 of 12). Pruning Pr<0.005 via Wasserstein.",
+          "depends_on": [
+            "L11",
+            "L26"
+          ],
+          "module": "gipre.scenarios.library",
+          "cluster_id": "E",
+          "cluster_title": "Global Scenario Engine + Customisation Matrix"
+        },
+        {
+          "id": "L26",
+          "cluster": "E",
+          "name": "Game-Theoretic Equilibrium Solver (rQRE)",
+          "status": "active",
+          "summary": "Regularised QRE: Pr_QRE(S_i) ∝ exp{β · Σ_k w_k · U_k(S_i) - λ · KL(σ_i || π_BC)}. β default 1.0 (high-stakes 2.0); λ=0.1. Max-entropy equilibrium selection.",
+          "depends_on": [
+            "L15"
+          ],
+          "module": "gipre.scenarios.qre",
+          "cluster_id": "E",
+          "cluster_title": "Global Scenario Engine + Customisation Matrix"
+        },
+        {
+          "id": "L27",
+          "cluster": "E",
+          "name": "Scenario Probability Estimation",
+          "status": "active",
+          "summary": "Bayesian hierarchical Dirichlet posterior over scenarios. α_i = 0.5·Pr_QRE + 0.3·Pr_triggers + 0.2·π_analogue. CRPS alarm threshold 0.10.",
+          "depends_on": [
+            "L26"
+          ],
+          "module": "gipre.scenarios.probability",
+          "cluster_id": "E",
+          "cluster_title": "Global Scenario Engine + Customisation Matrix"
+        },
+        {
+          "id": "L28",
+          "cluster": "E",
+          "name": "Trigger Tracking",
+          "status": "active",
+          "summary": "Real-time Bayesian update Pr(S_i|τ,H) = Pr(τ|S_i)·Pr(S_i|H) / Σ. Drift alert thresholds 0.02 active / 0.005 baseline.",
+          "depends_on": [
+            "L27"
+          ],
+          "module": "gipre.scenarios.triggers",
+          "cluster_id": "E",
+          "cluster_title": "Global Scenario Engine + Customisation Matrix"
+        },
+        {
+          "id": "L29",
+          "cluster": "E",
+          "name": "Scenario Narrative Synthesis",
+          "status": "active",
+          "summary": "Short 200w / Medium 400w / Long 800-1200w narratives. Numeric consistency C_1: |n-d| < 0.5·σ(d). Translation deferred to Phase 2.",
+          "depends_on": [
+            "L27",
+            "L28"
+          ],
+          "module": "gipre.scenarios.narratives",
+          "cluster_id": "E",
+          "cluster_title": "Global Scenario Engine + Customisation Matrix"
+        },
+        {
+          "id": "L30",
+          "cluster": "E",
+          "name": "Country Cascade",
+          "status": "active",
+          "summary": "p(y_C|data) = Σ_i Pr(S_i)·p(y_C|S_i,data) per country.",
+          "depends_on": [
+            "L27"
+          ],
+          "module": "gipre.synthesis.cascade",
+          "cluster_id": "E",
+          "cluster_title": "Global Scenario Engine + Customisation Matrix"
+        },
+        {
+          "id": "L31",
+          "cluster": "E",
+          "name": "Theme Cascade",
+          "status": "active",
+          "summary": "p(y_T|S_i) = ∫ a(y) · Π_C∈T p(y_C|S_i) · c_copula dy over themes.",
+          "depends_on": [
+            "L30"
+          ],
+          "module": "gipre.synthesis.cascade",
+          "cluster_id": "E",
+          "cluster_title": "Global Scenario Engine + Customisation Matrix"
+        },
+        {
+          "id": "L32",
+          "cluster": "E",
+          "name": "Consistency Enforcement",
+          "status": "active",
+          "summary": "Macro-baseline ε_macro=1e-6, NLI contradiction block threshold 0.85. Audit on cross-brief sample.",
+          "depends_on": [
+            "L30",
+            "L31"
+          ],
+          "module": "gipre.synthesis.consistency",
+          "cluster_id": "E",
+          "cluster_title": "Global Scenario Engine + Customisation Matrix"
+        },
+        {
+          "id": "L33",
+          "cluster": "E",
+          "name": "User Profile (200-field JSON)",
+          "status": "stub",
+          "summary": "User profile with lens weights, exposures, decision spec, brief preferences. STUB: deferred — first build serves Future Innovation AI Group founder profile only.",
+          "depends_on": [],
+          "module": "gipre.customisation.profile",
+          "cluster_id": "E",
+          "cluster_title": "Global Scenario Engine + Customisation Matrix"
+        },
+        {
+          "id": "L34",
+          "cluster": "E",
+          "name": "Personalised L21/L22 Re-run",
+          "status": "stub",
+          "summary": "Per-user decision and risk recomputation. STUB: deferred.",
+          "depends_on": [
+            "L21",
+            "L33"
+          ],
+          "cluster_id": "E",
+          "cluster_title": "Global Scenario Engine + Customisation Matrix"
+        },
+        {
+          "id": "L35",
+          "cluster": "E",
+          "name": "Persona-Conditioned LLM Brief Render",
+          "status": "stub",
+          "summary": "Per-user LLM persona for brief tone / detail. STUB: deferred.",
+          "depends_on": [
+            "L23",
+            "L33"
+          ],
+          "cluster_id": "E",
+          "cluster_title": "Global Scenario Engine + Customisation Matrix"
+        },
+        {
+          "id": "L36",
+          "cluster": "E",
+          "name": "Per-Tenant Isolation + DP Noise",
+          "status": "stub",
+          "summary": "Multi-tenant isolation with DP noise (ε=1.0, δ=1e-5). STUB: deferred — single-tenant MVP.",
+          "depends_on": [
+            "L33"
+          ],
+          "cluster_id": "E",
+          "cluster_title": "Global Scenario Engine + Customisation Matrix"
+        }
+      ]
+    },
+    "F": {
+      "id": "F",
+      "title": "Customisation tiers (v8.1)",
+      "layer_range": "L37–L40",
+      "n_layers_total": 4,
+      "n_active": 0,
+      "layers": [
+        {
+          "id": "L37",
+          "cluster": "F",
+          "name": "Type-1 Profile Customisation",
+          "status": "stub",
+          "summary": "100-question LLM intake (90-120 min, 9 domains). STUB: deferred — first build assumes single founder profile.",
+          "cluster_id": "F",
+          "cluster_title": "Customisation tiers (v8.1)"
+        },
+        {
+          "id": "L38",
+          "cluster": "F",
+          "name": "Type-2 Scenario-Set Customisation",
+          "status": "stub",
+          "summary": "Customer Bayesian-net overlay; add/remove/expand/condition scenarios. STUB: deferred.",
+          "depends_on": [
+            "L25"
+          ],
+          "cluster_id": "F",
+          "cluster_title": "Customisation tiers (v8.1)"
+        },
+        {
+          "id": "L39",
+          "cluster": "F",
+          "name": "Type-3 Interrogative Q&A",
+          "status": "stub",
+          "summary": "Cross-cutting NL gateway routing to L13/L14/L18/L20/L22/L29. STUB: deferred.",
+          "cluster_id": "F",
+          "cluster_title": "Customisation tiers (v8.1)"
+        },
+        {
+          "id": "L40",
+          "cluster": "F",
+          "name": "Live Workspace",
+          "status": "stub",
+          "summary": "Stateful Redis+Postgres; WebSocket subscriptions; multi-user collab. STUB: deferred.",
+          "cluster_id": "F",
+          "cluster_title": "Customisation tiers (v8.1)"
+        }
+      ]
+    },
+    "G": {
+      "id": "G",
+      "title": "Polycrisis + Behavioural-LLM (v9.0)",
+      "layer_range": "L41–L55",
+      "n_layers_total": 15,
+      "n_active": 4,
+      "layers": [
+        {
+          "id": "L41",
+          "cluster": "G",
+          "name": "Polycrisis Cascade Engine",
+          "status": "stub",
+          "summary": "Cascade Institute Polycrisis Core Model v2.5 + Weimer-Jehle CIB. 11 subsystems, 500 expert judgements, 10^4-10^6 configurations. STUB: hand-curated cross-impact matrix in MVP.",
+          "depends_on": [
+            "L25"
+          ],
+          "module": "gipre.synthesis.polycrisis",
+          "cluster_id": "G",
+          "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+        },
+        {
+          "id": "L42",
+          "cluster": "G",
+          "name": "Adversarial-Reflexivity Auditor",
+          "status": "stub",
+          "summary": "Hansen-Sargent ambiguity, bounded-depth 2-3 reflexivity, Aghassi-Bertsimas robust game theory. STUB.",
+          "cluster_id": "G",
+          "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+        },
+        {
+          "id": "L43",
+          "cluster": "G",
+          "name": "EGTA + PSRO",
+          "status": "stub",
+          "summary": "Wellman-Tuyls-Greenwald JAIR 2025 + PSRO (Lanctot 2017). Best-response oracle via PPO/SAC. STUB.",
+          "cluster_id": "G",
+          "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+        },
+        {
+          "id": "L44",
+          "cluster": "G",
+          "name": "Horizon Scanner",
+          "status": "stub",
+          "summary": "BERTopic streaming + LDA fallback + IsolationForest novelty + BERTrend. Hiltunen Future Sign 3D. STUB.",
+          "cluster_id": "G",
+          "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+        },
+        {
+          "id": "L45",
+          "cluster": "G",
+          "name": "Causal Sensitivity",
+          "status": "stub",
+          "summary": "E-values + Rosenbaum Γ + Cinelli-Hazlett OVB. STUB.",
+          "cluster_id": "G",
+          "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+        },
+        {
+          "id": "L46",
+          "cluster": "G",
+          "name": "AI Capability Forecaster",
+          "status": "stub",
+          "summary": "METR Time Horizon (~7-month doubling) + Epoch AI compute (5×/yr frontier, 3×/yr efficiency) + FRI elicitation. STUB.",
+          "cluster_id": "G",
+          "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+        },
+        {
+          "id": "L47",
+          "cluster": "G",
+          "name": "Distributional Macro",
+          "status": "stub",
+          "summary": "WID DINA Guidelines 2025; Bilbiie-Monacelli-Perotti JME 2024 inequality-aware HANK. STUB.",
+          "cluster_id": "G",
+          "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+        },
+        {
+          "id": "L48",
+          "cluster": "G",
+          "name": "Network Resilience (legacy)",
+          "status": "stub",
+          "summary": "Sillmann Nat Comms 2025, ESRank, percolation. SUPERSEDED by L56 in v9.0. Transition layer.",
+          "cluster_id": "G",
+          "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+        },
+        {
+          "id": "L49",
+          "cluster": "G",
+          "name": "Behavioural / Cognitive Hierarchy",
+          "status": "stub",
+          "summary": "Camerer-Ho-Chong QJE 2004; Lin-Palfrey JET 2024. Prospect theory α≈0.88, λ≈2.25, γ≈0.61. STUB.",
+          "cluster_id": "G",
+          "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+        },
+        {
+          "id": "L50",
+          "cluster": "G",
+          "name": "Critical Bias Auditor",
+          "status": "active",
+          "summary": "Acharya 2014 multiplex; region-anchored sources (Carnegie ME, Brookings Africa, ISEAS, El Colegio de México, ORF, RIAC). One Bias Auditor agent in our 50-agent slice.",
+          "module": "gipre.governance.bias_auditor",
+          "cluster_id": "G",
+          "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+        },
+        {
+          "id": "L51",
+          "cluster": "G",
+          "name": "Reasoning-LLM Orchestrator",
+          "status": "active",
+          "summary": "Routing across reasoning models. In our Claude Code build: Haiku 4.5 routine / Sonnet 4.6 default / Opus 4.7 critical.",
+          "module": "gipre.orchestration.routing",
+          "cluster_id": "G",
+          "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+        },
+        {
+          "id": "L52",
+          "cluster": "G",
+          "name": "GraphRAG + Agentic RAG",
+          "status": "stub",
+          "summary": "Microsoft GraphRAG, LightRAG (Oct 2024, ~10× cheaper), HyDE, agentic RAG. STUB: simple keyword retrieval over OSINT cache in MVP.",
+          "module": "gipre.data.rag",
+          "cluster_id": "G",
+          "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+        },
+        {
+          "id": "L53",
+          "cluster": "G",
+          "name": "LLM Safety / Adversarial Defense",
+          "status": "active",
+          "summary": "OWASP LLM Top 10 v2025 (LLM01:2025), Anthropic spotlighting, honeypot canaries. Detection thresholds τ=0.7 review / 0.9 block.",
+          "module": "gipre.core.safety",
+          "cluster_id": "G",
+          "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+        },
+        {
+          "id": "L54",
+          "cluster": "G",
+          "name": "LLM-as-Judge / Multi-Model Jury",
+          "status": "active",
+          "summary": "CALM framework (Ye et al. ICLR 2025), 12-bias quantification. In our build, the Critic agent serves the jury role.",
+          "module": "gipre.governance.critic",
+          "cluster_id": "G",
+          "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+        },
+        {
+          "id": "L55",
+          "cluster": "G",
+          "name": "Domain Fine-Tuning + Multimodal",
+          "status": "stub",
+          "summary": "LoRA/QLoRA/DoRA on Llama-3.1-70B / Qwen2.5-72B; FINMME benchmark. STUB.",
+          "cluster_id": "G",
+          "cluster_title": "Polycrisis + Behavioural-LLM (v9.0)"
+        }
+      ]
+    },
+    "H": {
+      "id": "H",
+      "title": "Adjacent fields (v9.0)",
+      "layer_range": "L56–L65",
+      "n_layers_total": 10,
+      "n_active": 1,
+      "layers": [
+        {
+          "id": "L56",
+          "cluster": "H",
+          "name": "Network/Graph Analytics",
+          "status": "stub",
+          "summary": "DomiRank (Nature Sci Rep 2025), ESRank, ChronoWave-GNN, EG-SAN, FiGraph (WWW 2025, 730K nodes/1M edges). TGNN with continual graph learning. STUB.",
+          "cluster_id": "H",
+          "cluster_title": "Adjacent fields (v9.0)"
+        },
+        {
+          "id": "L57",
+          "cluster": "H",
+          "name": "Multi-Modal GEOINT/OSINT",
+          "status": "stub",
+          "summary": "Prithvi-EO-2.0 (NASA-IBM, 1.3B), Clay (26M), SARATR-X, Aurora, GeoChat (CVPR 2024), Earth AI. AIS via Spire/Kpler/MarineTraffic. STUB.",
+          "cluster_id": "H",
+          "cluster_title": "Adjacent fields (v9.0)"
+        },
+        {
+          "id": "L58",
+          "cluster": "H",
+          "name": "Cyber Threat Intel",
+          "status": "stub",
+          "summary": "MITRE ATT&CK v18-v19, STIX 2.1/TAXII 2.1, Diamond Model, Lockheed Cyber Kill Chain, Microsoft Project Ire (0.98 precision Windows drivers, 26% recall). Tallinn Manual 3.0. STUB.",
+          "cluster_id": "H",
+          "cluster_title": "Adjacent fields (v9.0)"
+        },
+        {
+          "id": "L59",
+          "cluster": "H",
+          "name": "Provenance & Deception Defense",
+          "status": "stub",
+          "summary": "C2PA 2.1 (ISO/IEC 22144 2025), SynthID, Pangram (BFI 2025-116), DISARM Red+Blue, DECODE GNN (~12% accuracy improvement). STUB.",
+          "cluster_id": "H",
+          "cluster_title": "Adjacent fields (v9.0)"
+        },
+        {
+          "id": "L60",
+          "cluster": "H",
+          "name": "Sanctions & Weaponized Interdependence",
+          "status": "active",
+          "summary": "Farrell-Newman chokepoint ledger (USD-clearing, SWIFT, ASML EUV/DUV, Cadence/Synopsys/Mentor EDA, advanced packaging, REE refining, undersea cables, AWS/Azure/GCP regions). LLM-driven SDN parsing per Federal Reserve FEDS 2025-092.",
+          "module": "gipre.synthesis.sanctions",
+          "cluster_id": "H",
+          "cluster_title": "Adjacent fields (v9.0)"
+        },
+        {
+          "id": "L61",
+          "cluster": "H",
+          "name": "Energy / Critical Minerals / Trade",
+          "status": "stub",
+          "summary": "PyPSA-Earth/USA/DE; IEA WEO 2025 (AI data centre 485→950 TWh by 2030); USGS OFR 2025-1047 (samarium ~$4.5B); IMF Geoeconomic Fragmentation programme; Tinbergen + Anderson-van Wincoop PPML gravity. STUB.",
+          "cluster_id": "H",
+          "cluster_title": "Adjacent fields (v9.0)"
+        },
+        {
+          "id": "L62",
+          "cluster": "H",
+          "name": "Treaty / Legal",
+          "status": "stub",
+          "summary": "SaulLM-141B (Equall 2024), MultiLegalPile 689GB, LegalBench, LEXam 2025, VCLT Articles 31-32. STUB.",
+          "cluster_id": "H",
+          "cluster_title": "Adjacent fields (v9.0)"
+        },
+        {
+          "id": "L63",
+          "cluster": "H",
+          "name": "AI Capability/Safety Tracker",
+          "status": "stub",
+          "summary": "Anthropic RSP v3.0 (ASL-3 May 2025 activated for Claude Opus 4 — 2.53× bioweapon uplift), OpenAI Preparedness Framework, DeepMind Frontier Safety Framework, RAND RRA3797-1, FLI 2025 AI Safety Index. STUB.",
+          "cluster_id": "H",
+          "cluster_title": "Adjacent fields (v9.0)"
+        },
+        {
+          "id": "L64",
+          "cluster": "H",
+          "name": "Quantum / Biosec / Climate-Eng Tail Risk",
+          "status": "stub",
+          "summary": "Quantum (NIST PQC FIPS 203/204/205, Federal Reserve FEDS 2025-093 HNDL, Willow late 2024, Quantum Echoes Oct 2025, IBM Loon Nov 2025, Hanyuan-1 Oct 2025); Biosec (AlphaFold-3, ESM-3, Evo-2 40B Feb 2025, EO 14292 May 2025); Climate-Eng (Make Sunsets, NSF NCAR, UKRI £10.5M, Simons $50M); Pandemic (PandemicLLM Nature CompSci 2025, EpiLLM, BEACON). STUB.",
+          "cluster_id": "H",
+          "cluster_title": "Adjacent fields (v9.0)"
+        },
+        {
+          "id": "L65",
+          "cluster": "H",
+          "name": "Cultural / Bias Auditor",
+          "status": "stub",
+          "summary": "BorderLines (NAACL 2024, 251 territories × 49 langs), Tao PNAS Nexus 2024, Identity-Aware (arXiv:2510.18510), Khandelwal EMNLP 2025. STUB.",
+          "cluster_id": "H",
+          "cluster_title": "Adjacent fields (v9.0)"
+        }
+      ]
+    }
+  },
+  "source_file": "config/layers.yaml"
+}
