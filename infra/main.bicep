@@ -67,7 +67,7 @@ resource keyVault 'Microsoft.KeyVault/vaults@2024-04-01-preview' = {
     enableRbacAuthorization: true
     enableSoftDelete: true
     softDeleteRetentionInDays: 7
-    enablePurgeProtection: false
+    // enablePurgeProtection omitted — Azure 2024-04 API rejects explicit `false` here.
     publicNetworkAccess: 'Enabled'
     accessPolicies: []
   }
@@ -173,6 +173,10 @@ resource cosmosContainer 'Microsoft.DocumentDB/databaseAccounts/sqlDatabases/con
 // ────────────────────────── Static Web App ──────────────────────────
 // Standard tier ($9/mo) — unlocks custom domains, staging environments per PR, auth.
 
+// Manual-deploy mode (no GitHub linkage at provision time — azd uploads the built
+// assets directly via the deployment token). To later link to GitHub for auto-deploy,
+// configure it in the Azure portal (Configuration → Source control) after first deploy,
+// or set provider/repositoryUrl/branch via `az staticwebapp` CLI.
 resource staticWebApp 'Microsoft.Web/staticSites@2024-04-01' = {
   name: '${abbrs.webStaticSites}${resourceToken}'
   location: location
@@ -182,17 +186,9 @@ resource staticWebApp 'Microsoft.Web/staticSites@2024-04-01' = {
     tier: 'Standard'
   }
   properties: {
-    repositoryUrl: ''
-    branch: 'main'
-    buildProperties: {
-      appLocation: '/platform'
-      apiLocation: '/platform/api'
-      outputLocation: 'out'
-      appBuildCommand: 'npm install && npm run build'
-    }
     stagingEnvironmentPolicy: 'Enabled'
     allowConfigFileUpdates: true
-    provider: 'GitHub'
+    provider: 'None'
     enterpriseGradeCdnStatus: 'Disabled'
   }
 }
