@@ -27,32 +27,33 @@ export default function Home() {
           <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl">
             <span className="text-foreground/90 font-medium">GIPRE</span> — Geopolitical Intelligence and
             Probabilistic Reasoning Engine — is a 65-layer production architecture for geopolitical and
-            geo-economic forecasting. This portal is the transparent face of the build:{" "}
-            <span className="text-foreground/90">methodology, agent specs, governance audits, and live
-            progress</span>, generated directly from the source repository.
+            geo-economic forecasting. This portal previews the{" "}
+            <span className="text-foreground/90">client deliverables</span>: master scenario library,
+            country / region / theme / crisis briefs, the methodology behind them, and the
+            governance audits that gate every output before publication.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              href="/methodology"
+              href="/scenarios"
               className="inline-flex items-center gap-2 rounded-lg bg-foreground text-background px-4 py-2 text-sm font-medium hover:opacity-90 transition-opacity"
             >
-              Read the methodology
+              View 100 master scenarios
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              href="/governance"
+              href="/sample-briefs"
               className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-sm font-medium text-foreground hover:bg-muted transition-colors"
             >
-              <ShieldCheck className="h-4 w-4" />
-              See the governance audit
+              <FileText className="h-4 w-4" />
+              Read a sample brief
             </Link>
-            <a
-              href="https://www.geopoliticalgps.com"
+            <Link
+              href="/methodology"
               className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              <Activity className="h-4 w-4" />
-              v5 production at geopoliticalgps.com
-            </a>
+              <BookOpen className="h-4 w-4" />
+              Methodology
+            </Link>
           </div>
         </div>
       </section>

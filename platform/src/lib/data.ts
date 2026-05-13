@@ -156,9 +156,34 @@ export interface MethodologyData {
 // Scenarios + Changelog + Outputs (loose; rarely accessed)
 // ─────────────────────────────────────────────────────────────────────────────
 
+export interface ScenarioKey {
+  stress_level: number;
+  gp_archetype: string;
+  flashpoints: string[];
+}
+
+export interface Scenario {
+  id: string;
+  key: ScenarioKey;
+  title: string;
+  short_narrative: string;
+  medium_narrative: string;
+  long_narrative: string;
+  probability: number;
+  ci_low: number;
+  ci_high: number;
+  qre_payoff_table: Record<string, unknown>;
+  triggers: string[];
+  country_impacts: Record<string, unknown>;
+  theme_impacts: Record<string, unknown>;
+  historical_analogues: string[];
+  horizon_priority: string[];
+}
+
 export interface ScenariosData {
-  scenarios?: unknown[];
-  [k: string]: unknown;
+  scenarios: Scenario[];
+  n_total: number;
+  source_file?: string;
 }
 
 export interface ChangelogEntry {
