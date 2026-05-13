@@ -563,8 +563,243 @@
     "run_id": "bias-audit-2026-05-12",
     "synthesis_md": "",
     "synthesis_md_full_length": 0,
-    "n_artifacts": 0,
-    "summaries": [],
+    "n_artifacts": 26,
+    "summaries": [
+      {
+        "id": "AG-ARE",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 63.88,
+        "score_stddev": 11.7,
+        "n_findings": 24,
+        "n_critical": 1
+      },
+      {
+        "id": "AG-ARG",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 63.62,
+        "score_stddev": 10.88,
+        "n_findings": 21,
+        "n_critical": 0
+      },
+      {
+        "id": "AG-ASEAN",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 66.41,
+        "score_stddev": 7.92,
+        "n_findings": 20,
+        "n_critical": 2
+      },
+      {
+        "id": "AG-AUS",
+        "target_class": "actor",
+        "gate": "needs_substantive_revision",
+        "score_mean": 49.52,
+        "score_stddev": 5.77,
+        "n_findings": 12,
+        "n_critical": 4
+      },
+      {
+        "id": "AG-BRA",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 68.21,
+        "score_stddev": 6.8,
+        "n_findings": 24,
+        "n_critical": 2
+      },
+      {
+        "id": "AG-BRICS",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 64.8,
+        "score_stddev": 4.83,
+        "n_findings": 21,
+        "n_critical": 0
+      },
+      {
+        "id": "AG-CAN",
+        "target_class": "actor",
+        "gate": "needs_substantive_revision",
+        "score_mean": 59.88,
+        "score_stddev": 11.89,
+        "n_findings": 29,
+        "n_critical": 8
+      },
+      {
+        "id": "AG-CHN",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 61.49,
+        "score_stddev": 8.01,
+        "n_findings": 27,
+        "n_critical": 1
+      },
+      {
+        "id": "AG-DEU",
+        "target_class": "actor",
+        "gate": "needs_substantive_revision",
+        "score_mean": 49.69,
+        "score_stddev": 9.04,
+        "n_findings": 15,
+        "n_critical": 1
+      },
+      {
+        "id": "AG-EGY",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 67.31,
+        "score_stddev": 6.88,
+        "n_findings": 22,
+        "n_critical": 0
+      },
+      {
+        "id": "AG-EUR",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 60.69,
+        "score_stddev": 8.97,
+        "n_findings": 26,
+        "n_critical": 3
+      },
+      {
+        "id": "AG-FRA",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 68.9,
+        "score_stddev": 7.09,
+        "n_findings": 26,
+        "n_critical": 0
+      },
+      {
+        "id": "AG-GBR",
+        "target_class": "actor",
+        "gate": "needs_substantive_revision",
+        "score_mean": 49.1,
+        "score_stddev": 11.79,
+        "n_findings": 15,
+        "n_critical": 2
+      },
+      {
+        "id": "AG-IDN",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 66.16,
+        "score_stddev": 7.07,
+        "n_findings": 15,
+        "n_critical": 1
+      },
+      {
+        "id": "AG-IND",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 67.49,
+        "score_stddev": 6.09,
+        "n_findings": 27,
+        "n_critical": 2
+      },
+      {
+        "id": "AG-IRN",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 64.67,
+        "score_stddev": 10.02,
+        "n_findings": 27,
+        "n_critical": 2
+      },
+      {
+        "id": "AG-ISR",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 60.52,
+        "score_stddev": 7.71,
+        "n_findings": 22,
+        "n_critical": 3
+      },
+      {
+        "id": "AG-JPN",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 61.99,
+        "score_stddev": 9.96,
+        "n_findings": 21,
+        "n_critical": 5
+      },
+      {
+        "id": "AG-KOR",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 62.66,
+        "score_stddev": 10.11,
+        "n_findings": 16,
+        "n_critical": 2
+      },
+      {
+        "id": "AG-L01",
+        "target_class": "lens",
+        "gate": "needs_substantive_revision",
+        "score_mean": 55.94,
+        "score_stddev": 16.11,
+        "n_findings": 27,
+        "n_critical": 11
+      },
+      {
+        "id": "AG-L05",
+        "target_class": "lens",
+        "gate": "needs_substantive_revision",
+        "score_mean": 48.1,
+        "score_stddev": 10.35,
+        "n_findings": 17,
+        "n_critical": 2
+      },
+      {
+        "id": "AG-L17",
+        "target_class": "lens",
+        "gate": "revise",
+        "score_mean": 70.84,
+        "score_stddev": 7.15,
+        "n_findings": 27,
+        "n_critical": 0
+      },
+      {
+        "id": "AG-L18",
+        "target_class": "lens",
+        "gate": "revise",
+        "score_mean": 68.92,
+        "score_stddev": 8.06,
+        "n_findings": 20,
+        "n_critical": 0
+      },
+      {
+        "id": "AG-L19",
+        "target_class": "lens",
+        "gate": "revise",
+        "score_mean": 73.85,
+        "score_stddev": 10.68,
+        "n_findings": 26,
+        "n_critical": 0
+      },
+      {
+        "id": "AG-MEX",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 63.02,
+        "score_stddev": 6.95,
+        "n_findings": 28,
+        "n_critical": 0
+      },
+      {
+        "id": "AG-NGA",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 68.52,
+        "score_stddev": 6.94,
+        "n_findings": 26,
+        "n_critical": 0
+      }
+    ],
     "available": false,
     "structural_metrics_csv_exists": true
   },
