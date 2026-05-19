@@ -2,14 +2,14 @@
   "version": "9.0.x",
   "phases_total": 16,
   "steps_total": 91,
-  "steps_done": 10,
-  "steps_in_progress": 2,
+  "steps_done": 11,
+  "steps_in_progress": 1,
   "steps_pending": 79,
-  "completion_pct": 11.0,
+  "completion_pct": 12.1,
   "layers_total": 65,
   "layers_active": 28,
   "agents_total": 95,
   "agents_target": 500,
   "pdf_cycles": 8,
-  "generated_utc": "2026-05-13T14:01:46+00:00"
+  "generated_utc": "2026-05-19T16:19:32+00:00"
 }

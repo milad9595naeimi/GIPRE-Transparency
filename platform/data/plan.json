@@ -670,8 +670,8 @@
       "id": "N",
       "title": "Governance agent execution",
       "n_steps": 5,
-      "n_done": 1,
-      "n_in_progress": 1,
+      "n_done": 2,
+      "n_in_progress": 0,
       "n_pending": 3,
       "steps": [
         {
@@ -683,8 +683,8 @@
         {
           "id": "N02",
           "title": "Run Bias Auditor (L50/L65) on current outputs",
-          "status_cell": "🟡 2026-05-12",
-          "status": "in_progress"
+          "status_cell": "✅ 2026-05-19",
+          "status": "done"
         },
         {
           "id": "N03",
@@ -708,9 +708,9 @@
     }
   ],
   "total_steps": 91,
-  "total_done": 10,
-  "total_in_progress": 2,
+  "total_done": 11,
+  "total_in_progress": 1,
   "total_pending": 79,
   "source_file": "implementation/IMPLEMENTATION_PLAN.md",
-  "generated_utc": "2026-05-13T14:01:45+00:00"
+  "generated_utc": "2026-05-19T16:19:30+00:00"
 }
