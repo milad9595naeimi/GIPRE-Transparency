@@ -91,6 +91,61 @@ export function Footer() {
             </a>
           </span>
         </div>
+        {buildStateData.engine_commit_short && (
+          <div className="container text-[11px] text-muted-foreground/60 mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono">
+            <span title="Engine repo HEAD commit at the time this data was generated.">
+              <span className="text-muted-foreground/80">engine</span>{" "}
+              <span className="text-foreground/70 tabular-nums">
+                {buildStateData.engine_commit_short}
+              </span>
+              {buildStateData.engine_branch && (
+                <>
+                  {" "}
+                  <span className="text-muted-foreground/50">on</span>{" "}
+                  <span className="text-foreground/60">{buildStateData.engine_branch}</span>
+                </>
+              )}
+            </span>
+            {buildStateData.n01_run_id && (
+              <span title="N01 Critic / Multi-Model Jury run — independent multi-vendor governance audit.">
+                <span className="text-muted-foreground/80">·</span>{" "}
+                <span className="text-muted-foreground/80">N01</span>{" "}
+                <span className="text-foreground/60">{buildStateData.n01_run_id}</span>
+                {typeof buildStateData.n01_total_findings === "number" && (
+                  <>
+                    {" "}
+                    <span className="text-muted-foreground/50">
+                      ({buildStateData.n01_total_findings.toLocaleString()} findings
+                      {typeof buildStateData.n01_total_usd === "number" &&
+                        ` · $${buildStateData.n01_total_usd.toFixed(0)}`}
+                      )
+                    </span>
+                  </>
+                )}
+              </span>
+            )}
+            {buildStateData.n02_run_id && (
+              <span title="N02 Bias Auditor (L50 + L65) run — cross-language cultural-bias audit on the same corpus N01 audited.">
+                <span className="text-muted-foreground/80">·</span>{" "}
+                <span className="text-muted-foreground/80">N02</span>{" "}
+                <span className="text-foreground/60">{buildStateData.n02_run_id}</span>
+                {buildStateData.n02_config_hash && (
+                  <>
+                    {" "}
+                    <span className="text-muted-foreground/50">
+                      (cfg {buildStateData.n02_config_hash}
+                      {buildStateData.n02_corpus_hash &&
+                        ` · corpus ${buildStateData.n02_corpus_hash}`}
+                      {typeof buildStateData.n02_total_usd === "number" &&
+                        ` · $${buildStateData.n02_total_usd.toFixed(0)}`}
+                      )
+                    </span>
+                  </>
+                )}
+              </span>
+            )}
+          </div>
+        )}
       </div>
     </footer>
   );

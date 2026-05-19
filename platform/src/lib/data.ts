@@ -57,6 +57,26 @@ export interface BuildStateData {
   agents_target: number;
   pdf_cycles: number;
   generated_utc: string;
+  // Build provenance — emitted by scripts/build_site_data.py from engine git HEAD
+  // and the N01/N02 manifest.json files. All optional so stale JSON keeps building.
+  engine_commit_full?: string;
+  engine_commit_short?: string;
+  engine_commit_time_utc?: string;
+  engine_branch?: string;
+  n01_run_id?: string;
+  n01_started_utc?: string;
+  n01_n_artifacts?: number;
+  n01_n_judges?: number;
+  n01_total_usd?: number;
+  n01_total_findings?: number;
+  n01_config_hash?: string;
+  n02_run_id?: string;
+  n02_started_utc?: string;
+  n02_n_artifacts?: number;
+  n02_n_judges?: number;
+  n02_total_usd?: number;
+  n02_config_hash?: string;
+  n02_corpus_hash?: string;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
