@@ -683,7 +683,7 @@
         {
           "id": "N02",
           "title": "Run Bias Auditor (L50/L65) on current outputs",
-          "status_cell": "✅ 2026-05-19",
+          "status_cell": "✅ 2026-05-19 🌐 live",
           "status": "done"
         },
         {
@@ -712,5 +712,5 @@
   "total_in_progress": 1,
   "total_pending": 79,
   "source_file": "implementation/IMPLEMENTATION_PLAN.md",
-  "generated_utc": "2026-05-19T18:14:02+00:00"
+  "generated_utc": "2026-05-19T18:24:09+00:00"
 }
