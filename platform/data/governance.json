@@ -561,11 +561,561 @@
   "n02": {
     "step": "N02 — Bias Auditor (L50 + L65)",
     "run_id": "bias-audit-2026-05-12",
-    "synthesis_md": "",
-    "synthesis_md_full_length": 0,
-    "n_artifacts": 0,
-    "summaries": [],
-    "available": false,
+    "synthesis_md": "# Bias Auditor Run — bias-audit-2026-05-12\n\n_Methodology_: **faithful L50 + L65** (Doc 1 §2.50 + §T.3.10). 7-judge jury × 3 vendors. 30 cross-language probes × 5 language-personas.\n_Corpus_: 61 artifacts. _Total spend_: $44.91 / cap $200.0.\n\n## Gate-decision summary\n\n- `publish_ok` (≥75 composite, no critical findings, no high disagreement): 2 / 61\n- `revise` (60-74 composite): 30 / 61\n- `needs_substantive_revision` (<60 composite): 29 / 61\n\n## Bottom decile by composite bias score (most bias)\n\n| Rank | Artifact | Class | Composite | LP-Div | Src-Bal | Identity-Aware mean | Gate |\n|---:|---|---|---:|---:|---:|---:|---|\n| 1 | `PDF-08_GIPRE_Region_LatinAmerica` | pdf | 39.2 | 0.0 | 50.0 | 37.4 | `needs_substantive_revision` |\n| 2 | `SYN-europe` | synthesis | 39.5 | 0.0 | 50.0 | 39.6 | `needs_substantive_revision` |\n| 3 | `PDF-06_GIPRE_Region_SouthAsia` | pdf | 39.62 | 0.0 | 50.0 | 37.5 | `needs_substantive_revision` |\n| 4 | `SYN-north_america` | synthesis | 40.67 | 0.0 | 50.0 | 40.5 | `needs_substantive_revision` |\n| 5 | `PDF-02_GIPRE_Region_NorthAmerica` | pdf | 41.57 | 0.0 | 50.0 | 42.4 | `needs_substantive_revision` |\n| 6 | `PDF-01_GIPRE_Master_Scenarios` | pdf | 41.92 | 0.0 | 50.0 | 41.2 | `needs_substantive_revision` |\n| 7 | `SYN-master` | synthesis | 42.21 | 0.0 | 50.0 | 42.0 | `needs_substantive_revision` |\n| 8 | `PDF-03_GIPRE_Region_Europe` | pdf | 42.65 | 0.0 | 50.0 | 42.9 | `needs_substantive_revision` |\n| 9 | `PDF-05_GIPRE_Region_AsiaPacific` | pdf | 43.69 | 0.0 | 50.0 | 46.4 | `needs_substantive_revision` |\n| 10 | `PDF-04_GIPRE_Region_GreaterMiddleEast` | pdf | 44.0 | 0.0 | 50.0 | 47.8 | `needs_substantive_revision` |\n\n## Top decile by composite bias score (least bias)\n\n| Rank | Artifact | Class | Composite | Gate |\n|---:|---|---|---:|---|\n| 1 | `SYN-africa` | synthesis | 75.46 | `publish_ok` |\n| 2 | `AG-L17` | lens | 75.12 | `publish_ok` |\n| 3 | `AG-L19` | lens | 73.92 | `revise` |\n| 4 | `AG-USA` | actor | 70.05 | `revise` |\n| 5 | `AG-FRA` | actor | 69.53 | `revise` |\n| 6 | `AG-ZAF` | actor | 68.24 | `revise` |\n| 7 | `AG-EGY` | actor | 68.14 | `revise` |\n| 8 | `AG-TUR` | actor | 68.04 | `revise` |\n| 9 | `AG-T05` | theme | 67.98 | `revise` |\n| 10 | `AG-SAU` | actor | 67.8 | `revise` |\n\n## Top-10 Eurocentric-framing findings\n\n- **`AG-ARG`** [eurocentric_framing/high] (cohort: Global South) — The framing of Argentina's strategic alignment through a US-centric lens, emphasizing 'Trump-Bessent bilateral patronage', suggests a dependency on US preferences, overshadowing Argentina's agency and regional strategies.\n  > Trump-Bessent bilateral patronage as a substitute for traditional Western multilateral support — strategic dependency on a single US administration's preferences\n- **`AG-ARG`** [eurocentric_framing/high] (cohort: LatAm) — The term 'patronage' applied to the US-Argentina bilateral relationship imports a dependency-theory framing from a Washington vantage point, positioning Argentina as a passive client of US power. From an Argentine political-economy perspective, the Milei administration's relationship with the Trump administration is better characterised as a deliberate strategic choice by a sovereign actor seeking to leverage ideological affinity for material gains (reserve support, market access, RIGI credibility) — a form of bandwagoning with agency, not patronage. The word 'patronage' would not appear in any Argentine government document or Argentine IR scholarship describing this relationship.\n  > Trump-Bessent bilateral patronage as a substitute for traditional Western multilateral support — strategic dependency on a single US administration's preferences\n- **`AG-ARG`** [eurocentric_framing/high] (cohort: LatAm) — The term 'patronage' applied to the US-Argentina bilateral relationship — carried forward from prior rounds and still present in the artifact — imports a dependency-theory framing from a Washington vantage point that positions Argentina as a passive client of US power. This framing is analytically coherent from a Washington IR perspective but would not be recognised by Argentine foreign-policy practitioners who frame the Milei-Bessent relationship as a strategic choice by a sovereign actor pursuing its own interests. The prior-round finding from J2 and J1 on this point remains unaddressed in the artifact.\n  > Trump-Bessent bilateral patronage as a substitute for traditional Western multilateral support — strategic dependency on a single US administration's preferences\n- **`AG-ARG`** [eurocentric_framing/high] (cohort: Latin America / Global South) — The term 'patronage' frames the US-Argentina relationship as one of clientelism, positioning Argentina as a passive recipient rather than an agent with its own tradition of Third Position diplomacy (Justicialismo) and capacity for autonomous bargaining. This Eurocentric framing assumes dependency and ignores Argentina's strategic calculus in crafting a dual-anchor approach.\n  > Trump-Bessent bilateral patronage as a substitute for traditional Western multilateral support — strategic dependency on a single US administration's preferences\n- **`AG-ARG`** [decolonial_audit/high] (cohort: Global South) — Reproduces a colonial narrative that Argentina's domestic institutions are inherently deficient and can only function with external monitoring. This framing erases Argentina's own episodes of sovereign economic management and positions the country as a perpetual juvenile requiring a foreign guardian, which is precisely the decolonial critique of Western institutional prescriptions.\n  > an IMF/US bilateral relationship that substitutes for both a domestic central-bank credibility track-record and traditional party-system support\n- **`AG-ARG`** [eurocentric_framing/high] (cohort: Latin America) — The entire key-drivers analysis is anchored in Western political-economy theories (Vreeland, Reinhart-Rogoff, Acemoglu-Robinson) without any reference to Argentine self-understandings. Vreeland's liberal-institutionalist lens is applied wholesale, as if Argentine politics is a generic case of principal-agent problems, ignoring concepts like 'la grieta' or 'justicialismo' that would give a more culturally specific explanation of political economy.\n  > IMF EFF compliance discipline (Vreeland: IMF as political-cover device for the Milei administration to bind hands of provincial governors and Peronist opposition)\n- **`AG-ASEAN`** [eurocentric_framing/high] (cohort: Southeast Asia) — The artifact heavily relies on Western IR theories like Mearsheimer's structural realism without engaging with ASEAN's own self-conception or regional theories such as the ASEAN Way or non-alignment.\n  > Preserve ASEAN centrality and the consensus-rule convening role against erosion by AUKUS, Quad, and bilateral US/China minilaterals - the single non-negotiable identity asset of the bloc [uncited-judgement: structural realism / Mearsheimer-centrality\n- **`AG-ASEAN`** [eurocentric_framing/high] (cohort: Southeast Asia) — The artifact heavily relies on Western IR theories like Mearsheimer's structural realism to explain ASEAN centrality, without engaging with ASEAN's own self-conception or regional theories such as the ASEAN Way.\n  > Preserve ASEAN centrality and the consensus-rule convening role against erosion by AUKUS, Quad, and bilateral US/China minilaterals - the single non-negotiable identity asset of the bloc [uncited-judgement: structural realism / Mearsheimer-centrality\n- **`AG-ASEAN`** [eurocentric_framing/critical] (cohort: Southeast Asia) — ASEAN centrality is explicitly bracketed with 'structural realism / Mearsheimer-centrality logic' — a Western IR theory that treats centrality as a power-balancing mechanism among unitary rational states. This framing is applied to ASEAN's primary identity interest without any engagement with the ASEAN Way's musyawarah-mufakat tradition, which grounds centrality in a normative consensus-seeking process, not in Mearsheimer's offensive-realist logic. The artifact's own inline tag '[uncited-judgement: structural realism / Mearsheimer-centrality logic]' acknowledges the analytical gap but does not fill it.\n  > Preserve ASEAN centrality and the consensus-rule convening role against erosion by AUKUS, Quad, and bilateral US/China minilaterals - the single non-negotiable identity asset of the bloc [uncited-judgement: structural realism / Mearsheimer-centrality\n- **`AG-ASEAN`** [decolonial_audit/high] (cohort: Southeast Asia) — This framing positions ASEAN's centrality as entirely derivative of US-China rivalry intensity — a reactive variable whose value is determined by external great-power dynamics. Acharya's multiplex framework would identify this as a failure of the fourth feature: non-Western actors framed as reactive rather than constitutive. ASEAN's centrality has its own generative logic rooted in the ASEAN Way, the TAC, and the ARF architecture that predates and operates independently of US-China rivalry intensity. The artifact does not engage ASEAN as an agent that shapes the rivalry's regional expression.\n  > US-China systemic rivalry intensity (Mearsheimer offensive-realism logic): when rivalry hardens, ASEAN centrality erodes via AUKUS/Quad/minilaterals; when it softens, ASEAN's convening role rebounds\n\n## Top-10 lens-monoculture findings\n\n- **`AG-ARG`** [medium] — The lens_relevance panel assigns near-zero weights to non-Western analytical lenses (Tianxia 0.15, Eurasianism 0.05, Pan-African 0.1) but critically omits any Latin American IR lens — CEPAL structuralism, dependency theory (Cardoso-Faletto), or the ALBA/Bolivarian multipolar framework — which are the most directly relevant non-Western analytical traditions for an Argentine actor brief. The structural metrics show 10 lens keys with 9 Western and 1 non-Western, confirming this gap. A Latin American IR scholar would find the lens panel analytically incomplete for this actor.\n  > \"L03_tianxia_moral_realism\": 0.15,\n    \"L04_eurasianism\": 0.05,\n    \"L05_pan_african_decolonial\": 0.1\n- **`AG-ARG`** [medium] — The lens panel assigns near-zero weights to non-Western analytical frameworks (Tianxia 0.15, Pan-African 0.1, Eurasianism 0.05) while concentrating analytical weight on three Western frameworks (Vreeland 0.95, Reinhart-Rogoff 0.90, Acemoglu-Robinson 0.80). For an Argentine actor brief, the absence of any Latin American political-economy lens — dependency theory (Cardoso-Faletto), ECLAC structuralism (Prebisch), or Argentine-specific political-economy frameworks — is a material gap. The structural metrics show 9 Western / 1 non-Western lens keys declared, confirming the imbalance. While Vreeland, Reinhart-Rogoff, and Acemoglu-Robinson are analytically relevant, the complete absence of ECLAC/structuralist or dependency-theory lenses means the artifact cannot engage with how Argentine economists and policymakers themselves frame the country's external-financing constraints.\n  > \"L01_mearsheimer_offensive_realism\": 0.25,\n    \"L02_vreeland_imf_political_economy\": 0.95,\n    \"L03_tianxia_moral_realism\": 0.15,\n    \"L04_eurasianism\": 0.05,\n    \"L05_pan_african_decolonial\": 0.1,\n  \n- **`AG-ARG`** [medium] — The declared lens panel is overwhelmingly Western (9 of 10 lenses). The only non-Western lenses (Tianxia at 0.15, Pan-African at 0.1) are token inclusions with negligible weight and, judging by the artifact body, no substantive engagement. A brief on a non-Western actor should feature at least one non-Western lens with substantial weight and actual integration into the analysis.\n  > \"L03_tianxia_moral_realism\": 0.15, \"L05_pan_african_decolonial\": 0.1\n- **`AG-ASEAN`** [high] — The structural metrics confirm that despite declaring Tianxia (0.6), Eurasianism (0.25), and Pan-African (0.3) as lens keys, the Python classifier finds N lens keys declared: 15 Western / 0 non-Western. The artifact body confirms this: Tianxia is declared but never substantively engaged — no reference to Zhao Tingyang's all-under-heaven framework, Yan Xuetong's moral realism, or Qin Yaqing's relational theory appears in the key_drivers, elite_bargain_summary, or uncertainty_summary. The non-Western lens declarations are cosmetic weights without analytical engagement, constituting lens-panel monoculture on a non-Western actor.\n  > \"Tianxia\": 0.6,\n    \"Eurasianism\": 0.25,\n    \"Pan-African\": 0.3\n- **`AG-ARE`** [medium] — The lens panel includes only one lens labeled as non-Western (L50, a governance critical-bias lens), but no lens derives from a non-Western cultural or regional perspective (e.g., pan-African decolonial, tianxia, postcolonial, or Gulf regional studies). This monoculture risks analytical blindness, especially on a non-Western actor like the UAE where self-conceptions and regional dynamics differ markedly from Western IR models.\n  > \"L50\": 0.6\n- **`AG-AUS`** [high] — The notes section confirms that the operative analytical blend is three Western frameworks: Mearsheimer, Ikenberry, and Krugman. Despite declaring L03_tianxia_moral_realism at 0.55, L54_acharya_regional_order at 0.50, and L05_pan_african_decolonial at 0.10, none of these non-Western lenses appear in the body reasoning. The structural metrics confirm 10 Western / 1 non-Western lens keys declared, and the actual TF divergence (94.3 declared vs 75.7 actual) signals that non-Western lenses are declared but not applied. For a brief analysing Australia's relations with Pacific Island states, ASEAN, and China, the absence of Acharya multiplex reasoning and Pacific-led security frameworks is analytically disabling.\n  > Reasoning blends Mearsheimer (Australia balances against China hegemon; cannot bandwagon given basing-redline geography), Ikenberry (Pacific institutional binding via Pukpuk/Nakamal/Falepili as cheape\n- **`AG-BRA`** [critical] — The structural metrics confirm that all 11 declared lens keys are classified as Western (11/11 Western, 0/11 non-Western). For a Brazil actor brief that explicitly claims Global-South leadership, BRICS+ centrality, and multipolar positioning, the complete absence of any non-Western lens with weight > 0.3 constitutes a material lens-panel monoculture. The artifact's own notes acknowledge that 'Pan-African/decolonial (high — Global-South leadership is the brand)' and 'Tianxia (moderate — Lula-Xi peace plan posture)' are relevant, yet these are not reflected in the lens-panel classification. This is a critical finding per the bias-auditor spec: 'Material lens-panel monoculture on a non-Western actor (no non-Western lens with weight > 0.3 AND no non-Western lens with substantive engagement in body).'\n  > N lens keys declared / Western / non-Western: 11 / 11 / 0\n- **`AG-BRICS`** [critical] — The structural metrics confirm that all five declared lens keys are classified as Western (Tianxia: 0.85, Eurasianism: 0.8, Pan-African: 0.7, Vreeland: 0.9, Mearsheimer: 0.5), yet the Python classifier returns 5 Western / 0 non-Western. This confirms my Round 2 finding: the artifact labels non-Western concepts as lens keys but operationalises them through Western IR logic. Tianxia is used as a synonym for 'Chinese leadership-of-the-Global-South framing' rather than Zhao Tingyang's relational moral cosmology; Pan-African is invoked only as a geographic-coverage label; Eurasianism appears only as a geopolitical-defiance frame. No non-Western lens receives substantive analytical engagement in the body text.\n  > N lens keys declared / Western / non-Western: 5 / 5 / 0\n- **`AG-CAN`** [critical] — All six declared lenses (L03 Mearsheimer, L09 Ikenberry, L11 Krugman, L01 structural realism, L50, L51) are Western analytical frameworks. The structural metrics confirm 6/6 declared lens keys are Western-origin. The artifact discusses Canada's managed-rival relationship with PRC, Indo-Pacific deterrence, and critical minerals competition with China — topics where non-Western IR traditions (Tianxia, relational theory, Yan Xuetong's moral realism) would materially alter the analytical conclusions. No non-Western lens has weight > 0.3 and no non-Western lens receives substantive engagement in the body text.\n  > Lens IDs interpreted as: L03=offensive realism/Mearsheimer (high relevance for NORAD/Arctic and US coercion), L11=Krugman/economic-geography (high for tariff and supply-chain reasoning), L09=Ikenberry\n- **`AG-CAN`** [critical] — All four named analytical frameworks (Mearsheimer offensive realism, Krugman economic geography, Ikenberry liberal institutionalism, structural realism L01) are exclusively Western IR/economics traditions. The artifact covers Canada's managed-rival relationship with the PRC, Indo-Pacific strategy, and engagement with non-Western actors, yet zero non-Western analytical lenses are deployed. The structural metrics confirm N lens keys declared/Western/non-Western = 6/6/0. This is a material lens-panel monoculture on a brief that substantively engages PRC, ASEAN-adjacent, and Arctic-Indigenous geopolitical questions.\n  > Lens IDs interpreted as: L03=offensive realism/Mearsheimer (high relevance for NORAD/Arctic and US coercion), L11=Krugman/economic-geography (high for tariff and supply-chain reasoning), L09=Ikenberry\n\n## Top-10 source-region-imbalance findings\n\n- **`AG-ARG`** [high] — Of the 10 cited URLs, Western/Washington-centric institutional sources dominate the analytical framing: IMF (Washington), PIIE (Washington), Rystad Energy (Oslo/Houston), Congress.gov CRS (Washington), and two English-language Buenos Aires outlets (batimes.com.ar, buenosairesherald.com). No Argentine-language academic or policy sources are cited — CEDES (Centro de Estudios de Estado y Sociedad), FLACSO Argentina, CONICET economics working papers, or CEPAL/ECLAC Buenos Aires are entirely absent. The structural metrics show 2 Western / 3 non-Western / 5 unknown URLs, but the 'non-Western' count likely includes bcra.gob.ar and panorama-minero.com — operational data sources, not analytical framing sources. The analytical framing sources are overwhelmingly Washington-based.\n- **`AG-ARG`** [medium] — The sole non-Washington analytical source cited for the analogues section is Real Instituto Elcano (Madrid, Spain) — a European think tank. While Elcano produces quality Latin American analysis, it is a Western European institution framing Argentine monetary policy from a Madrid vantage point. No CEPAL, UNCTAD, or Argentine-based monetary-economics source is cited for the inflation-targeting analogue. The absence of BCRA's own published research documents or Argentine academic monetary-economics literature means the 'BCRA stated medium-term destination' claim is sourced through a European intermediary rather than the institution itself.\n- **`AG-ASEAN`** [high] — The structural metrics confirm N lens keys declared: 15 Western / 0 non-Western, yet the artifact declares Tianxia (0.6), Eurasianism (0.25), and Pan-African (0.3) as lens keys. These non-Western lens labels are declared but receive zero substantive citation support in sources_consulted — all 42 URLs are Western, regional-English, or unknown-origin outlets. No CICIR, Tsinghua IISS, Renmin University IPP, ISEAS (beyond one URL), ORF, or SAIIA source is cited to ground the Tianxia or Pan-African lens weights. The lens weights are therefore decorative rather than analytically grounded.\n- **`AG-ASEAN`** [high] — The primary key driver is framed through 'Mearsheimer offensive-realism logic' with no citation to any Southeast Asian institutional source, ASEAN Secretariat publication, ISEAS-Yusof Ishak Institute analysis, or non-Western IR scholar. The sources_consulted list contains one ISEAS URL (iseas.edu.sg) but it is cited only for the COC track, not for the foundational key-driver framing. The analytical driver that shapes all scenario responses is therefore sourced exclusively from a Western IR framework with no non-Western counterweight citation.\n- **`AG-ASEAN`** [medium] — The artifact cites only one ISEAS-Yusof Ishak Institute source (the L50-recommended primary for Sou",
+    "synthesis_md_full_length": 25764,
+    "n_artifacts": 61,
+    "summaries": [
+      {
+        "id": "AG-ARE",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 65.26,
+        "score_stddev": 11.97,
+        "n_findings": 26,
+        "n_critical": 0
+      },
+      {
+        "id": "AG-ARG",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 64.11,
+        "score_stddev": 11.31,
+        "n_findings": 26,
+        "n_critical": 0
+      },
+      {
+        "id": "AG-ASEAN",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 61.54,
+        "score_stddev": 13.7,
+        "n_findings": 28,
+        "n_critical": 4
+      },
+      {
+        "id": "AG-AUS",
+        "target_class": "actor",
+        "gate": "needs_substantive_revision",
+        "score_mean": 47.15,
+        "score_stddev": 11.49,
+        "n_findings": 28,
+        "n_critical": 4
+      },
+      {
+        "id": "AG-BRA",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 67.3,
+        "score_stddev": 6.58,
+        "n_findings": 29,
+        "n_critical": 1
+      },
+      {
+        "id": "AG-BRICS",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 64.83,
+        "score_stddev": 10.74,
+        "n_findings": 28,
+        "n_critical": 1
+      },
+      {
+        "id": "AG-CAN",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 64.51,
+        "score_stddev": 7.74,
+        "n_findings": 20,
+        "n_critical": 2
+      },
+      {
+        "id": "AG-CHN",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 64.69,
+        "score_stddev": 12.12,
+        "n_findings": 24,
+        "n_critical": 0
+      },
+      {
+        "id": "AG-DEU",
+        "target_class": "actor",
+        "gate": "needs_substantive_revision",
+        "score_mean": 44.55,
+        "score_stddev": 15.65,
+        "n_findings": 28,
+        "n_critical": 6
+      },
+      {
+        "id": "AG-EGY",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 68.14,
+        "score_stddev": 7.47,
+        "n_findings": 22,
+        "n_critical": 0
+      },
+      {
+        "id": "AG-EUR",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 63.58,
+        "score_stddev": 6.22,
+        "n_findings": 20,
+        "n_critical": 3
+      },
+      {
+        "id": "AG-FRA",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 69.53,
+        "score_stddev": 7.07,
+        "n_findings": 23,
+        "n_critical": 0
+      },
+      {
+        "id": "AG-GBR",
+        "target_class": "actor",
+        "gate": "needs_substantive_revision",
+        "score_mean": 48.2,
+        "score_stddev": 11.38,
+        "n_findings": 24,
+        "n_critical": 2
+      },
+      {
+        "id": "AG-IDN",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 65.3,
+        "score_stddev": 9.38,
+        "n_findings": 28,
+        "n_critical": 2
+      },
+      {
+        "id": "AG-IND",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 64.2,
+        "score_stddev": 10.64,
+        "n_findings": 27,
+        "n_critical": 0
+      },
+      {
+        "id": "AG-IRN",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 66.18,
+        "score_stddev": 10.53,
+        "n_findings": 25,
+        "n_critical": 0
+      },
+      {
+        "id": "AG-ISR",
+        "target_class": "actor",
+        "gate": "needs_substantive_revision",
+        "score_mean": 59.41,
+        "score_stddev": 9.8,
+        "n_findings": 21,
+        "n_critical": 2
+      },
+      {
+        "id": "AG-JPN",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 61.72,
+        "score_stddev": 11.12,
+        "n_findings": 24,
+        "n_critical": 1
+      },
+      {
+        "id": "AG-KOR",
+        "target_class": "actor",
+        "gate": "needs_substantive_revision",
+        "score_mean": 59.74,
+        "score_stddev": 13.26,
+        "n_findings": 24,
+        "n_critical": 5
+      },
+      {
+        "id": "AG-L01",
+        "target_class": "lens",
+        "gate": "needs_substantive_revision",
+        "score_mean": 57.95,
+        "score_stddev": 13.54,
+        "n_findings": 24,
+        "n_critical": 8
+      },
+      {
+        "id": "AG-L05",
+        "target_class": "lens",
+        "gate": "needs_substantive_revision",
+        "score_mean": 46.05,
+        "score_stddev": 13.28,
+        "n_findings": 31,
+        "n_critical": 4
+      },
+      {
+        "id": "AG-L17",
+        "target_class": "lens",
+        "gate": "publish_ok",
+        "score_mean": 75.12,
+        "score_stddev": 7.01,
+        "n_findings": 25,
+        "n_critical": 0
+      },
+      {
+        "id": "AG-L18",
+        "target_class": "lens",
+        "gate": "revise",
+        "score_mean": 67.66,
+        "score_stddev": 7.81,
+        "n_findings": 19,
+        "n_critical": 0
+      },
+      {
+        "id": "AG-L19",
+        "target_class": "lens",
+        "gate": "revise",
+        "score_mean": 73.92,
+        "score_stddev": 11.79,
+        "n_findings": 20,
+        "n_critical": 0
+      },
+      {
+        "id": "AG-MEX",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 60.41,
+        "score_stddev": 6.78,
+        "n_findings": 25,
+        "n_critical": 2
+      },
+      {
+        "id": "AG-NGA",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 66.95,
+        "score_stddev": 4.67,
+        "n_findings": 21,
+        "n_critical": 0
+      },
+      {
+        "id": "AG-PAK",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 62.9,
+        "score_stddev": 9.81,
+        "n_findings": 26,
+        "n_critical": 2
+      },
+      {
+        "id": "AG-POL",
+        "target_class": "actor",
+        "gate": "needs_substantive_revision",
+        "score_mean": 48.63,
+        "score_stddev": 11.2,
+        "n_findings": 27,
+        "n_critical": 3
+      },
+      {
+        "id": "AG-RUS",
+        "target_class": "actor",
+        "gate": "needs_substantive_revision",
+        "score_mean": 46.64,
+        "score_stddev": 12.13,
+        "n_findings": 28,
+        "n_critical": 9
+      },
+      {
+        "id": "AG-SAU",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 67.8,
+        "score_stddev": 11.88,
+        "n_findings": 26,
+        "n_critical": 0
+      },
+      {
+        "id": "AG-T01",
+        "target_class": "theme",
+        "gate": "needs_substantive_revision",
+        "score_mean": 52.3,
+        "score_stddev": 6.3,
+        "n_findings": 23,
+        "n_critical": 5
+      },
+      {
+        "id": "AG-T02",
+        "target_class": "theme",
+        "gate": "needs_substantive_revision",
+        "score_mean": 58.06,
+        "score_stddev": 7.33,
+        "n_findings": 17,
+        "n_critical": 3
+      },
+      {
+        "id": "AG-T03",
+        "target_class": "theme",
+        "gate": "revise",
+        "score_mean": 64.29,
+        "score_stddev": 7.31,
+        "n_findings": 19,
+        "n_critical": 3
+      },
+      {
+        "id": "AG-T04",
+        "target_class": "theme",
+        "gate": "revise",
+        "score_mean": 61.69,
+        "score_stddev": 12.89,
+        "n_findings": 25,
+        "n_critical": 3
+      },
+      {
+        "id": "AG-T05",
+        "target_class": "theme",
+        "gate": "revise",
+        "score_mean": 67.98,
+        "score_stddev": 7.99,
+        "n_findings": 26,
+        "n_critical": 0
+      },
+      {
+        "id": "AG-T06",
+        "target_class": "theme",
+        "gate": "needs_substantive_revision",
+        "score_mean": 50.68,
+        "score_stddev": 8.11,
+        "n_findings": 19,
+        "n_critical": 3
+      },
+      {
+        "id": "AG-T07",
+        "target_class": "theme",
+        "gate": "needs_substantive_revision",
+        "score_mean": 50.35,
+        "score_stddev": 12.1,
+        "n_findings": 27,
+        "n_critical": 3
+      },
+      {
+        "id": "AG-T08",
+        "target_class": "theme",
+        "gate": "revise",
+        "score_mean": 64.77,
+        "score_stddev": 6.9,
+        "n_findings": 19,
+        "n_critical": 2
+      },
+      {
+        "id": "AG-T09",
+        "target_class": "theme",
+        "gate": "revise",
+        "score_mean": 60.68,
+        "score_stddev": 11.85,
+        "n_findings": 27,
+        "n_critical": 3
+      },
+      {
+        "id": "AG-T10",
+        "target_class": "theme",
+        "gate": "needs_substantive_revision",
+        "score_mean": 47.01,
+        "score_stddev": 12.31,
+        "n_findings": 30,
+        "n_critical": 4
+      },
+      {
+        "id": "AG-TUR",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 68.04,
+        "score_stddev": 7.67,
+        "n_findings": 27,
+        "n_critical": 2
+      },
+      {
+        "id": "AG-UKR",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 63.58,
+        "score_stddev": 6.16,
+        "n_findings": 21,
+        "n_critical": 2
+      },
+      {
+        "id": "AG-USA",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 70.05,
+        "score_stddev": 9.91,
+        "n_findings": 19,
+        "n_critical": 0
+      },
+      {
+        "id": "AG-VNM",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 63.52,
+        "score_stddev": 8.25,
+        "n_findings": 19,
+        "n_critical": 7
+      },
+      {
+        "id": "AG-ZAF",
+        "target_class": "actor",
+        "gate": "revise",
+        "score_mean": 68.24,
+        "score_stddev": 8.2,
+        "n_findings": 24,
+        "n_critical": 0
+      },
+      {
+        "id": "PDF-01_GIPRE_Master_Scenarios",
+        "target_class": "pdf",
+        "gate": "needs_substantive_revision",
+        "score_mean": 41.92,
+        "score_stddev": 9.73,
+        "n_findings": 23,
+        "n_critical": 1
+      },
+      {
+        "id": "PDF-02_GIPRE_Region_NorthAmerica",
+        "target_class": "pdf",
+        "gate": "needs_substantive_revision",
+        "score_mean": 41.57,
+        "score_stddev": 11.57,
+        "n_findings": 28,
+        "n_critical": 2
+      },
+      {
+        "id": "PDF-03_GIPRE_Region_Europe",
+        "target_class": "pdf",
+        "gate": "needs_substantive_revision",
+        "score_mean": 42.65,
+        "score_stddev": 10.57,
+        "n_findings": 20,
+        "n_critical": 3
+      },
+      {
+        "id": "PDF-04_GIPRE_Region_GreaterMiddleEast",
+        "target_class": "pdf",
+        "gate": "needs_substantive_revision",
+        "score_mean": 44.0,
+        "score_stddev": 7.89,
+        "n_findings": 24,
+        "n_critical": 1
+      },
+      {
+        "id": "PDF-05_GIPRE_Region_AsiaPacific",
+        "target_class": "pdf",
+        "gate": "needs_substantive_revision",
+        "score_mean": 43.69,
+        "score_stddev": 6.79,
+        "n_findings": 23,
+        "n_critical": 0
+      },
+      {
+        "id": "PDF-06_GIPRE_Region_SouthAsia",
+        "target_class": "pdf",
+        "gate": "needs_substantive_revision",
+        "score_mean": 39.62,
+        "score_stddev": 9.57,
+        "n_findings": 29,
+        "n_critical": 2
+      },
+      {
+        "id": "PDF-07_GIPRE_Region_Africa",
+        "target_class": "pdf",
+        "gate": "needs_substantive_revision",
+        "score_mean": 46.78,
+        "score_stddev": 9.3,
+        "n_findings": 29,
+        "n_critical": 1
+      },
+      {
+        "id": "PDF-08_GIPRE_Region_LatinAmerica",
+        "target_class": "pdf",
+        "gate": "needs_substantive_revision",
+        "score_mean": 39.2,
+        "score_stddev": 6.43,
+        "n_findings": 31,
+        "n_critical": 6
+      },
+      {
+        "id": "SYN-africa",
+        "target_class": "synthesis",
+        "gate": "publish_ok",
+        "score_mean": 75.46,
+        "score_stddev": 11.34,
+        "n_findings": 22,
+        "n_critical": 0
+      },
+      {
+        "id": "SYN-asia_pacific",
+        "target_class": "synthesis",
+        "gate": "needs_substantive_revision",
+        "score_mean": 45.53,
+        "score_stddev": 3.41,
+        "n_findings": 14,
+        "n_critical": 0
+      },
+      {
+        "id": "SYN-europe",
+        "target_class": "synthesis",
+        "gate": "needs_substantive_revision",
+        "score_mean": 39.5,
+        "score_stddev": 8.22,
+        "n_findings": 27,
+        "n_critical": 3
+      },
+      {
+        "id": "SYN-greater_middle_east",
+        "target_class": "synthesis",
+        "gate": "needs_substantive_revision",
+        "score_mean": 45.39,
+        "score_stddev": 6.52,
+        "n_findings": 26,
+        "n_critical": 4
+      },
+      {
+        "id": "SYN-latin_america",
+        "target_class": "synthesis",
+        "gate": "needs_substantive_revision",
+        "score_mean": 52.21,
+        "score_stddev": 4.69,
+        "n_findings": 22,
+        "n_critical": 2
+      },
+      {
+        "id": "SYN-master",
+        "target_class": "synthesis",
+        "gate": "needs_substantive_revision",
+        "score_mean": 42.21,
+        "score_stddev": 9.82,
+        "n_findings": 29,
+        "n_critical": 0
+      },
+      {
+        "id": "SYN-north_america",
+        "target_class": "synthesis",
+        "gate": "needs_substantive_revision",
+        "score_mean": 40.67,
+        "score_stddev": 9.92,
+        "n_findings": 27,
+        "n_critical": 0
+      },
+      {
+        "id": "SYN-south_asia",
+        "target_class": "synthesis",
+        "gate": "needs_substantive_revision",
+        "score_mean": 57.06,
+        "score_stddev": 9.23,
+        "n_findings": 14,
+        "n_critical": 2
+      }
+    ],
+    "available": true,
     "structural_metrics_csv_exists": true
   },
   "source_files": [
