@@ -7,8 +7,8 @@ export const metadata: Metadata = {
     template: "%s · GIPRE Transparency",
   },
   description:
-    "The open methodology and governance audit view of the GIPRE engine — Geopolitical Intelligence and Probabilistic Reasoning Engine. 65 layers, 95+ agents, 100+ scenarios. Built by Strature Geopolitical Prospects & Strategy Inc.",
-  metadataBase: new URL("https://gipre-transparency.azurestaticapps.net"),
+    "The open methodology and governance audit view of the GIPRE engine — Geopolitical Intelligence and Probabilistic Reasoning Engine. 65 layers, 146 agents, 100 scenarios. Built by Strature Geopolitical Prospects & Strategy Inc.",
+  metadataBase: new URL("https://ashy-forest-072686a0f.7.azurestaticapps.net"),
   openGraph: {
     type: "website",
     title: "GIPRE Transparency",
