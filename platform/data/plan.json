@@ -66,9 +66,9 @@
       "id": "B",
       "title": "Scale agents (50 → 500)",
       "n_steps": 6,
-      "n_done": 2,
+      "n_done": 3,
       "n_in_progress": 0,
-      "n_pending": 4,
+      "n_pending": 3,
       "steps": [
         {
           "id": "B01",
@@ -85,8 +85,8 @@
         {
           "id": "B03",
           "title": "Add 50 sub-state actor agents (central banks, MoFs, defence)",
-          "status_cell": "⏳",
-          "status": "pending"
+          "status_cell": "✅ 2026-05-20 (B03a + B03b complete; 51-actor first-half cohort)",
+          "status": "done"
         },
         {
           "id": "B04",
@@ -612,15 +612,15 @@
       "id": "V",
       "title": "Visible progress (GIPRE Transparency platform — v2 deployable)",
       "n_steps": 8,
-      "n_done": 1,
-      "n_in_progress": 0,
+      "n_done": 0,
+      "n_in_progress": 1,
       "n_pending": 7,
       "steps": [
         {
           "id": "V01",
           "title": "Minimal platform v2 — Next.js skeleton + 5 pages (Landing, Methodology, Governance, Architecture, Agents) + Bicep IaC for Static Web Apps Standard + App Insights + Key Vault + Cosmos serverless + Blob; GitHub Actions auto-deploy; one-command `azd up` runbook",
-          "status_cell": "✅ 2026-05-19",
-          "status": "done"
+          "status_cell": "🟡 2026-05-12",
+          "status": "in_progress"
         },
         {
           "id": "V02",
@@ -670,8 +670,8 @@
       "id": "N",
       "title": "Governance agent execution",
       "n_steps": 5,
-      "n_done": 2,
-      "n_in_progress": 0,
+      "n_done": 1,
+      "n_in_progress": 1,
       "n_pending": 3,
       "steps": [
         {
@@ -683,8 +683,8 @@
         {
           "id": "N02",
           "title": "Run Bias Auditor (L50/L65) on current outputs",
-          "status_cell": "✅ 2026-05-19 🌐 live",
-          "status": "done"
+          "status_cell": "🟡 2026-05-12",
+          "status": "in_progress"
         },
         {
           "id": "N03",
@@ -708,9 +708,9 @@
     }
   ],
   "total_steps": 91,
-  "total_done": 12,
-  "total_in_progress": 0,
-  "total_pending": 79,
+  "total_done": 11,
+  "total_in_progress": 2,
+  "total_pending": 78,
   "source_file": "implementation/IMPLEMENTATION_PLAN.md",
-  "generated_utc": "2026-05-19T21:06:26+00:00"
+  "generated_utc": "2026-05-20T19:08:32+00:00"
 }
